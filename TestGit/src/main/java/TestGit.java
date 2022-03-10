@@ -8,6 +8,7 @@ public class TestGit {
 		System.out.println("두번째 커밋");
 		System.out.println("세번째 커밋");
 		System.out.println("네번째 스니커즈");
+		System.out.println("네번째 반 스니커즈");
 	
 	}
 
