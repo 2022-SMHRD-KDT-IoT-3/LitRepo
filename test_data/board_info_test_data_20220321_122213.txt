@@ -1,0 +1,5 @@
+﻿INSERT INTO board_info (article_title, article_content, article_file, article_date, mem_id, article_cnt, article_type) VALUES ('article_title 1', 'article_content 1', 'article_file 1', sysdate, 'mem_id 01', 1, 'F');
+INSERT INTO board_info (article_title, article_content, article_file, article_date, mem_id, article_cnt, article_type) VALUES ('article_title 2', 'article_content 2', 'article_file 2', sysdate, 'mem_id 02', 2, 'F');
+INSERT INTO board_info (article_title, article_content, article_file, article_date, mem_id, article_cnt, article_type) VALUES ('article_title 3', 'article_content 3', 'article_file 3', sysdate, 'mem_id 03', 3, 'Q');
+INSERT INTO board_info (article_title, article_content, article_file, article_date, mem_id, article_cnt, article_type) VALUES ('article_title 4', 'article_content 4', 'article_file 4', sysdate, 'mem_id 04', 4, 'I');
+INSERT INTO board_info (article_title, article_content, article_file, article_date, mem_id, article_cnt, article_type) VALUES ('article_title 5', 'article_content 5', 'article_file 5', sysdate, 'mem_id 05', 5, 'S');
