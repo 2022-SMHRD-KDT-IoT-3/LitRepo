@@ -1,4 +1,4 @@
--- Å×ÀÌºí »èÁ¦
+-- í…Œì´ë¸” ì‚­ì œ
 DROP TABLE mem_info CASCADE CONSTRAINTS ;
 DROP TABLE phy_info CASCADE CONSTRAINTS ;
 DROP TABLE rt_info CASCADE CONSTRAINTS ;
@@ -6,14 +6,14 @@ DROP TABLE env_info CASCADE CONSTRAINTS ;
 DROP TABLE board_info CASCADE CONSTRAINTS ;
 DROP TABLE comment_info CASCADE CONSTRAINTS ;
 
--- ½ÃÄö½º »èÁ¦
+-- ì‹œí€€ìŠ¤ ì‚­ì œ
 DROP SEQUENCE board_info_SEQ ;
 DROP SEQUENCE phy_info_SEQ ;
 DROP SEQUENCE rt_info_SEQ ;
 DROP SEQUENCE env_info_SEQ ;
 DROP SEQUENCE comment_info_SEQ ;
 
--- Å×ÀÌºí ¼ø¼­´Â °ü°è¸¦ °í·ÁÇÏ¿© ÇÑ ¹ø¿¡ ½ÇÇàÇØµµ ¿¡·¯°¡ ¹ß»ýÇÏÁö ¾Ê°Ô Á¤·ÄµÇ¾ú½À´Ï´Ù.
+-- í…Œì´ë¸” ìˆœì„œëŠ” ê´€ê³„ë¥¼ ê³ ë ¤í•˜ì—¬ í•œ ë²ˆì— ì‹¤í–‰í•´ë„ ì—ëŸ¬ê°€ ë°œìƒí•˜ì§€ ì•Šê²Œ ì •ë ¬ë˜ì—ˆìŠµë‹ˆë‹¤.
 
 -- mem_info Table Create SQL
 CREATE TABLE mem_info
@@ -24,33 +24,33 @@ CREATE TABLE mem_info
     mem_gender       CHAR(1)         NOT NULL, 
     mem_birthdate    DATE            DEFAULT SYSDATE NOT NULL, 
     mem_joindate     DATE            NOT NULL, 
-    mem_type         CHAR(1)         NOT NULL, 
+    mem_type         CHAR(1)         DEFAULT 'U' NOT NULL, 
      PRIMARY KEY (mem_id)
 )
 /
 
-COMMENT ON TABLE mem_info IS 'È¸¿ø Á¤º¸ Å×ÀÌºí'
+COMMENT ON TABLE mem_info IS 'íšŒì› ì •ë³´ í…Œì´ë¸”'
 /
 
-COMMENT ON COLUMN mem_info.mem_id IS 'È¸¿ø ¾ÆÀÌµð'
+COMMENT ON COLUMN mem_info.mem_id IS 'íšŒì› ì•„ì´ë””'
 /
 
-COMMENT ON COLUMN mem_info.mem_pw IS 'È¸¿ø ºñ¹Ð¹øÈ£'
+COMMENT ON COLUMN mem_info.mem_pw IS 'íšŒì› ë¹„ë°€ë²ˆí˜¸'
 /
 
-COMMENT ON COLUMN mem_info.mem_nick IS 'È¸¿ø ´Ð³×ÀÓ'
+COMMENT ON COLUMN mem_info.mem_nick IS 'íšŒì› ë‹‰ë„¤ìž„'
 /
 
-COMMENT ON COLUMN mem_info.mem_gender IS 'È¸¿ø ¼ºº°'
+COMMENT ON COLUMN mem_info.mem_gender IS 'íšŒì› ì„±ë³„'
 /
 
-COMMENT ON COLUMN mem_info.mem_birthdate IS 'È¸¿ø »ý³â¿ùÀÏ'
+COMMENT ON COLUMN mem_info.mem_birthdate IS 'íšŒì› ìƒë…„ì›”ì¼'
 /
 
-COMMENT ON COLUMN mem_info.mem_joindate IS 'È¸¿ø °¡ÀÔÀÏÀÚ'
+COMMENT ON COLUMN mem_info.mem_joindate IS 'íšŒì› ê°€ìž…ì¼ìž'
 /
 
-COMMENT ON COLUMN mem_info.mem_type IS 'È¸¿ø À¯Çü'
+COMMENT ON COLUMN mem_info.mem_type IS 'íšŒì› ìœ í˜•'
 /
 
 
@@ -64,7 +64,7 @@ CREATE TABLE board_info
     article_date       DATE              DEFAULT SYSDATE NOT NULL, 
     mem_id             VARCHAR2(25)      NOT NULL, 
     article_cnt        NUMBER(12, 0)     DEFAULT 0 NOT NULL, 
-    article_type       CHAR(1)           NOT NULL, 
+    article_type       CHAR(1)           DEFAULT 'F' NOT NULL, 
      PRIMARY KEY (article_seq)
 )
 /
@@ -90,31 +90,31 @@ END;
 --DROP SEQUENCE board_info_SEQ;
 /
 
-COMMENT ON TABLE board_info IS '°Ô½ÃÆÇ Å×ÀÌºí'
+COMMENT ON TABLE board_info IS 'ê²Œì‹œíŒ í…Œì´ë¸”'
 /
 
-COMMENT ON COLUMN board_info.article_seq IS '±Û ¼ø¹ø'
+COMMENT ON COLUMN board_info.article_seq IS 'ê¸€ ìˆœë²ˆ'
 /
 
-COMMENT ON COLUMN board_info.article_title IS '±Û Á¦¸ñ'
+COMMENT ON COLUMN board_info.article_title IS 'ê¸€ ì œëª©'
 /
 
-COMMENT ON COLUMN board_info.article_content IS '±Û ³»¿ë'
+COMMENT ON COLUMN board_info.article_content IS 'ê¸€ ë‚´ìš©'
 /
 
-COMMENT ON COLUMN board_info.article_file IS '±Û Ã·ºÎÆÄÀÏ'
+COMMENT ON COLUMN board_info.article_file IS 'ê¸€ ì²¨ë¶€íŒŒì¼'
 /
 
-COMMENT ON COLUMN board_info.article_date IS '±Û ÀÛ¼ºÀÏÀÚ'
+COMMENT ON COLUMN board_info.article_date IS 'ê¸€ ìž‘ì„±ì¼ìž'
 /
 
-COMMENT ON COLUMN board_info.mem_id IS '±Û ÀÛ¼ºÀÚ'
+COMMENT ON COLUMN board_info.mem_id IS 'ê¸€ ìž‘ì„±ìž'
 /
 
-COMMENT ON COLUMN board_info.article_cnt IS '±Û Á¶È¸¼ö'
+COMMENT ON COLUMN board_info.article_cnt IS 'ê¸€ ì¡°íšŒìˆ˜'
 /
 
-COMMENT ON COLUMN board_info.article_type IS '±Û À¯Çü'
+COMMENT ON COLUMN board_info.article_type IS 'ê¸€ ìœ í˜•'
 /
 
 ALTER TABLE board_info
@@ -156,22 +156,22 @@ END;
 --DROP SEQUENCE phy_info_SEQ;
 /
 
-COMMENT ON TABLE phy_info IS '½ÅÃ¼ Á¤º¸ Å×ÀÌºí'
+COMMENT ON TABLE phy_info IS 'ì‹ ì²´ ì •ë³´ í…Œì´ë¸”'
 /
 
-COMMENT ON COLUMN phy_info.sensing_seq IS 'ÃøÁ¤ ¼ø¹ø'
+COMMENT ON COLUMN phy_info.sensing_seq IS 'ì¸¡ì • ìˆœë²ˆ'
 /
 
-COMMENT ON COLUMN phy_info.mem_id IS 'È¸¿ø ¾ÆÀÌµð'
+COMMENT ON COLUMN phy_info.mem_id IS 'íšŒì› ì•„ì´ë””'
 /
 
-COMMENT ON COLUMN phy_info.sensing_pulse IS '½É¹Ú¼ö'
+COMMENT ON COLUMN phy_info.sensing_pulse IS 'ì‹¬ë°•ìˆ˜'
 /
 
-COMMENT ON COLUMN phy_info.sensing_stress IS '½ºÆ®·¹½º Áö¼ö'
+COMMENT ON COLUMN phy_info.sensing_stress IS 'ìŠ¤íŠ¸ë ˆìŠ¤ ì§€ìˆ˜'
 /
 
-COMMENT ON COLUMN phy_info.sensing_date IS 'ÃøÁ¤ ÀÏÀÚ'
+COMMENT ON COLUMN phy_info.sensing_date IS 'ì¸¡ì • ì¼ìž'
 /
 
 ALTER TABLE phy_info
@@ -213,22 +213,22 @@ END;
 --DROP SEQUENCE rt_info_SEQ;
 /
 
-COMMENT ON TABLE rt_info IS '½Ç½Ã°£ ¼ö¸é ¼¾¼­ Å×ÀÌºí'
+COMMENT ON TABLE rt_info IS 'ì‹¤ì‹œê°„ ìˆ˜ë©´ ì„¼ì„œ í…Œì´ë¸”'
 /
 
-COMMENT ON COLUMN rt_info.rt_seq IS '½Ç½Ã°£ ¼ø¹ø'
+COMMENT ON COLUMN rt_info.rt_seq IS 'ì‹¤ì‹œê°„ ìˆœë²ˆ'
 /
 
-COMMENT ON COLUMN rt_info.mem_id IS 'È¸¿ø ¾ÆÀÌµð'
+COMMENT ON COLUMN rt_info.mem_id IS 'íšŒì› ì•„ì´ë””'
 /
 
-COMMENT ON COLUMN rt_info.rt_pulse IS '½Ç½Ã°£ ½É¹Ú¼ö'
+COMMENT ON COLUMN rt_info.rt_pulse IS 'ì‹¤ì‹œê°„ ì‹¬ë°•ìˆ˜'
 /
 
-COMMENT ON COLUMN rt_info.rt_decibel IS 'ÄÚ°ñÀÌ µ¥½Ãº§'
+COMMENT ON COLUMN rt_info.rt_decibel IS 'ì½”ê³¨ì´ ë°ì‹œë²¨'
 /
 
-COMMENT ON COLUMN rt_info.rt_datetime IS 'ÃøÁ¤ ³¯Â¥'
+COMMENT ON COLUMN rt_info.rt_datetime IS 'ì¸¡ì • ë‚ ì§œ'
 /
 
 ALTER TABLE rt_info
@@ -270,22 +270,22 @@ END;
 --DROP SEQUENCE env_info_SEQ;
 /
 
-COMMENT ON TABLE env_info IS '¿Â½Àµµ Á¤º¸ Å×ÀÌºí'
+COMMENT ON TABLE env_info IS 'ì˜¨ìŠµë„ ì •ë³´ í…Œì´ë¸”'
 /
 
-COMMENT ON COLUMN env_info.env_seq IS '¿Â½Àµµ ¼ø¹ø'
+COMMENT ON COLUMN env_info.env_seq IS 'ì˜¨ìŠµë„ ìˆœë²ˆ'
 /
 
-COMMENT ON COLUMN env_info.env_temperature IS '¿Âµµ'
+COMMENT ON COLUMN env_info.env_temperature IS 'ì˜¨ë„'
 /
 
-COMMENT ON COLUMN env_info.env_humidity IS '½Àµµ'
+COMMENT ON COLUMN env_info.env_humidity IS 'ìŠµë„'
 /
 
-COMMENT ON COLUMN env_info.env_date IS 'ÃøÁ¤ ÀÏÀÚ'
+COMMENT ON COLUMN env_info.env_date IS 'ì¸¡ì • ì¼ìž'
 /
 
-COMMENT ON COLUMN env_info.mem_id IS 'À¯Àú ¾ÆÀÌµð'
+COMMENT ON COLUMN env_info.mem_id IS 'ìœ ì € ì•„ì´ë””'
 /
 
 ALTER TABLE env_info
@@ -328,25 +328,25 @@ END;
 --DROP SEQUENCE comment_info_SEQ;
 /
 
-COMMENT ON TABLE comment_info IS '´ñ±Û Å×ÀÌºí'
+COMMENT ON TABLE comment_info IS 'ëŒ“ê¸€ í…Œì´ë¸”'
 /
 
-COMMENT ON COLUMN comment_info.cmt_seq IS '´ñ±Û ¼ø¹ø'
+COMMENT ON COLUMN comment_info.cmt_seq IS 'ëŒ“ê¸€ ìˆœë²ˆ'
 /
 
-COMMENT ON COLUMN comment_info.article_seq IS '¿ø±Û ¼ø¹ø'
+COMMENT ON COLUMN comment_info.article_seq IS 'ì›ê¸€ ìˆœë²ˆ'
 /
 
-COMMENT ON COLUMN comment_info.cmt_content IS '´ñ±Û ³»¿ë'
+COMMENT ON COLUMN comment_info.cmt_content IS 'ëŒ“ê¸€ ë‚´ìš©'
 /
 
-COMMENT ON COLUMN comment_info.cmt_date IS '´ñ±Û ÀÛ¼ºÀÏÀÚ'
+COMMENT ON COLUMN comment_info.cmt_date IS 'ëŒ“ê¸€ ìž‘ì„±ì¼ìž'
 /
 
-COMMENT ON COLUMN comment_info.mem_id IS '´ñ±Û ÀÛ¼ºÀÚ'
+COMMENT ON COLUMN comment_info.mem_id IS 'ëŒ“ê¸€ ìž‘ì„±ìž'
 /
 
-COMMENT ON COLUMN comment_info.likes IS 'ÁÁ¾Æ¿ä ¼ö'
+COMMENT ON COLUMN comment_info.likes IS 'ì¢‹ì•„ìš” ìˆ˜'
 /
 
 ALTER TABLE comment_info
@@ -359,7 +359,7 @@ ALTER TABLE comment_info
         REFERENCES mem_info (mem_id)
 /
 
--- Á¦¾àÁ¶°Ç
+-- ì œì•½ì¡°ê±´
 ALTER TABLE MEM_INFO ADD CONSTRAINTS CHECK_MEM_GENDER CHECK (MEM_GENDER IN ('F', 'M'));
 /
 ALTER TABLE MEM_INFO ADD CONSTRAINTS CHECK_MEM_TYPE CHECK (MEM_TYPE IN ('A', 'U','D'));
