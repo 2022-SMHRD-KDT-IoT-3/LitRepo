@@ -1,0 +1,5 @@
+﻿INSERT INTO phy_info (mem_id, sensing_pulse, sensing_stress, sensing_date) VALUES ('mem_id 01', 1, 1, sysdate);
+INSERT INTO phy_info (mem_id, sensing_pulse, sensing_stress, sensing_date) VALUES ('mem_id 02', 2, 2, sysdate);
+INSERT INTO phy_info (mem_id, sensing_pulse, sensing_stress, sensing_date) VALUES ('mem_id 03', 3, 3, sysdate);
+INSERT INTO phy_info (mem_id, sensing_pulse, sensing_stress, sensing_date) VALUES ('mem_id 04', 4, 4, sysdate);
+INSERT INTO phy_info (mem_id, sensing_pulse, sensing_stress, sensing_date) VALUES ('mem_id 05', 5, 5, sysdate);

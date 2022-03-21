@@ -1,0 +1,5 @@
+﻿INSERT INTO comment_info (article_seq, cmt_content, cmt_date, mem_id, likes) VALUES (11, 'cmt_content 1', sysdate, 'mem_id 01', 1);
+INSERT INTO comment_info (article_seq, cmt_content, cmt_date, mem_id, likes) VALUES (12, 'cmt_content 2', sysdate, 'mem_id 02', 2);
+INSERT INTO comment_info (article_seq, cmt_content, cmt_date, mem_id, likes) VALUES (13, 'cmt_content 3', sysdate, 'mem_id 03', 3);
+INSERT INTO comment_info (article_seq, cmt_content, cmt_date, mem_id, likes) VALUES (14, 'cmt_content 4', sysdate, 'mem_id 04', 4);
+INSERT INTO comment_info (article_seq, cmt_content, cmt_date, mem_id, likes) VALUES (15, 'cmt_content 5', sysdate, 'mem_id 05', 5);
