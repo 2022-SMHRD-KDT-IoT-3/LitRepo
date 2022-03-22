@@ -124,24 +124,24 @@ public class CommentDAO {
 		} return cnt;
 	}
 	// 댓글 출력 메소드
-	public List<CommentDTO> selecComment(int article_seq) {
+	public List<CommentDTO> selectComment(BoardDTO dto) {
 		
 		List<CommentDTO> cmtlist = new ArrayList<CommentDTO>();
 		dbconn();
 		try {
-			String sql = "select * from comment_info where article_seq=? order by cmt_date";
+			String sql = "select * from comment_info where article_seq=? order by cmt_date desc";
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, article_seq);
+			psmt.setInt(1, dto.getArticle_seq());
 			rs = psmt.executeQuery();
 			while(rs.next()) {
-				int cmt_seq = rs.getInt(1);
-				article_seq = article_seq;
+				int num = rs.getInt(1);
+				int article_seq = dto.getArticle_seq();
 				String cmt_content = rs.getString(3);
 				String cmt_date = rs.getString(4);
 				String mem_id = rs.getString(5);
 				int likes = rs.getInt(6);
 				
-				cmtdto = new CommentDTO(cmt_seq, article_seq, cmt_content, cmt_date, mem_id, likes);
+				cmtdto = new CommentDTO(num, article_seq, cmt_content, cmt_date, mem_id, likes);
 				cmtlist.add(cmtdto);
 			}
 		} catch (Exception e) {
