@@ -40,7 +40,14 @@ public class CommentDAO {
 	public int insertComment(CommentDTO dto) {
 		dbconn();
 		try {
+			String sql = "insert into comment_info values(cmt_seq.nextval,?,sysdate,?,?) where article_seq=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, dto.getCmt_content());
+			psmt.setString(2, dto.getMem_id());
+			psmt.setInt(3, dto.getLikes());
+			psmt.setInt(4, dto.getArticle_seq());
 			
+			cnt = psmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
