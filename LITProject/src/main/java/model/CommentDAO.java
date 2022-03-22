@@ -10,6 +10,7 @@ public class CommentDAO {
 	Connection conn = null;
 	PreparedStatement psmt = null;
 	ResultSet rs = null;
+	int cnt = 0;
 	
 	// DB conn메소드
 	public void dbconn() {
@@ -35,5 +36,15 @@ public class CommentDAO {
 			e.printStackTrace();
 		}
 	}
-	
+	// 댓글 작성 메소드
+	public int insertComment(CommentDTO dto) {
+		dbconn();
+		try {
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			dbclose();
+		} return cnt;
+	}
 }
