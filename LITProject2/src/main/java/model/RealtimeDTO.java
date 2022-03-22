@@ -5,7 +5,7 @@ public class RealtimeDTO {
 	private String mem_id;
 	private int rt_pulse;
 	private int rt_decibel;
-	private String rt_datetiem;
+	private String rt_datetime;
 
 	
 	public RealtimeDTO(int rt_seq, String mem_id, int rt_pulse, int rt_decibel, String rt_datetiem) {
@@ -13,7 +13,7 @@ public class RealtimeDTO {
 		this.mem_id = mem_id;
 		this.rt_pulse = rt_pulse;
 		this.rt_decibel = rt_decibel;
-		this.rt_datetiem = rt_datetiem;
+		this.rt_datetime = rt_datetime;
 	}
 	
 	public int getRt_seq() {
@@ -40,11 +40,11 @@ public class RealtimeDTO {
 	public void setRt_decibel(int rt_decibel) {
 		this.rt_decibel = rt_decibel;
 	}
-	public String getRt_datetiem() {
-		return rt_datetiem;
+	public String getRt_datetime() {
+		return rt_datetime;
 	}
-	public void setRt_datetiem(String rt_datetiem) {
-		this.rt_datetiem = rt_datetiem;
+	public void setRt_datetiem(String rt_datetime) {
+		this.rt_datetime = rt_datetime;
 	}
 	
 	
