@@ -18,7 +18,6 @@
 </noscript>
 
 
-
 </head>
 <body>
 	<% BoardDAO dao = new BoardDAO();
