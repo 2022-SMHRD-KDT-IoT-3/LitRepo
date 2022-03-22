@@ -432,7 +432,7 @@ type: 'line',
 data: {
 labels: ['3/1', '3/2', '3/3', '3/4', '3/5', '3/6','3/7'],
 datasets: [{
-label: '하루 평균 실내 온도',
+label: '하루 평균 실내 습도',
 data: [20, 21, 23, 20, 18, 17, 20],
 backgroundColor: [
 
