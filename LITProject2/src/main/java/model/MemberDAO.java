@@ -43,21 +43,26 @@ public class MemberDAO {
 	public int join(MemberDTO dto) {
 		dbconn();
 		try {
-			String sql = "insert into mem_info values(?,?,?,?,?,sysdate,default)";
-			
+			String sql = "insert into mem_info values(?,?,?,?, to_date(?, 'YYYY-MM-DD HH24:MI:SS'),sysdate,'U')";
+
 			psmt = conn.prepareStatement(sql);
+
 			psmt.setString(1, dto.getMem_id());
 			psmt.setString(2, dto.getMem_pw());
 			psmt.setString(3, dto.getMem_nick());
 			psmt.setString(4, dto.getMem_gender());
 			psmt.setString(5, dto.getMem_birthday());
 			
+			
 			cnt = psmt.executeUpdate();
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			dbclose();
-		}return cnt;
+		}
+		return cnt;
 	}
 	// 아이디 중복체크 메소드
 	public boolean idCheck(String id) {

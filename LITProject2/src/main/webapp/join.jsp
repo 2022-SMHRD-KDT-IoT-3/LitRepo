@@ -105,17 +105,17 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
 				<section>
 					<div class="mb-3" id="id">
 						<label for="exampleFormControlInput1" class="form-label">아이디</label>
-						<input type="email" class="form-control"
+						<input type="text" class="form-control"
 							id="exampleFormControlInput1" name = "id" placeholder>
 					</div>
 					<div class="mb-3" id="id">
 						<label for="exampleFormControlInput1" class="form-label">비밀번호</label>
-						<input type="email" class="form-control"
+						<input type="password" class="form-control"
 							id="exampleFormControlInput1" name= "pw" placeholder>
 					</div>
 					<div class="mb-3" id="id">
 						<label for="exampleFormControlInput1" class="form-label">닉네임</label>
-						<input type="email" class="form-control"
+						<input type="text" class="form-control"
 							id="exampleFormControlInput1" name = "nickname" placeholder>
 					</div>
 
@@ -125,13 +125,13 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
 						<br>
 						<div class="form-check form-check-inline">
 							<input class="form-check-input" type="radio"
-								name= "gender" id="inlineRadio1" value= "woman">
+								name= "gender" id="inlineRadio1" value= "F">
 							<label class="form-check-label" for="inlineRadio1">여자</label>
 						</div>
 
 						<div class="form-check form-check-inline">
 							<input class="form-check-input" type="radio"
-								name = "gender"  id="inlineRadio2" value= "man">
+								name = "gender"  id="inlineRadio2" value= "M">
 							<label class="form-check-label" for="inlineRadio2">남자</label>
 						</div>
 						<div class="mb-3" id="line">

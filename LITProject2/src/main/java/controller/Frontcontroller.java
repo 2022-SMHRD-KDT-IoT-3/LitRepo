@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Inter.Command;
+import service.JoinService;
+import service.LoginServiceCon;
 import service.WriteBoardService;
 
 @WebServlet("*.do")
@@ -42,6 +44,16 @@ public class Frontcontroller extends HttpServlet {
 			com = new WriteBoardService();
 			nextPage = com.execute(request, response);
 			
+			
+		} else if(command.equals("JoinServiceCon.do")) {
+			
+			com = new JoinService();
+			nextPage = com.execute(request, response);
+			
+		} else if(command.equals("LoginServiceCon.do")) {
+			
+			com = new LoginServiceCon();
+			nextPage = com.execute(request, response);
 			
 		}
 		

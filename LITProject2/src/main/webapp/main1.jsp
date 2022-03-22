@@ -1,3 +1,4 @@
+<%@page import="model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE HTML>
@@ -30,6 +31,13 @@
 
 </head>
 <body class="is-preload">
+<%
+	HttpSession session1 = request.getSession();
+	
+	MemberDTO dto = (MemberDTO) session1.getAttribute("info");
+
+%>
+
 
 	<!-- Wrapper -->
 	<div id="wrapper">
@@ -38,7 +46,12 @@
 
 		<span class="span1">
 			<button type="button" class="btn btn-outline-secondary">회원가입</button>
+			<%if(dto != null) { %>
+			<button type="button" class="btn btn-outline-secondary">로그아웃</button>
+			<%} else { %>
 			<button type="button" class="btn btn-outline-secondary">로그인</button>
+			<%} %>
+			
 
 		</span>
 

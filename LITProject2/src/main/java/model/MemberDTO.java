@@ -27,6 +27,15 @@ public class MemberDTO {
 		this.mem_nick = mem_nick;
 	}
 
+	public MemberDTO(String mem_id, String mem_pw, String mem_nick, String mem_gender, String mem_birthday) {
+		super();
+		this.mem_id = mem_id;
+		this.mem_pw = mem_pw;
+		this.mem_nick = mem_nick;
+		this.mem_gender = mem_gender;
+		this.mem_birthday = mem_birthday;
+	}
+
 	@Override
 	public String toString() {
 		return "MemberDTO [mem_id=" + mem_id + ", mem_pw=" + mem_pw + ", mem_nick=" + mem_nick + "]";
