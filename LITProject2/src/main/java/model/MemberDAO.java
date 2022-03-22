@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MemberDAO {
 	
@@ -17,7 +19,7 @@ public class MemberDAO {
 	public void dbconn() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String url = "";
+			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
 			String dbid = "campus_b_0310_2";
 			String dbpw = "smhrd2";
 			
@@ -41,7 +43,7 @@ public class MemberDAO {
 	public int join(MemberDTO dto) {
 		dbconn();
 		try {
-			String sql = "insert into mem_info values(?,?,?,?,?,?,?)";
+			String sql = "insert into mem_info values(?,?,?,?,?,sysdate,default)";
 			
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getMem_id());
@@ -49,8 +51,6 @@ public class MemberDAO {
 			psmt.setString(3, dto.getMem_nick());
 			psmt.setString(4, dto.getMem_gender());
 			psmt.setString(5, dto.getMem_birthday());
-			psmt.setString(6, dto.getMem_joindate());
-			psmt.setString(7, dto.getMem_type());
 			
 			cnt = psmt.executeUpdate();
 		} catch (Exception e) {
@@ -71,7 +71,7 @@ public class MemberDAO {
 			rs = psmt.executeQuery();
 			
 			if(rs.next()) {
-				result = true;
+				result = true;	// 중복된 아이디가 있을 경우 true
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -114,7 +114,7 @@ public class MemberDAO {
 			dbclose();
 		} return cnt;
 	}
-	// 로그인 메소드
+	// 로그인 메소드 - 로그인 후 환영합니다 메세지 출력에 사용하기 위함
 	public MemberDTO login(String id, String pw) {
 		dbconn();
 		try {
@@ -137,5 +137,32 @@ public class MemberDAO {
 		} finally {
 			dbclose();
 		} return dto;
+	}
+	// 회원정보 전체 출력 메소드
+	public List<MemberDTO> selectMem(String id){
+		List<MemberDTO> memlist = new ArrayList<MemberDTO>();
+		dbconn();
+		try {
+			String sql = "select * from mem_info";
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				id = rs.getString("mem_id");
+				String pw = rs.getString("mem_pw");
+				String nick = rs.getString("mem_nick");
+				String gender = rs.getString("mem_gender");
+				String birthday = rs.getString("mem_birthday");
+				String joindate = rs.getString("mem_joindate");
+				String type = rs.getString("mem_type");
+				
+				dto = new MemberDTO(id, pw, nick, gender, birthday, joindate, type);
+				memlist.add(dto);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			dbclose();
+		} return memlist;
 	}
 }
