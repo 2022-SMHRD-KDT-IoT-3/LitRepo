@@ -6,7 +6,11 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0">
+=======
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/apache-tomcat-9.0.55">
+>>>>>>> branch 'LIT' of https://github.com/2022-SMHRD-KDT-IoT-3/LitRepo
 		<attributes>
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>

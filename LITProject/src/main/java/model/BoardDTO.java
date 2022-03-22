@@ -1,4 +1,4 @@
-package model;
+package Model;
 
 public class BoardDTO {
 	private int article_seq;
@@ -22,6 +22,13 @@ public class BoardDTO {
 		this.article_type = article_type;
 	}
 	
+	public BoardDTO(String article_title, String article_content, String article_file, String mem_id) {
+		this.article_title = article_title;
+		this.article_content = article_content;
+		this.article_file = article_file;
+		this.mem_id = mem_id;
+	}
+
 	public int getArticle_seq() {
 		return article_seq;
 	}
