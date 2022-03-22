@@ -108,6 +108,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 												<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
 												<label class="form-check-label" for="inlineRadio1">여자</label>
 											  </div>
+											 
 											  <div class="form-check form-check-inline">
 												<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
 												<label class="form-check-label" for="inlineRadio2">남자</label>
