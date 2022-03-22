@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE HTML>
-
 <html>
 	<head>
 
@@ -20,7 +19,7 @@
 		#id1{
 			font-weight: bold;
          margin: auto;
-         text-align: center;
+         text-align: left;
 			font-weight: bold;
 		}
 
@@ -48,7 +47,10 @@
 		#btn{
 			background-color:rgb(255, 255, 255)
 		}
-		
+		#btn1{
+			border: 3px solid #946697;
+			
+		}
 		
 		
 	</style>
@@ -88,7 +90,7 @@
 											<div>
 												<div class="d-grid gap-3 col-8 mx-auto">
 												</br></br>
-													<button type="button" class="btn btn-secondary btn-lg" id="btn">로그인</button>
+													<button type="button" class="btn btn-secondary btn-lg" id="btn1">로그인</button>
 													<button type="button" class="btn btn-secondary btn-lg" id="btn1">회원 가입</button>
 												</div>
 												
