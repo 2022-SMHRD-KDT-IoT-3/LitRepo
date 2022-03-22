@@ -40,8 +40,7 @@
 #p4 {
 	margin: auto;
 	text-align: center;
-	width: 300px;
-	height: 190px;
+	
 }
 </style>
 
