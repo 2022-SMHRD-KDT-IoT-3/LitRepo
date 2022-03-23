@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+
 <!DOCTYPE HTML>
 
 <html>
@@ -37,12 +38,11 @@
 }
 .span1 {
 	right: 10px;
-	margin-right: 10px;
-	top: 5px;
+	top: 10px;
 	position: absolute;
-	border:1px solid #86458a;
-	border-radius: 30px;
 }
+
+
 #main{
 	margin: auto;
 text-align: center;
@@ -50,14 +50,17 @@ text-align: center;
 #color{
 		margin: auto;
 		text-align: center;
-			margin-bottom: 10px;
 			padding:20px;
-			width:400px;
-			height:400px;
+			width:300px;
+			height:300px;
 		
 }
 #p3{
 	font-size:2rem;
+}
+#header{
+padding:100px;
+
 }
 </style>
 
@@ -76,7 +79,7 @@ text-align: center;
 		<header id="header">
 			<h1 id="id1">색상 조절</h1>
 			<br>
-			<p>원하는 색상으로 조명 색상을 변경해드립니다</p>
+			<p>원하시는 조명 색상으로 변경해드립니다</p>
 		</header>
 
 		<!-- Main -->
