@@ -8,13 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MemberDAO {
-	
+
 	Connection conn = null;
 	PreparedStatement psmt = null;
 	ResultSet rs = null;
 	int cnt = 0;
 	MemberDTO dto = null;
-	
+
 	// DB conn메소드
 	public void dbconn() {
 		try {
@@ -22,23 +22,28 @@ public class MemberDAO {
 			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
 			String dbid = "campus_b_0310_2";
 			String dbpw = "smhrd2";
-			
+
 			conn = DriverManager.getConnection(url, dbid, dbpw);
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+
 	// DB close 메소드
 	public void dbclose() {
 		try {
-			if(rs != null) rs.close();
-			if(psmt != null) psmt.close();
-			if(conn != null) conn.close();
+			if (rs != null)
+				rs.close();
+			if (psmt != null)
+				psmt.close();
+			if (conn != null)
+				conn.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+
 	// 회원가입 메소드
 	public int join(MemberDTO dto) {
 		dbconn();
@@ -52,11 +57,9 @@ public class MemberDAO {
 			psmt.setString(3, dto.getMem_nick());
 			psmt.setString(4, dto.getMem_gender());
 			psmt.setString(5, dto.getMem_birthday());
-			
-			
+
 			cnt = psmt.executeUpdate();
-			
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -64,27 +67,29 @@ public class MemberDAO {
 		}
 		return cnt;
 	}
+
 	// 아이디 중복체크 메소드
 	public boolean idCheck(String id) {
-		boolean result=false;	// 중복되지 X
+		boolean result = false; // 중복되지 X
 		dbconn();
 		try {
 			String sql = "select mem_id from mem_info where mem_id=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
-			
+
 			rs = psmt.executeQuery();
-			
-			if(rs.next()) {
-				result = true;	// 중복된 아이디가 있을 경우 true
+
+			if (rs.next()) {
+				result = true; // 중복된 아이디가 있을 경우 true
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			dbclose();
-		} return result;
+		}
+		return result;
 	}
-	
+
 	// 회원수정 메소드
 	public int update(MemberDTO dto) {
 		dbclose();
@@ -101,9 +106,10 @@ public class MemberDAO {
 			e.printStackTrace();
 		} finally {
 			dbclose();
-		} return cnt;
+		}
+		return cnt;
 	}
-	
+
 	// 회원정보 삭제 메소드
 	public int delete(String id) {
 		dbconn();
@@ -111,48 +117,63 @@ public class MemberDAO {
 			String sql = "delete from mem_info where mem_id=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
-			
+
 			cnt = psmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			dbclose();
-		} return cnt;
+		}
+		return cnt;
 	}
+
 	// 로그인 메소드 - 로그인 후 환영합니다 메세지 출력에 사용하기 위함
 	public MemberDTO login(String id, String pw) {
+
 		dbconn();
 		try {
-			String sql = "select * from mem_info where mem_id=? and mem_pw=?";
+			String sql = "SELECT mem_id, mem_pw, mem_nick, mem_gender,"
+					+ "TO_CHAR(mem_birthdate, 'YYYY-MM-DD HH24:MI:SS'),"
+					+ "TO_CHAR(mem_joindate, 'YYYY-MM-DD HH24:MI:SS')," + "mem_type"
+					+ " FROM mem_info WHERE mem_id = ? AND mem_pw = ?";
+
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
 			psmt.setString(2, pw);
-			
+
 			rs = psmt.executeQuery();
-			
-			if(rs.next()) {
-				id = rs.getString(1);
-				pw = rs.getString(2);
-				String nick = rs.getString(3);
-				dto = new MemberDTO(id, pw, nick);
-				
+
+			if (rs.next()) {
+				String mem_id = rs.getString(1);
+				String mem_pw = rs.getString(2);
+				String mem_nick = rs.getString(3);
+				String mem_gender = rs.getString(4);
+				String mem_birthdate = rs.getString(5);
+				String mem_joindate = rs.getString(6);
+				String mem_type = rs.getString(7);
+
+				dto = new MemberDTO(mem_id, mem_pw, mem_nick, mem_gender, mem_birthdate, mem_joindate, mem_type);
 			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			dbclose();
-		} return dto;
+		}
+		return dto;
+
 	}
+
 	// 회원정보 전체 출력 메소드
-	public List<MemberDTO> selectMem(String id){
+	public List<MemberDTO> selectMem(String id) {
 		List<MemberDTO> memlist = new ArrayList<MemberDTO>();
 		dbconn();
 		try {
 			String sql = "select * from mem_info";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
-			
-			while(rs.next()) {
+
+			while (rs.next()) {
 				id = rs.getString("mem_id");
 				String pw = rs.getString("mem_pw");
 				String nick = rs.getString("mem_nick");
@@ -160,7 +181,7 @@ public class MemberDAO {
 				String birthday = rs.getString("mem_birthday");
 				String joindate = rs.getString("mem_joindate");
 				String type = rs.getString("mem_type");
-				
+
 				dto = new MemberDTO(id, pw, nick, gender, birthday, joindate, type);
 				memlist.add(dto);
 			}
@@ -168,6 +189,7 @@ public class MemberDAO {
 			e.printStackTrace();
 		} finally {
 			dbclose();
-		} return memlist;
+		}
+		return memlist;
 	}
 }

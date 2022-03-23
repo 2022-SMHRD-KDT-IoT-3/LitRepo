@@ -28,8 +28,6 @@ public class JoinService implements Command {
 
 		System.out.println(birthday);
 		
-		birthday = birthday.replace("-", "");
-		
 		System.out.println(birthday);
 
 		MemberDTO dto = new MemberDTO(id, pw, nick, gender, birthday);

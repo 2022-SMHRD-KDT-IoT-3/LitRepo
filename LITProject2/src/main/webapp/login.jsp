@@ -63,7 +63,7 @@
 <body class="is-preload">
 
 
-	<form action="LoginServiceCon.do" action="post">
+	<form action="LoginServiceCon.do" method="post">
 	<!-- Wrapper -->
 	<div id="wrapper">
 
