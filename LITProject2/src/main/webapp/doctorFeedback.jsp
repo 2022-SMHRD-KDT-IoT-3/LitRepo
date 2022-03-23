@@ -105,7 +105,7 @@
 
 
 												<br><br><br>
-												<h4 id ="history"> <b>lit</b> 의 피드백</h4>
+												<h4 id ="history"> 분석 결과</h4>
 												<br>
 												<ul>
 													<li>현재 나이의 휴식기 평균 심박수는 69~72입니다 </li>
@@ -201,6 +201,7 @@
 											<td>나심장 의사</td>
 											<td>김병원 의사</td>
 											<td>김간호 의사</td>
+											<td>안아파 의사</td>
 										</tr>
 									</table>
 								</section>	

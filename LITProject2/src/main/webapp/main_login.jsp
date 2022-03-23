@@ -14,8 +14,7 @@
 </noscript>
 <script src="https://kit.fontawesome.com/def66b134a.js"
 	crossorigin="anonymous"></script>
-<scrip src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0">
-</script>
+<scrip src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"> </script>
 
 <style>
 .span1 {
@@ -39,6 +38,12 @@
 	color: black;
 	font-weight: bold;
 }
+
+#bt {
+	text-align: center;
+	margin-left: 20px;
+	margin-right: 20px;
+}
 </style>
 </head>
 
@@ -58,7 +63,18 @@
 			<button type="button" class="btn btn-secondary">마이페이지</button>
 			<button type="button" class="btn btn-outline-secondary">로그아웃</button>
 
-		</span>
+		</span> <br>
+		<br>
+		<br>
+
+		<!-- 메뉴 영역 -->
+		<table>
+			<tr align="center">
+				<td><a id="bt">색상</a> <a id="bt">컨텐츠 추천</a> <a id="bt">의사피드백</a>
+					<a id="bt">게시판</a> <a id="bt">셀프 체크</a></td>
+			</tr>
+		</table>
+
 
 
 		<!-- Header(제일 위에 보여지는 화면) -->
@@ -127,7 +143,7 @@
 				<!-- Second Section(사용메뉴얼) -->
 				<section id="second" class="main special">
 					<header class="major">
-						<h2>사용 메뉴얼</h2>
+						<h2>피드백 과정</h2>
 						<p>전문가의 의견과 논문을 종합하여 사용자의 숙면에 도움이 되는 맞춤 피드백을 제공합니다.</p>
 					</header>
 					<ul class="statistics">
@@ -174,7 +190,8 @@
 				<section>
 
 					<p>
-						<br>불편사항이 있다면 연락 언제든 연락해주세요 <br>언제나 고객님의 피드백을 기다리고 있습니다
+						<br>제품 관련 불편사항이 있다면 연락 언제든 연락해주세요 <br>언제나 고객님의 피드백을 기다리고
+						있습니다
 					</p>
 					phone : 010-0000-0000 <br> email : jung@naver.com <br>
 
