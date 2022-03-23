@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 
+
 <!DOCTYPE HTML>
 
 <html>
@@ -25,6 +26,7 @@
 #p2 {
 	margin: auto;
 	text-align: center;
+	font-size:14px;
 }
 .image.main{
 	display:inline;
@@ -57,10 +59,14 @@ text-align: center;
 }
 #p3{
 	font-size:2rem;
+	color:#FFFFFF;
 }
 #header{
-padding:100px;
+padding-top:100px;
 
+}
+#main{
+	background-color:rgb(255 255 255 / 50%);
 }
 </style>
 

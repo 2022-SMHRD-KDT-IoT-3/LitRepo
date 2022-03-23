@@ -4,7 +4,7 @@
 
 <html>
 <head>
-<title>DreamCatcher</title>
+<title>lit!</title>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -25,6 +25,10 @@
 	margin: auto;
 	text-align: center;
 }
+#id{
+    margin:500px;
+}
+
 .image.main{
 	display:inline;
 	margin-left:auto;
@@ -36,12 +40,13 @@
 	
 }
 		.span1 {
-	right: 5px;
+	right: -2.5px;
 	margin-right: 10px;
 	top: 5px;
 	position: absolute;
-	border:1px solid #86458a;
-	border-radius: 30px;
+}
+#header{
+    padding-top:100px;
 }
 </style>
 
@@ -49,8 +54,8 @@
 <body class="is-preload">
 	<span class="span1">
 	
-			<button type="button" class="btn btn-outline-secondary">HOME</button>
-			<button type="button" class="btn btn-outline-secondary">·Î±×¾Æ¿ô</button>
+			<button type="button" id="btn btn-outline-secondary1">HOME</button>
+			<button type="button" id="btn btn-outline-secondary1">·Î±×¾Æ¿ô</button>
 	
 	</span>
 	<!-- Wrapper -->

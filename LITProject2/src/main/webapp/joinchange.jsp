@@ -29,12 +29,22 @@
 			text-align: center;
 			}
 			.span1 {
-	right: 5px;
-	margin-right: 10px;
-	top: 2px;
+				right: 10px;
+	top: 10px;
 	position: absolute;
-	border:1px solid #86458a;
-	border-radius: 30px;
+}
+.btn-outline-secondary {
+	background-color: transparent;
+    box-shadow: inset 0 0 0 0px rgb(255 255 255 / 35%);
+    color: #ffffff;
+	border-radius: 8px;
+	border-color:rgb(255 255 255 / 35%);
+	padding-right:10px;
+	width:80px;
+	font-size:12px;
+}
+#header{
+	margin-top:30px;
 }
 
 
@@ -103,8 +113,8 @@
 
 									
        								 <tr>
-            							<td align="right">积老</td>
-            							<td>2022-03-22</td>
+            							<td align="right" id="birthday">积老</td>
+            							<td id="day">2022-03-22</td>
 										</tr>
 
 							</table>
@@ -125,7 +135,35 @@
 						</div>
 						
 					</div>
+					<footer id="footer">
+						<section>
 				
+							<dl class="alt">
+								<dt>Address</dt>
+				
+								<dd>堡林 悼备 抗贱辨 31-15</dd>
+								<dt>Phone</dt>
+								<dd>000-0000 x 0000</dd>
+								<dt>Email</dt>
+								<dd>
+									<a href="#">information@untitled.tld</a>
+								</dd>
+							</dl>
+							<ul class="icons">
+								<li><a href="#" class="icon brands fa-twitter alt"><span
+										class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands fa-facebook-f alt"><span
+										class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands fa-instagram alt"><span
+										class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands fa-github alt"><span
+										class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands fa-dribbble alt"><span
+										class="label">Dribbble</span></a></li>
+							</ul>
+						</section>
+				
+					</footer>
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>

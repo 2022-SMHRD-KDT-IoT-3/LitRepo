@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 
+
 <!DOCTYPE HTML>
 <html>
 <head>
 
-<title>Lit!</title>
+<title>lit!</title>
 
 <meta charset="utf-8" />
 <meta name="viewport"
@@ -22,7 +23,6 @@
 
 <style>
 #gender {
-	font-weight: bold;
 	margin: 10px;
 	font-size: 20px;
 }
@@ -34,19 +34,14 @@
 }
 
 #id2 {
-	margin-top: 20px;
+	margin-top: 25px;
 	line-height: 2;
 }
 
 #join {
+	/*위에 회원가입글씨*/
 	font-size: 30px;
 	font-weight: bold;
-}
-
-#btn1 {
-	border: 3px solid #946697;
-	padding-bottom:55px;
-
 }
 
 #exampleFormControlInput1 {
@@ -60,23 +55,44 @@
 	border-radius: .5rem;
 	
 }
-
+.form-control {
+/*생년월일 년월일입력창*/
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 350;
+    line-height: 1.5;
+    color: #636363;
+    background-color: rgba(222, 222, 222, 0.25);
+    background-clip: padding-box;
+    border: 1px solid #dddddd;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .5rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
 
 
 #inlineRadio1 {
+	/*여자남자 radio칸과 생년월일칸 사이각격*/
 	font-size: 30px;
 }
 
 .mb-3 {
-	margin-bottom: 1rem !important;
+	/* 아이디 비밀번호 창간격*/
+	margin-bottom: 1.5rem !important;
 }
 .span1 {
+	/*홈로그인버튼 간격*/
 	right: 10px;
 	top: 10px;
 	position: absolute;
 	border-radius: 8px;
 }
 .btn-outline-secondary {
+	/*위에 홈 로그인버튼*/
 	background-color: transparent;
     box-shadow: inset 0 0 0 0px rgb(255 255 255 / 35%);
     color: #ffffff;
@@ -86,7 +102,14 @@
 	width:80px;
 	font-size:12px;
 }
-
+#main{
+	background-color:rgb(255 255 255 / 50%);
+}
+.go{
+	background-color: transparent;
+    box-shadow: inset 0 0 0 1px #ffffff;
+    color: #636363 !important;
+}
 </style>
 </head>
 <body class="is-preload">
@@ -160,7 +183,7 @@
 							<div class="d-grid  col-8 mx-auto" id="gender">
 								</br>
 								</br>
-								<input type="submit" class="btn btn-secondary btn-lg" id="btn1" value="회원가입">
+								<button type="button" class="go">회원가입</button>
 								<br>
 							</div>
 						</div>
