@@ -31,11 +31,6 @@
 
 </head>
 <body class="is-preload">
-	<%
-	HttpSession session1 = request.getSession();
-
-	MemberDTO dto = (MemberDTO) session1.getAttribute("info");
-	%>
 
 
 	<!-- Wrapper -->
@@ -43,20 +38,10 @@
 
 		<!-- 로그인 버튼 -->
 
-		<span class="span1">
-			<button type="button" class="btn btn-outline-secondary">회원가입</button>
-			<%
-			if (dto != null) {
-			%>
-			<button type="button" class="btn btn-outline-secondary">로그아웃</button>
-			<%
-			} else {
-			%>
-			<button type="button" class="btn btn-outline-secondary">로그인</button>
-			<%
-			}
-			%>
-
+			<span class="span1">
+			<button type="button" class="btn btn-outline-secondary" onclick="location.href='join.jsp'">회원가입</button>
+			<button type="button" class="btn btn-outline-secondary" onclick="location.href='login.jsp'">로그인</button>
+			
 
 		</span>
 

@@ -1,11 +1,11 @@
+<%@page import="model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE HTML>
-
 <html>
 	<head>
-		
-		<title>lit!</title>
+
+		<title>DreamCatcher</title>
 		
 		
 		<meta charset="utf-8" />
@@ -16,29 +16,14 @@
 
 		<style>
 			/* 프로필 영역 스타일 가운데 정렬 */
-
 			#profile{
 				margin: auto;
-				text-align: center;
+			text-align: center;
 			margin-bottom: 10px;
 			padding:30px;
 			padding-top:50px;
 			}
-			.span1 {
-				right: 10px;
-	top: 10px;
-	position: absolute;
-}
-.btn-outline-secondary {
-	background-color: transparent;
-    box-shadow: inset 0 0 0 0px rgb(255 255 255 / 35%);
-    color: #ffffff;
-	border-radius: 8px;
-	border-color:rgb(255 255 255 / 35%);
-	padding-right:10px;
-	width:80px;
-	font-size:12px;
-}
+
 
 			#dateS{
 				margin: auto;
@@ -49,27 +34,43 @@
 				text-align:center;
 				padding-bottom:30px;
 			}
-			#joins{
-				padding-right:30px;
-				padding-left:30px;
-			}
+			.span1 {
+	right: 5px;
+	margin-right: 10px;
+	top: 2px;
+	position: absolute;
+	border:1px solid #86458a;
+	border-radius: 30px;
+}
 		</style>
 
 </head>
 <body class="is-preload">
 
+<%
+	HttpSession session1 = request.getSession();
+	
+	MemberDTO dto = (MemberDTO) session1.getAttribute("info");
+	
+	String birthday = dto.getMem_birthday().replace(" 00:00:00", "");
+	System.out.println(birthday);
+
+%>
+
+
+
+		<span class="span1">
+		
+				<button type="button" class="btn btn-outline-secondary" onclick="location.href='main_login.jsp'">HOME</button>
+				<button type="button" class="btn btn-outline-secondary" onclick="location.href='LogoutServiceCon.do'">로그아웃</button>
+		
+		</span>
+
 		<!-- Wrapper -->
 			<div id="wrapper">
-				<span class="span1">
-					<button type="button" class="btn btn-outline-secondary">HOME</button>
-					<button type="button" class="btn btn-outline-secondary">로그아웃</button>
-		
-				
-		
-				</span>
+
 				<!-- Header -->
 					<header id="header">
-						<br>
 						<h1 id="join">마이페이지</h1>
 						<br></br>
 					</header>
@@ -86,7 +87,7 @@
 			
 						</div>
 						<div id="sujung">
-							<button type="button" class="btn btn-outline-secondary1" id="joins">회원정보 수정</button>
+							<p>회원정보 수정</p>
 						</div>
 						<form>
 							<table id="table">
@@ -94,18 +95,18 @@
 									<!-- 첫번째 th -->
 									<tr>
 										<td align="right">아이디</td>
-										<td>Litsmhrd</td>
+										<td><%= dto.getMem_id() %></td>
 										<td></td>
 									</tr>
 							 
 									<tr>
 										<td align="right">닉네임</td>
-										<td>잠만보</td>
+										<td><%= dto.getMem_nick() %></td>
 									</tr>
 
 									<tr>
 										<td align="right">성별</td>
-										<td>여자</td>
+										<td><%= dto.getMem_gender() %></td>
 										<td></td>
 										
 									</tr>	
@@ -113,7 +114,7 @@
 									
        								 <tr>
             							<td align="right">생일</td>
-            							<td>2022-03-22</td>
+            							<td><%= birthday %></td>
 										</tr>
 
 							</table>

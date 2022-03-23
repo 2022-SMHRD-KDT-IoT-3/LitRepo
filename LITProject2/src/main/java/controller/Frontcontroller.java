@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import Inter.Command;
 import service.JoinService;
 import service.LoginServiceCon;
+import service.LogoutServiceCon;
 import service.WriteBoardService;
 
 @WebServlet("*.do")
@@ -55,6 +56,10 @@ public class Frontcontroller extends HttpServlet {
 			com = new LoginServiceCon();
 			nextPage = com.execute(request, response);
 			
+		} else if(command.equals("LogoutServiceCon.do")) {
+			
+			com = new LogoutServiceCon();
+			nextPage = com.execute(request, response);
 		}
 		
 		

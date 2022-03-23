@@ -43,7 +43,7 @@ public class LoginServiceCon implements Command {
 		
 		
 		
-		return "goMain";
+		return "main_login.jsp";
 	}
 
 }

@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
 
 public class EnvironmentDAO {
 	
@@ -13,7 +11,6 @@ public class EnvironmentDAO {
 	PreparedStatement psmt = null;
 	ResultSet rs = null;
 	int cnt = 0;
-	EnvironmentDTO envdto = null;
 	
 	// DB conn메소드
 	public void dbconn() {
@@ -39,47 +36,38 @@ public class EnvironmentDAO {
 			e.printStackTrace();
 		}
 	}
-	// DB에 환경 데이터 저장
-	public int insertEnv(int temp, int humi, String id) {
+	
+	public int envInsert(String Temp, String humi) {
+		
 		dbconn();
+		
 		try {
-			String sql = "insert into env_info values(env_info_SEQ.nextval,?,?,sysdate,?)";
-			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, temp);
-			psmt.setInt(2, humi);
-			psmt.setString(3, id);
-			cnt = psmt.executeUpdate();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			dbclose();
-		} return cnt;
-	}
-	// 환경 데이터 출력
-	public List<EnvironmentDTO> selectEnv(String id){
-		List<EnvironmentDTO> envlist = new ArrayList<EnvironmentDTO>();
-		dbconn();
-		try {
-			String sql = "select * from env_info where mem_id=? order by env_date";
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, id);
-
-			rs = psmt.executeQuery();
+			String sql = "INSERT INTO env_info VALUES(env_info_seq.nextval, ?, ?, sysdate, 'mem_id 01')";
 			
-			while(rs.next()) {
-				int num = rs.getInt(1);
-				int temp = rs.getInt(2);
-				int humid = rs.getInt(3);
-				String env_date = rs.getString(4);
-				id = id;
-				
-				envdto = new EnvironmentDTO(num, temp, humid, env_date, id);
-				envlist.add(envdto);
-			}
+			psmt = conn.prepareStatement(sql);
+			
+			psmt.setString(1, Temp);
+			psmt.setString(2, humi);
+			
+			cnt = psmt.executeUpdate();
+			
+			
+			
+			
+			
 		} catch (Exception e) {
+			
 			e.printStackTrace();
+			
 		} finally {
+			
 			dbclose();
-		} return envlist;
+			
+		}
+		
+		return cnt;
+		
+		
 	}
+	
 }
