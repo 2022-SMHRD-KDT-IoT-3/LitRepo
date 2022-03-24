@@ -9,9 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Inter.Command;
+import service.DeleteBoardServiceCon;
 import service.JoinService;
 import service.LoginServiceCon;
-import service.LogoutServiceCon;
+import service.SaveCommentServiceCon;
+import service.ShowCommentServiceCon;
+import service.UpdateBoardServiceCon;
 import service.WriteBoardService;
 
 @WebServlet("*.do")
@@ -56,9 +59,18 @@ public class Frontcontroller extends HttpServlet {
 			com = new LoginServiceCon();
 			nextPage = com.execute(request, response);
 			
-		} else if(command.equals("LogoutServiceCon.do")) {
+		} else if(command.equals("DeleteBoardServiceCon.do")) {
+			com = new DeleteBoardServiceCon();
+			nextPage = com.execute(request, response);
 			
-			com = new LogoutServiceCon();
+		} else if(command.equals("UpdateBoardServiceCon.do")) {
+			com = new UpdateBoardServiceCon();
+			nextPage = com.execute(request, response);
+		} else if(command.equals("SaveCommentServiceCon.do")) {
+			com = new SaveCommentServiceCon();
+			nextPage = com.execute(request, response);
+		} else if (command.equals("ShowCommentServiceCon.do")) {
+			com = new ShowCommentServiceCon();
 			nextPage = com.execute(request, response);
 		}
 		
