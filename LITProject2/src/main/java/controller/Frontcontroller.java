@@ -12,6 +12,7 @@ import Inter.Command;
 import service.DeleteBoardServiceCon;
 import service.JoinService;
 import service.LoginServiceCon;
+import service.LogoutServiceCon;
 import service.SaveCommentServiceCon;
 import service.ShowCommentServiceCon;
 import service.UpdateBoardServiceCon;
@@ -72,6 +73,11 @@ public class Frontcontroller extends HttpServlet {
 		} else if (command.equals("ShowCommentServiceCon.do")) {
 			com = new ShowCommentServiceCon();
 			nextPage = com.execute(request, response);
+		} else if (command.equals("LogoutServiceCon.do")) {
+			com = new LogoutServiceCon();
+			nextPage = com.execute(request, response);
+			
+			
 		}
 		
 		
