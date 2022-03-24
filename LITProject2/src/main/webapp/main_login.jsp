@@ -90,7 +90,7 @@
 		<table>
 			<tr align="center">
 				<td><a id="bt">색상</a> <a id="bt">컨텐츠 추천</a> <a id="bt">의사피드백</a>
-					<a id="bt">게시판</a> <a id="bt">셀프 체크</a></td>
+					<a id="bt" href="Board.jsp">게시판</a> <a id="bt">셀프 체크</a></td>
 			</tr>
 		</table>
 
