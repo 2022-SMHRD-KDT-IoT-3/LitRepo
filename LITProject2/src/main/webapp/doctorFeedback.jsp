@@ -22,7 +22,14 @@
 	background-color:antiquewhite;
 	border-radius: 10px;
 }
-
+.span1 {
+				right: 10px;
+	top: 10px;
+	position: absolute;
+}
+#header{
+    padding-top:40px;
+}
 
 </style>
 <html>
@@ -45,6 +52,13 @@
 		<!-- Wrapper -->
 			<div id="wrapper">
 
+				<span class="span1">
+					<button type="button" class="btn btn-outline-secondary" onclick="location.href='main1.jsp'">HOME</button>
+					<button type="button" class="btn btn-outline-secondary" onclick="location.href='LogoutServiceCon.do'">로그아웃</button>
+		
+				
+		
+				</span>
 				<!-- Header -->
 					<header id="header">
 						<h1>수면 건강 피드백</h1>

@@ -60,7 +60,9 @@
 	width:80px;
 	font-size:12px;
 }
-
+#join{
+	padding-top: 40px;
+}
 		</style>
 
 </head>
@@ -73,7 +75,8 @@
 			<div id="wrapper">
 				<div id="wrapper">
 					<span class="span1">
-						<button type="button" class="btn btn-outline-secondary">HOME</button>
+						<button type="button" onclick="location.href='main1.jsp'" class="btn btn-outline-secondary">HOME</button>
+					<button type="button" class="btn btn-outline-secondary" onclick="location.href='login.jsp'">·Î±×ÀÎ</button>
 					</span>
 				<!-- Header -->
 					<header id="header">

@@ -6,7 +6,6 @@
 
 <title>DreamCatcher</title>
 
-<button type="button" class="btn btn-secondary">Home</button>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -57,6 +56,26 @@
 #btn1 {
 	border: 3px solid #946697;
 }
+.span1 {
+	right: -2.5px;
+	margin-right: 10px;
+	top: 5px;
+	position: absolute;
+}
+#header{
+    padding-top:100px;
+}
+.btn-outline-secondary {
+	/*위에 홈 로그인버튼*/
+	background-color: transparent;
+    box-shadow: inset 0 0 0 0px rgb(255 255 255 / 35%);
+    color: #ffffff;
+	border-radius: 8px;
+	border-color:rgb(255 255 255 / 35%);
+	padding-right:10px;
+	width:80px;
+	font-size:12px;
+}
 </style>
 
 </head>
@@ -66,7 +85,11 @@
 	<form action="LoginServiceCon.do" method="post">
 	<!-- Wrapper -->
 	<div id="wrapper">
-
+		<span class="span1">
+		
+				<button type="button" onclick="location.href='main1.jsp'"
+				class="btn btn-outline-secondary">HOME</button>
+				</span>
 		<!-- Header -->
 		<header id="header">
 			<h1 id="login">로그인</h1>

@@ -4,7 +4,7 @@
 
 <html>
 <head>
-<title>lit!</title>
+<title>DeamCatcher</title>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -52,14 +52,14 @@
 
 </head>
 <body class="is-preload">
-	<span class="span1">
-	
-			<button type="button" id="btn btn-outline-secondary1">HOME</button>
-			<button type="button" id="btn btn-outline-secondary1">로그아웃</button>
-	
-	</span>
 	<!-- Wrapper -->
 	<div id="wrapper">
+		<span class="span1">
+
+			<button type="button" onclick="location.href='main1.jsp'" class="btn btn-outline-secondary">HOME</button>
+			<button type="button" onclick="location.href='mypage.jsp'" class="btn btn-outline-secondary">마이페이지</button>
+			<button type="button" onclick="location.href='LogoutServiceCon.do'" class="btn btn-outline-secondary">로그아웃</button>
+		</span>
 
 		<!-- Header -->
 		<header id="header">
