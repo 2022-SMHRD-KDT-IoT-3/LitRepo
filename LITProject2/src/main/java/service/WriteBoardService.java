@@ -40,18 +40,21 @@ public class WriteBoardService implements Command {
 			String fileName = URLEncoder.encode(multi.getFilesystemName("fileName"), "UTF-8");
 			String content = multi.getParameter("content");
 			
+			String boardtype = multi.getParameter("boardtype");
+			
+			System.out.println(boardtype);
 //			System.out.println(title);
 //			System.out.println(writer);
 //			System.out.println(fileName);
 //			System.out.println(content);
 			
-			BoardDTO dto = new BoardDTO(title, content, fileName, writer);
+			BoardDTO dto = new BoardDTO(title, content, fileName, writer, boardtype);
 			
 			int cnt = new BoardDAO().writeBoard(dto);
 			
 			
 		
-		return "main1.jsp";
+		return "Board.jsp";
 	
 	
 	

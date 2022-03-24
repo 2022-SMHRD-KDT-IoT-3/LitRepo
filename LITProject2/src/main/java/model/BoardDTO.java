@@ -22,11 +22,12 @@ public class BoardDTO {
 		this.article_type = article_type;
 	}
 	
-	public BoardDTO(String article_title, String article_content, String article_file, String mem_id) {
+	public BoardDTO(String article_title, String article_content, String article_file, String mem_id, String article_type) {
 		this.article_title = article_title;
 		this.article_content = article_content;
 		this.article_file = article_file;
 		this.mem_id = mem_id;
+		this.article_type = article_type;
 	}
 
 	public int getArticle_seq() {

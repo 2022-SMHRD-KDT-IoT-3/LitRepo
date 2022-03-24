@@ -23,7 +23,7 @@
 	<% BoardDAO dao = new BoardDAO();
 	
 		ArrayList<BoardDTO> list = dao.showBoard();
-	
+		String type = "";
 	%>
 	
 	
@@ -36,22 +36,37 @@
 				<thead>
 					<tr>
 						<th>글 번호</th>
+						<th>글 유형</th>
 						<th>제목</th>
 						<th>작성자</th>
+						<th>작성일자</th>
 					</tr>
 				</thead>
 				<tbody>
 				
 				
 					<% 
-						for(int i = 0; i < list.size(); i++){
+						for(int i = list.size()-1; i >=0; i--){
 					%>		
 							
 						 <tr>
 						 	
 						 <td> <%= i + 1 %></td>
-						 <td> <%= list.get(i).getArticle_title() %></td>
+						 <td>
+						 <% if(list.get(i).getArticle_type().equals("F")){
+							 	type="자유";
+						 	}else if(list.get(i).getArticle_type().equals("I")){
+						 		type="정보";
+						 	} else if(list.get(i).getArticle_type().equals("S")){
+						 		type="수면";
+						 	} else if(list.get(i).getArticle_type().equals("Q")){
+						 		type="질문";
+						 %>
+						 <%}%>
+						 <%= type %></td>
+						 <td><a href="showBoard.jsp?num=<%= i %>"> <%= list.get(i).getArticle_title() %></a></td>
 						 <td><%= list.get(i).getMem_id() %></td>
+						 <td><%= list.get(i).getArticle_date() %></td>
 						 </tr>	
 							
 					<%} %>
@@ -59,8 +74,7 @@
 				</tbody>
 				<tfoot>
 					<tr>
-						<td colspan="2"></td>
-						<td>100.00</td>
+						<td colspan="5" align="center"><button onclick='location.href="writeBoard.jsp"'>글 쓰기</button></td>
 					</tr>
 				</tfoot>
 			</table>

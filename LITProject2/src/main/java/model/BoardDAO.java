@@ -46,7 +46,7 @@ public class BoardDAO {
 		
 		try {
 			
-			String sql = "INSERT INTO board_info VALUES(board_info_seq.nextval, ?, ?, ?, sysdate, ?, default, 'F')"; //작성해야 될 부분
+			String sql = "INSERT INTO board_info VALUES(board_info_seq.nextval, ?, ?, ?, sysdate, ?, default, ?)"; //작성해야 될 부분
 			
 			psmt = conn.prepareStatement(sql);
 			
@@ -54,6 +54,15 @@ public class BoardDAO {
 			psmt.setString(2, dto.getArticle_content());
 			psmt.setString(3, dto.getArticle_file());
 			psmt.setString(4, dto.getMem_id());
+			if(dto.getArticle_type().equals("free")) {
+				psmt.setString(5, "F");
+			}else if(dto.getArticle_type().equals("q&a")) {
+				psmt.setString(5, "Q");
+			}else if(dto.getArticle_type().equals("infomation")) {
+				psmt.setString(5, "I");
+			}else if(dto.getArticle_type().equals("sleep")) {
+				psmt.setString(5, "S");
+			}
 			
 			cnt = psmt.executeUpdate();
 			
@@ -77,7 +86,7 @@ public class BoardDAO {
 
 		dbconn();
 		try {
-			String sql = "SELECT * FROM board_info ORDER BY article_date DESC";
+			String sql = "SELECT * FROM board_info ORDER BY article_date";
 
 			psmt = conn.prepareStatement(sql);
 
@@ -107,9 +116,47 @@ public class BoardDAO {
 
 		return list;
 	}
-	
-	
-	
-	
+	// 게시물 수정하는 메소드
+	public int updateBoard(BoardDTO dto) {
+		dbconn();
+		try {
+			String sql = "update board_info set article_title=?, article_content=?, article_file=?, article_type=? where mem_id=? and article_seq=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, dto.getArticle_title());
+			psmt.setString(2, dto.getArticle_content());
+			psmt.setString(3, dto.getArticle_file());
+			if(dto.getArticle_type().equals("free")) {
+				psmt.setString(5, "F");
+			}else if(dto.getArticle_type().equals("q&a")) {
+				psmt.setString(5, "Q");
+			}else if(dto.getArticle_type().equals("infomation")) {
+				psmt.setString(5, "I");
+			}else if(dto.getArticle_type().equals("sleep")) {
+				psmt.setString(5, "S");
+			}
+			psmt.setString(6, dto.getMem_id());
+			cnt = psmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			dbclose();
+		} return cnt;
+	}
+	// 게시물 삭제하는 메소드
+	public int deleteBoard(int num) {
+		dbconn();
+		try {
+			String sql="delete from board_info where article_seq= TO_NUMBER(?)";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, num);
+			
+			cnt = psmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			dbclose();
+		} return cnt;
+	}
+	// 게시물 조회수 추가는 메소드
 	
 }

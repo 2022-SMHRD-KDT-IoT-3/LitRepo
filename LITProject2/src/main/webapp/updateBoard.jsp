@@ -1,12 +1,11 @@
 <%@page import="model.MemberDTO"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
-<title>Elements - Stellar by HTML5 UP</title>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -14,20 +13,12 @@
 <noscript>
 	<link rel="stylesheet" href="assets/css/noscript.css" />
 </noscript>
-
-
-
-
 </head>
 <body>
 		<%
-			//HttpSession session = request.getSession();
+			session = request.getSession();
 		
-			//session.getAttribute("id");
-					session = request.getSession();
-		
-			MemberDTO dto = (MemberDTO) session.getAttribute("id");
-		
+			MemberDTO dto = (MemberDTO) session.getAttribute("info");
 		
 		%>
 	
@@ -40,23 +31,20 @@
 				 		2. text : text/plain 
 				 		3. 파일 전송 시 : multipart/form-data-->
 					
-				<form action = "WriteBoardService.do" method="post" enctype="multipart/form-data">
+				<form action = "UpdateBoardServiceCon.do" method="post" enctype="multipart/form-data">
 				<table id="list">
 					<tr>
 						<td>제목</td>
-						<td><input type="text" name="title"> </td>
+						<td><input type="text" name="title"></td>
 					</tr>
 					<tr>
 						<td>작성자</td>
 						
 						<td><input  type="text" name="writer"><!-- 세션 사용자 이름 --> </td>
-						<%if (dto != null) { %>
 						<td><%= dto.getMem_id() %> </td>
-						<%} else {%>
-						<td> 사용자 </td>
-						<%} %>
 					</tr>
 					<tr>
+						<td>글 유형</td>
 						<td>
 							<select name = "boardtype">
 								<option  value= "free">자유</option>
@@ -81,9 +69,9 @@
 						</td>
 					</tr>
 					<tr>
-						<td colspan="2">
-							<input type="reset" value="초기화">
-							<input type="submit" value="작성하기">
+						<td colspan="2" align="center">
+							<button type="button" onclick="location.href='Board.jsp'">목록</button>
+							<input type="submit" value="수정하기">
 						</td>
 					</tr>
 				</table>

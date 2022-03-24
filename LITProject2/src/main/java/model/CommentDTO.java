@@ -18,6 +18,15 @@ public class CommentDTO {
 		this.likes = likes;
 	}
 	
+	
+	public CommentDTO(int article_seq, String cmt_content, String mem_id) {
+		super();
+		this.article_seq = article_seq;
+		this.cmt_content = cmt_content;
+		this.mem_id = mem_id;
+	}
+
+
 	public int getCmt_seq() {
 		return cmt_seq;
 	}

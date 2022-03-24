@@ -44,10 +44,11 @@ public class CommentDAO {
 		try {
 			String sql = "insert into comment_info values(comment_info_SEQ.nextval,?,?,sysdate,?,default)";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, dto.getCmt_content());
-			psmt.setInt(2, dto.getArticle_seq());
+			psmt.setInt(1, dto.getArticle_seq());
+			psmt.setString(2, dto.getCmt_content());
+			
 			psmt.setString(3, dto.getMem_id());
-			psmt.setInt(4, dto.getLikes());
+			//psmt.setInt(4, dto.getLikes());
 			
 			
 			cnt = psmt.executeUpdate();
@@ -124,24 +125,24 @@ public class CommentDAO {
 		} return cnt;
 	}
 	// 댓글 출력 메소드
-	public List<CommentDTO> selectComment(BoardDTO dto) {
+	public List<CommentDTO> selectComment(int num) {
 		
 		List<CommentDTO> cmtlist = new ArrayList<CommentDTO>();
 		dbconn();
 		try {
 			String sql = "select * from comment_info where article_seq=? order by cmt_date desc";
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, dto.getArticle_seq());
+			psmt.setInt(1, num);
 			rs = psmt.executeQuery();
 			while(rs.next()) {
-				int num = rs.getInt(1);
-				int article_seq = dto.getArticle_seq();
+				int num1 = rs.getInt(1);
+				int article_seq = num;
 				String cmt_content = rs.getString(3);
 				String cmt_date = rs.getString(4);
 				String mem_id = rs.getString(5);
 				int likes = rs.getInt(6);
 				
-				cmtdto = new CommentDTO(num, article_seq, cmt_content, cmt_date, mem_id, likes);
+				cmtdto = new CommentDTO(num1, article_seq, cmt_content, cmt_date, mem_id, likes);
 				cmtlist.add(cmtdto);
 			}
 		} catch (Exception e) {
@@ -149,5 +150,21 @@ public class CommentDAO {
 		} finally {
 			dbclose();
 		} return cmtlist;
+	}
+	// 게시물 삭제 시 댓글 삭제 메소드
+	public int deleteBoardComment(int num) {
+		dbconn();
+		try {
+			String sql = "DELETE FROM comment_info WHERE article_seq = ?";
+			psmt = conn.prepareStatement(sql);
+			System.out.println(num);
+			psmt.setInt(1, num);
+			cnt = psmt.executeUpdate();
+			System.out.println(cnt);
+		} catch (Exception e) {
+			e.printStackTrace();	
+		} finally {
+			dbclose();
+		} return cnt;
 	}
 }
