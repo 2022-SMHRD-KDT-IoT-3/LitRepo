@@ -26,9 +26,8 @@
 			//session.getAttribute("id");
 					session = request.getSession();
 		
-			MemberDTO dto = (MemberDTO) session.getAttribute("id");
-		
-		
+			MemberDTO dto = (MemberDTO) session.getAttribute("info");
+			System.out.println(dto.getMem_id());
 		%>
 	
 	
@@ -48,15 +47,10 @@
 					</tr>
 					<tr>
 						<td>작성자</td>
-						
-						<td><input  type="text" name="writer"><!-- 세션 사용자 이름 --> </td>
-						<%if (dto != null) { %>
-						<td><%= dto.getMem_id() %> </td>
-						<%} else {%>
-						<td> 사용자 </td>
-						<%} %>
+						<td><%=dto.getMem_id() %></td>
 					</tr>
 					<tr>
+						<td>글 유형</td>
 						<td>
 							<select name = "boardtype">
 								<option  value= "free">자유</option>
