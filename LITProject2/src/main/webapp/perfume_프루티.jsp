@@ -15,12 +15,13 @@
 
 	<style>
 		@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
-
-
-		#img {
-			width: 20px;
-			height: 20px;
-		}
+	
+	
+	#img{
+		width: 20px;
+		height: 20px;
+	}
+	
 	</style>
 
 </head>
@@ -35,7 +36,7 @@
 
 		<!-- Header -->
 		<header id="header">
-			<h1 id="id1">ASMR</h1>
+			<h1 id="id1">Fruit</h1>
 			<br>
 			<br>
 		</header>
@@ -43,11 +44,11 @@
 
 		<nav id="nav">
 			<ul>
-				<li><a href="content_main.jsp">Main</a></li>
-				<li><a href="content_perfum.jsp">향초</a></li>
-				<li><a href="content_meditation.jsp">명상</a></li>
-				<li><a href="content_living.jsp">리빙</a></li>
-				<li><a href="content_tea.jsp">차</a></li>
+				<li><a href="content_perfum.jsp">All</a></li>
+				<li><a href="perfume_시트러스.jsp">Citrus</a></li>
+				<li><a href="perfume_플로럴.jsp">Flower</a></li>
+				<li><a href="perfume_프루티.jsp">Fruit</a></li>
+				<li><a href="perfume_우디.jsp">Wood</a></li>
 
 			</ul>
 		</nav>
@@ -63,66 +64,43 @@
 				<tr>
 					<td>
 						<div class="card" style="width: 18rem;">
-							<a href="https://www.youtube.com/watch?v=HrO74lj5QBs"><img src="./img_asmr/asmr비.jpg"
-									class="card-img-top" width="300px" height="220"></a>
+							<a href="https://www.coupang.com/vp/products/6325118485?itemId=13202429754&vendorItemId=80460929836&q=%EB%9D%BC%EC%9E%84%ED%96%A5%EC%B4%88&itemsCount=36&searchId=1c01afa374e748a9a756862503091113&rank=20&isAddedCart="><img src="./img_perfume/프루티망고.jpg" class="card-img-top" width="300px"></a>
 							<div class="card-body">
-								<p class="card-text" style="text-align: center">비</p>
+							  <p class="card-text" style="text-align: center;">달달한 망고 향기</p>
 							</div>
-						</div>
-					</td>
-					<td>
-						<div class="card" style="width: 18rem;">
-							<a href="https://www.youtube.com/watch?v=KKi2qiuZZWQ"><img src="./img_asmr/asmr바람.jpg" class="card-img-top" width="300px" height="220"></a>
-							<div class="card-body">
-								<p class="card-text" style="text-align: center">바람</p>
-							</div>
-						</div>
-					</td>
-
-				</tr>
-
-				<tr>
-					<td>
-					<div class="card" style="width: 18rem;">
-						<a href="https://www.youtube.com/watch?v=6ZSbWQkIYsU"><img src="./img_asmr/asmr장작.jpg" class="card-img-top" width="300px" height="220"></a>
-						<div class="card-body">
-							<p class="card-text" style="text-align: center">장작</p>
-						</div>
-					</div>
-					</td>
-					<td>
-						<div class="card" style="width: 18rem;">
-							<a href="https://www.youtube.com/watch?v=lYJ17n_oUkA"><img src="./img_asmr/asmr숲.jpg" class="card-img-top" width="300px" height="220"></a>
-							<div class="card-body">
-								<p class="card-text" style="text-align: center">숲</p>
-							</div>
-						</div>
+						  </div>
 					</td>
 					
+					<td>
+						<div class="card" style="width: 18rem;">
+							<a href="https://www.coupang.com/vp/products/1143442108?itemId=2114992305&vendorItemId=70113631144&q=%EC%82%AC%EA%B3%BC%ED%96%A5%EC%B4%88&itemsCount=36&searchId=40cf064f3bb8486f83a183336f6a0ecb&rank=1&isAddedCart="><img src="./img_perfume/프루티사과.jpg" class="card-img-top" width="300px"></a>
+							<div class="card-body">
+							  <p class="card-text" style="text-align: center;">설익은 풋사과 향기</p>
+							</div>
+						  </div>
+					</td>
 				</tr>
-
 				<tr>
 					<td>
 						<div class="card" style="width: 18rem;">
-							<a href="https://www.youtube.com/watch?v=zp789sRyQKg"><img src="./img_asmr/asmr바다.jpg" class="card-img-top" width="300px" height="220"></a>
+				<a href="https://www.coupang.com/vp/products/6102014865?itemId=2310815184&vendorItemId=70307610864&pickType=COU_PICK&q=%EC%B2%B4%EB%A6%AC%ED%96%A5%EC%B4%88&itemsCount=36&searchId=c2bc10a4daed4906b232dc5cda6136b6&rank=1&isAddedCart="><img src="./img_perfume/프루티체리.jpg" class="card-img-top" width="300px"></a>
 							<div class="card-body">
-								<p class="card-text" style="text-align: center">바다</p>
+							  <p class="card-text" style="text-align: center;"> 달콤하면서 진한 체리향</p>
 							</div>
+						  </div>
 					</td>
+					
 					<td>
 						<div class="card" style="width: 18rem;">
-							<a href="https://www.youtube.com/watch?v=xym-gmq_rlw"><img src="./img_asmr/asmr카페.jpg" class="card-img-top" width="300px" height="220"></a>
+							<a href="https://www.coupang.com/vp/products/210587460?itemId=627609275&vendorItemId=4648074296&pickType=COU_PICK&sourceType=srp_product_ads&clickEventId=498476cd-62e5-4e4f-8b12-c40e1be6231c&korePlacement=15&koreSubPlacement=1&q=%EB%B2%A0%EB%A6%AC%ED%96%A5%EC%B4%88&itemsCount=36&searchId=87e5318376844767a851e3390656b5fa&rank=0&isAddedCart="><img src="./img_perfume/프루티베리.jpg" class="card-img-top" width="300px"></a>
 							<div class="card-body">
-								<p class="card-text" style="text-align: center">카페</p>
+							  <p class="card-text" style="text-align: center;"> 베리베리 스트로베리</p>
 							</div>
-						</div>
+						  </div>
 					</td>
 				</tr>
-
-
-
-			</table>
-
+				</table>
+			
 
 
 

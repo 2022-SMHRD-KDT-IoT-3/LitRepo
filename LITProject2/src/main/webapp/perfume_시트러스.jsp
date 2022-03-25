@@ -15,12 +15,13 @@
 
 	<style>
 		@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
-
-
-		#img {
-			width: 20px;
-			height: 20px;
-		}
+	
+	
+	#img{
+		width: 20px;
+		height: 20px;
+	}
+	
 	</style>
 
 </head>
@@ -35,7 +36,7 @@
 
 		<!-- Header -->
 		<header id="header">
-			<h1 id="id1">ASMR</h1>
+			<h1 id="id1">Citrus</h1>
 			<br>
 			<br>
 		</header>
@@ -43,11 +44,11 @@
 
 		<nav id="nav">
 			<ul>
-				<li><a href="content_main.jsp">Main</a></li>
-				<li><a href="content_perfum.jsp">향초</a></li>
-				<li><a href="content_meditation.jsp">명상</a></li>
-				<li><a href="content_living.jsp">리빙</a></li>
-				<li><a href="content_tea.jsp">차</a></li>
+				<li><a href="content_perfum.jsp">All</a></li>
+				<li><a href="perfume_시트러스.jsp">Citrus</a></li>
+				<li><a href="perfume_플로럴.jsp">Flower</a></li>
+				<li><a href="perfume_프루티.jsp">Fruit</a></li>
+				<li><a href="perfume_우디.jsp">Wood</a></li>
 
 			</ul>
 		</nav>
@@ -63,66 +64,43 @@
 				<tr>
 					<td>
 						<div class="card" style="width: 18rem;">
-							<a href="https://www.youtube.com/watch?v=HrO74lj5QBs"><img src="./img_asmr/asmr비.jpg"
-									class="card-img-top" width="300px" height="220"></a>
+							<a href="https://www.coupang.com/vp/products/6325118485?itemId=13202429754&vendorItemId=80460929836&q=%EB%9D%BC%EC%9E%84%ED%96%A5%EC%B4%88&itemsCount=36&searchId=1c01afa374e748a9a756862503091113&rank=20&isAddedCart="><img src="./img_perfume/시트러스라임.jpg" class="card-img-top" width="300px"></a>
 							<div class="card-body">
-								<p class="card-text" style="text-align: center">비</p>
+							  <p class="card-text" style="text-align: center">머릿속까지 상큼한 라임의 향</p>
 							</div>
-						</div>
-					</td>
-					<td>
-						<div class="card" style="width: 18rem;">
-							<a href="https://www.youtube.com/watch?v=KKi2qiuZZWQ"><img src="./img_asmr/asmr바람.jpg" class="card-img-top" width="300px" height="220"></a>
-							<div class="card-body">
-								<p class="card-text" style="text-align: center">바람</p>
-							</div>
-						</div>
-					</td>
-
-				</tr>
-
-				<tr>
-					<td>
-					<div class="card" style="width: 18rem;">
-						<a href="https://www.youtube.com/watch?v=6ZSbWQkIYsU"><img src="./img_asmr/asmr장작.jpg" class="card-img-top" width="300px" height="220"></a>
-						<div class="card-body">
-							<p class="card-text" style="text-align: center">장작</p>
-						</div>
-					</div>
-					</td>
-					<td>
-						<div class="card" style="width: 18rem;">
-							<a href="https://www.youtube.com/watch?v=lYJ17n_oUkA"><img src="./img_asmr/asmr숲.jpg" class="card-img-top" width="300px" height="220"></a>
-							<div class="card-body">
-								<p class="card-text" style="text-align: center">숲</p>
-							</div>
-						</div>
+						  </div>
 					</td>
 					
+					<td>
+						<div class="card" style="width: 18rem;">
+							<a href="https://www.coupang.com/vp/products/6226574087?itemId=12490607147&vendorItemId=79759305850&q=%EC%9E%90%EB%AA%BD%ED%96%A5%EC%B4%88&itemsCount=36&searchId=dc15ac1eb05b4226a0a9349d9931dc5e&rank=1&isAddedCart="><img src="./img_perfume/시트러스 자몽.jpg" class="card-img-top" width="300px"></a>
+							<div class="card-body">
+							  <p class="card-text" style="text-align: center;">톡하고 터지는 자몽 향</p>
+							</div>
+						  </div>
+					</td>
 				</tr>
-
 				<tr>
 					<td>
 						<div class="card" style="width: 18rem;">
-							<a href="https://www.youtube.com/watch?v=zp789sRyQKg"><img src="./img_asmr/asmr바다.jpg" class="card-img-top" width="300px" height="220"></a>
+							<a href=""><img src="./img_perfume/시트러스풀꽃.jpg" class="card-img-top" width="300px"></a>
 							<div class="card-body">
-								<p class="card-text" style="text-align: center">바다</p>
+							  <p class="card-text" style="text-align: center;"> 코 끝 속 은은한 풀꽃내음</p>
 							</div>
+						  </div>
 					</td>
+					
 					<td>
 						<div class="card" style="width: 18rem;">
-							<a href="https://www.youtube.com/watch?v=xym-gmq_rlw"><img src="./img_asmr/asmr카페.jpg" class="card-img-top" width="300px" height="220"></a>
+							<a href="https://www.coupang.com/vp/products/1898819346?itemId=9957786562&vendorItemId=77240936710&q=%ED%92%80%EA%BD%83%ED%96%A5%EC%B4%88&itemsCount=36&searchId=4f537df94ce84ab58e2d20793c40faa8&rank=29&isAddedCart="><img src="./img_perfume/시트러스라벤더.jpg" class="card-img-top" width="300px"></a>
 							<div class="card-body">
-								<p class="card-text" style="text-align: center">카페</p>
+							  <p class="card-text" style="text-align: center;"> 보라빛 향기 속 상큼함, 레몬라벤더</p>
 							</div>
-						</div>
+						  </div>
 					</td>
 				</tr>
-
-
-
-			</table>
-
+				</table>
+			
 
 
 
