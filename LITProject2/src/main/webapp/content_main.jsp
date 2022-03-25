@@ -30,6 +30,13 @@
         @import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
 
 
+		.carousel-inner #img1 {
+			width : 100%;
+			height : auto;
+		
+		}
+
+
         #img {
             width: 20px;
             height: 20px;
