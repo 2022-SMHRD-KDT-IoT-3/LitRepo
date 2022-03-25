@@ -62,11 +62,11 @@
 		<table>
 			<tr align="center">
 				<td>
-					<a id="bt">색상</a>
-					<a id="bt">컨텐츠 추천</a>
-					<a id="bt">의사피드백</a>
-					<a id="bt">게시판</a>
-					<a id="bt">기타</a>
+					<a id="bt" href ="content_perfum.jsp">향초</a>
+					<a id="bt" href = "content_meditation.jsp">명상</a>
+					<a id="bt" href="content_asmr.jsp">ASMR</a>
+					<a id="bt" href="content_living.jsp">리빙 제품</a>
+					<a id="bt" href = "content_tea.jsp">차</a>
 				</td>
 			</tr>
 		</table>

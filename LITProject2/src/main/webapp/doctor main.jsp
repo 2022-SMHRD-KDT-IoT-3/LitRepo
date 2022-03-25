@@ -94,11 +94,10 @@
 		<table>
 			<tr align="center">
 				<td>
-					<a id="bt">색상</a>
-					<a id="bt">컨텐츠 추천</a>
-					<a id="bt">의사피드백</a>
-					<a id="bt">게시판</a>
-					<a id="bt">기타</a>
+					<a id="bt" href="doctor main.jsp">의사 피드백</a>
+					<a id="bt" href="doctormine.jsp">맞춤 피드백</a>
+					<a id="bt" href="doctortip.jsp">수면 관련 팁</a>
+					<a id="bt" href="doctorcheck.jsp">수면상태체크</a>
 				</td>
 			</tr>
 		</table>
