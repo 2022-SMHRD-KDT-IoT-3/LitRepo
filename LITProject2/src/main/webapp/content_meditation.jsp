@@ -63,7 +63,8 @@
 				<tr>
 					<td>
 						<div class="card" style="width: 18rem;">
-							<a href="https://www.youtube.com/watch?v=nlX8Bj6VT4o"><img src="./img_meditation/명상명상.jpg"
+						<!-- target="_blank"완료 -->
+							<a href="https://www.youtube.com/watch?v=nlX8Bj6VT4o"target="_blank"><img src="./img_meditation/명상명상.jpg"
 									class="card-img-top" width="300px" height="220"></a>
 							<div class="card-body">
 								<p class="card-text" style="text-align: center">명상</p>
@@ -72,7 +73,7 @@
 					</td>
 					<td>
 						<div class="card" style="width: 18rem;">
-							<a href="https://www.coupang.com/vp/products/1305259983?itemId=2320100298&vendorItemId=78780013918&pickType=COU_PICK&sourceType=srp_product_ads&clickEventId=e478d1ed-5375-49fd-a4e9-9e2e16b3de4f&korePlacement=15&koreSubPlacement=1&q=%EB%AA%85%EC%83%81%EC%9A%A9%ED%92%88&itemsCount=36&searchId=5fbef06f73d649da836a02d9d4f6f3fe&rank=0&isAddedCart="><img src="./img_meditation/명상인센스.jpg" class="card-img-top" width="300px" height="220"></a>
+							<a href="https://www.coupang.com/vp/products/1305259983?itemId=2320100298&vendorItemId=78780013918&pickType=COU_PICK&sourceType=srp_product_ads&clickEventId=e478d1ed-5375-49fd-a4e9-9e2e16b3de4f&korePlacement=15&koreSubPlacement=1&q=%EB%AA%85%EC%83%81%EC%9A%A9%ED%92%88&itemsCount=36&searchId=5fbef06f73d649da836a02d9d4f6f3fe&rank=0&isAddedCart="target="_blank"><img src="./img_meditation/명상인센스.jpg" class="card-img-top" width="300px" height="220"></a>
 							<div class="card-body">
 								<p class="card-text" style="text-align: center">인센스스틱</p>
 							</div>
@@ -84,7 +85,7 @@
 				<tr>
 					<td>
 					<div class="card" style="width: 18rem;">
-						<a href="https://www.coupang.com/vp/products/2056847696?itemId=3496278303&vendorItemId=71482508441&sourceType=srp_product_ads&clickEventId=8ecd2f62-cab1-4d43-b5dc-113dd1979a3d&korePlacement=15&koreSubPlacement=6&q=%EC%95%84%EB%A1%9C%EB%A7%88%EC%98%A4%EC%9D%BC&itemsCount=36&searchId=422130f583a94169bfb62303c306787e&rank=5&isAddedCart="><img src="./img_meditation/명상아로마.jpg" class="card-img-top" width="300px" height="220"></a>
+						<a href="https://www.coupang.com/vp/products/2056847696?itemId=3496278303&vendorItemId=71482508441&sourceType=srp_product_ads&clickEventId=8ecd2f62-cab1-4d43-b5dc-113dd1979a3d&korePlacement=15&koreSubPlacement=6&q=%EC%95%84%EB%A1%9C%EB%A7%88%EC%98%A4%EC%9D%BC&itemsCount=36&searchId=422130f583a94169bfb62303c306787e&rank=5&isAddedCart="target="_blank"><img src="./img_meditation/명상아로마.jpg" class="card-img-top" width="300px" height="220"></a>
 						<div class="card-body">
 							<p class="card-text" style="text-align: center">아로마</p>
 						</div>
@@ -92,7 +93,7 @@
 					</td>
 					<td>
 						<div class="card" style="width: 18rem;">
-							<a href="https://www.youtube.com/watch?v=1vfMmDuTweQ"><img src="./img_meditation/명상스트레칭.jpg" class="card-img-top" width="300px" height="220"></a>
+							<a href="https://www.youtube.com/watch?v=1vfMmDuTweQ"target="_blank"><img src="./img_meditation/명상스트레칭.jpg" class="card-img-top" width="300px" height="220"></a>
 							<div class="card-body">
 								<p class="card-text" style="text-align: center">스트레칭</p>
 							</div>
@@ -104,14 +105,14 @@
 				<tr>
 					<td>
 						<div class="card" style="width: 18rem;">
-							<a href="https://www.youtube.com/watch?v=gO5tVebwG_M"><img src="./img_meditation/명상요가.jpg" class="card-img-top" width="300px" height="220"></a>
+							<a href="https://www.youtube.com/watch?v=gO5tVebwG_M"target="_blank"><img src="./img_meditation/명상요가.jpg" class="card-img-top" width="300px" height="220"></a>
 							<div class="card-body">
 								<p class="card-text" style="text-align: center">요가</p>
 							</div>
 					</td>
 					<td>
 						<div class="card" style="width: 18rem;">
-							<a href="https://www.coupang.com/vp/products/306146801?itemId=965291509&vendorItemId=5369727465&q=%EB%A7%88%EC%82%AC%EC%A7%80%EB%B3%BC&itemsCount=36&searchId=333a32fe54864e2c8947ba8512aa4859&rank=0&isAddedCart="><img src="./img_meditation/명상마사지.jpg" class="card-img-top" width="300px" height="220"></a>
+							<a href="https://www.coupang.com/vp/products/306146801?itemId=965291509&vendorItemId=5369727465&q=%EB%A7%88%EC%82%AC%EC%A7%80%EB%B3%BC&itemsCount=36&searchId=333a32fe54864e2c8947ba8512aa4859&rank=0&isAddedCart="target="_blank"><img src="./img_meditation/명상마사지.jpg" class="card-img-top" width="300px" height="220"></a>
 							<div class="card-body">
 								<p class="card-text" style="text-align: center">마사지 볼</p>
 							</div>

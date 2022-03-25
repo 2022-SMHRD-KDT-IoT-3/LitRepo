@@ -63,7 +63,8 @@
 				<tr>
 					<td>
 						<div class="card" style="width: 18rem;">
-							<a href="https://www.youtube.com/watch?v=HrO74lj5QBs"><img src="./img_asmr/asmr비.jpg"
+						<!-- target="_blank" 완료 -->
+							<a href="https://www.youtube.com/watch?v=HrO74lj5QBs"target="_blank"><img src="./img_asmr/asmr비.jpg"
 									class="card-img-top" width="300px" height="220"></a>
 							<div class="card-body">
 								<p class="card-text" style="text-align: center">비</p>
@@ -72,7 +73,7 @@
 					</td>
 					<td>
 						<div class="card" style="width: 18rem;">
-							<a href="https://www.youtube.com/watch?v=KKi2qiuZZWQ"><img src="./img_asmr/asmr바람.jpg" class="card-img-top" width="300px" height="220"></a>
+							<a href="https://www.youtube.com/watch?v=KKi2qiuZZWQ"target="_blank"><img src="./img_asmr/asmr바람.jpg" class="card-img-top" width="300px" height="220"></a>
 							<div class="card-body">
 								<p class="card-text" style="text-align: center">바람</p>
 							</div>
@@ -84,7 +85,7 @@
 				<tr>
 					<td>
 					<div class="card" style="width: 18rem;">
-						<a href="https://www.youtube.com/watch?v=6ZSbWQkIYsU"><img src="./img_asmr/asmr장작.jpg" class="card-img-top" width="300px" height="220"></a>
+						<a href="https://www.youtube.com/watch?v=6ZSbWQkIYsU"target="_blank"><img src="./img_asmr/asmr장작.jpg" class="card-img-top" width="300px" height="220"></a>
 						<div class="card-body">
 							<p class="card-text" style="text-align: center">장작</p>
 						</div>
@@ -92,7 +93,7 @@
 					</td>
 					<td>
 						<div class="card" style="width: 18rem;">
-							<a href="https://www.youtube.com/watch?v=lYJ17n_oUkA"><img src="./img_asmr/asmr숲.jpg" class="card-img-top" width="300px" height="220"></a>
+							<a href="https://www.youtube.com/watch?v=lYJ17n_oUkA"target="_blank"><img src="./img_asmr/asmr숲.jpg" class="card-img-top" width="300px" height="220"></a>
 							<div class="card-body">
 								<p class="card-text" style="text-align: center">숲</p>
 							</div>
@@ -104,14 +105,14 @@
 				<tr>
 					<td>
 						<div class="card" style="width: 18rem;">
-							<a href="https://www.youtube.com/watch?v=zp789sRyQKg"><img src="./img_asmr/asmr바다.jpg" class="card-img-top" width="300px" height="220"></a>
+							<a href="https://www.youtube.com/watch?v=zp789sRyQKg"target="_blank"><img src="./img_asmr/asmr바다.jpg" class="card-img-top" width="300px" height="220"></a>
 							<div class="card-body">
 								<p class="card-text" style="text-align: center">바다</p>
 							</div>
 					</td>
 					<td>
 						<div class="card" style="width: 18rem;">
-							<a href="https://www.youtube.com/watch?v=xym-gmq_rlw"><img src="./img_asmr/asmr카페.jpg" class="card-img-top" width="300px" height="220"></a>
+							<a href="https://www.youtube.com/watch?v=xym-gmq_rlw"target="_blank"><img src="./img_asmr/asmr카페.jpg" class="card-img-top" width="300px" height="220"></a>
 							<div class="card-body">
 								<p class="card-text" style="text-align: center">카페</p>
 							</div>
