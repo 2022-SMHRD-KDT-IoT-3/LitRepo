@@ -3,187 +3,156 @@
 <!DOCTYPE HTML>
 
 <html>
-	<head>
-		<title>DreamCatcher</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	
+
+<head>
+	<title>recommand</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+
 	<style>
+		@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
 
-		#p1{
-			margin: auto;
-			text-align: center;
-			font-weight: bold;
-			font-size: 17px;
-			color: rgba(15, 15, 15, 0.705);
-		}
 
-		#p2{
-			margin: auto;
-			text-align: center;
+		#img {
+			width: 20px;
+			height: 20px;
 		}
-
-		#tr2{
-			margin-top: 10pxs;
-		}
-
-		#minit1{
-			background-color :rgba(253, 253, 252, 0.767);
-			border-radius: 40px;
-		}
-
-		
-		#gotop{
-			left: 10px;
-			bottom: -50px;
-			position: relative;
-		}
-		.span1 {
-				right: 10px;
-	top: 10px;
-	position: absolute;
-}
-#id1{
-	padding-top: 40px;
-}
 	</style>
 
-	</head>
-	<body class="is-preload">
+</head>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
-				<div id="wrapper">
-					<span class="span1">
+<body class="is-preload" style="font-family: 'Nanum Myeongjo', serif;">
 
-						<button type="button" onclick="location.href='main1.jsp'" class="btn btn-outline-secondary">HOME</button>
-						<button type="button" onclick="location.href='mypage.jsp'" class="btn btn-outline-secondary">마이페이지</button>
-						<button type="button" onclick="location.href='LogoutServiceCon.do'" class="btn btn-outline-secondary">로그아웃</button>
-					</span>
-				<!-- 맨위로 버튼 누를때 이동해올 곳 -->
-				<h1 id ="top"></h1>
-				
-				<!-- Header -->
-					<header id="header">
-						<h1 id="id1">ASMR 추천</h1>
-						<br>
-						<p>숙면에 도움을 줄 수 있는 ASMR 콘텐츠를 추천해드립니다</p>
-					</header>
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- 맨위로 버튼 누를때 이동해올 곳 -->
+		<h1 id="top"></h1>
+
+		<!-- Header -->
+		<header id="header">
+			<h1 id="id1">ASMR</h1>
+			<br>
+			<br>
+		</header>
 
 
-						<!-- Content -->
-							<section id="content" class="main">
-						
-								<table>
-									<tr>
-										<td id="minit1">
-											<b></b><p id ="p1">비</p></b>
-											<br>
-											<span class="image main">
-												<a href="https://www.youtube.com/watch?v=HrO74lj5QBs"><img src="./img_asmr/windshield-gc7ac811b3_640.jpg" /></a>
-												</span>
-										</td>
-										</tr>
+		<nav id="nav">
+			<ul>
+				<li><a href="content_main.jsp">Main</a></li>
+				<li><a href="content_perfum.jsp">향초</a></li>
+				<li><a href="content_meditation.jsp">명상</a></li>
+				<li><a href="content_living.jsp">리빙</a></li>
+				<li><a href="content_tea.jsp">차</a></li>
 
-										<!-- 빈칸용도 -->
-										<tr>
-											<td><br></td>
-										</tr>
-										
-									
-										<tr>
-										<td id="minit1">
-											<br>
-											<b><p id ="p1">바람</p></b>
-											<br>
-											<span class="image main">
-												<a href="https://www.youtube.com/watch?v=KKi2qiuZZWQ"><img src="./img_asmr/field-g95f2eb99c_640.jpg" /></a>
-											</span>
-											</tr>
-										
-										<!-- 빈칸용도 -->
-											<tr>
-												<td><br></td>
-											</tr>
-
-										
-											<tr>
-											<td id="minit1">
-											<br>
-											<b><p id ="p1">장작</p></b>
-											<br>
-											<span class="image main">
-												<a href="https://www.youtube.com/watch?v=6ZSbWQkIYsU"><img src="./img_asmr/fire-g45586be6c_640.jpg" /></a>
-												</span>
-											</tr>
-
-											<!-- 빈칸용도 -->
-											<tr>
-												<td><br></td>
-											</tr>
-
-										
-											<tr>
-											<td id="minit1">
-												<br>
-												<b><p id ="p1">숲</p></b>
-												<br>	
-												<span class="image main">
-													<a href="https://www.youtube.com/watch?v=lYJ17n_oUkA"><img src="./img_asmr/forest-g2d0654d8f_640.jpg" /></a>
-													</span>
-											</tr>
-
-											<!-- 빈칸용도 -->
-											<tr>
-												<td><br></td>
-											</tr>
-
-										
-											<tr>
-												<td id="minit1">
-													<br>
-												<b><p id ="p1">바람</p></b>
-												<br>
-												<span class="image main">
-													<a href="https://www.youtube.com/watch?v=zp789sRyQKg"><img src="./img_asmr/background-gef39e3554_640.jpg" /></a>
-													</span>
-
-												</tr>
-
-									<!-- 전체 테이블 영역 마지막 -->
-									</tr>
-								</table>
+			</ul>
+		</nav>
 
 
-
-								<br>
-								<br>
-								<h4 id = "p2">추가하고 싶은 asmr장르가 있다면 알려주세요</h4>
-								<p id = "p2">사용자의 의견을 우선하여 컨텐츠를 추가하겠습니다</p>
-								<br>
-							
-							</section>
-
-							
+		<br>
+		<br>
+		<br>
+		<br>
+		<!-- Content -->
+		<section id="content" class="main">
+			<table>
+				<tr>
+					<td>
+						<div class="card" style="width: 18rem;">
+							<a href="https://www.youtube.com/watch?v=HrO74lj5QBs"><img src="./img_asmr/asmr비.jpg"
+									class="card-img-top" width="300px" height="220"></a>
+							<div class="card-body">
+								<p class="card-text" style="text-align: center">비</p>
+							</div>
 						</div>
+					</td>
+					<td>
+						<div class="card" style="width: 18rem;">
+							<a href="https://www.youtube.com/watch?v=KKi2qiuZZWQ"><img src="./img_asmr/asmr바람.jpg" class="card-img-top" width="300px" height="220"></a>
+							<div class="card-body">
+								<p class="card-text" style="text-align: center">바람</p>
+							</div>
+						</div>
+					</td>
 
-							<button type="button" id = "gotop"><a href="#top">맨 위로</a></button>
-						
-						
-						<br><br><br><br><br>
+				</tr>
+
+				<tr>
+					<td>
+					<div class="card" style="width: 18rem;">
+						<a href="https://www.youtube.com/watch?v=6ZSbWQkIYsU"><img src="./img_asmr/asmr장작.jpg" class="card-img-top" width="300px" height="220"></a>
+						<div class="card-body">
+							<p class="card-text" style="text-align: center">장작</p>
+						</div>
 					</div>
+					</td>
+					<td>
+						<div class="card" style="width: 18rem;">
+							<a href="https://www.youtube.com/watch?v=lYJ17n_oUkA"><img src="./img_asmr/asmr숲.jpg" class="card-img-top" width="300px" height="220"></a>
+							<div class="card-body">
+								<p class="card-text" style="text-align: center">숲</p>
+							</div>
+						</div>
+					</td>
 					
+				</tr>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+				<tr>
+					<td>
+						<div class="card" style="width: 18rem;">
+							<a href="https://www.youtube.com/watch?v=zp789sRyQKg"><img src="./img_asmr/asmr바다.jpg" class="card-img-top" width="300px" height="220"></a>
+							<div class="card-body">
+								<p class="card-text" style="text-align: center">바다</p>
+							</div>
+					</td>
+					<td>
+						<div class="card" style="width: 18rem;">
+							<a href="https://www.youtube.com/watch?v=xym-gmq_rlw"><img src="./img_asmr/asmr카페.jpg" class="card-img-top" width="300px" height="220"></a>
+							<div class="card-body">
+								<p class="card-text" style="text-align: center">카페</p>
+							</div>
+						</div>
+					</td>
+				</tr>
 
-	</body>
+
+
+			</table>
+
+
+
+
+			<br>
+			<br>
+			<h4 id="p2">추가하고 싶은 향기가 있다면 알려주세요</h4>
+			<p id="p2">사용자의 의견을 우선하여 컨텐츠를 추가하겠습니다</p>
+			<br>
+
+		</section>
+
+
+	</div>
+
+	<button type="button" id="gotop"><a href="#top">맨 위로</a></button>
+
+
+	<br><br><br><br><br>
+	</div>
+
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<!DOCTYPE HTML>
+ <!DOCTYPE HTML>
 <style>
 
 /* 글 가운데 정렬 용도, 여기저기 쓰임 */
@@ -13,6 +13,7 @@
 	background-color: lightgrey;
 	text-align: center;
 	font-size: 20px;
+	border-radius: 10px;
 	
 }
 
@@ -22,14 +23,8 @@
 	background-color:antiquewhite;
 	border-radius: 10px;
 }
-.span1 {
-				right: 10px;
-	top: 10px;
-	position: absolute;
-}
-#header{
-    padding-top:40px;
-}
+/* 비디오 */
+video { max-width: 80%; display: block; margin: 20px auto; }
 
 </style>
 <html>
@@ -44,26 +39,32 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
-
+		<!-- 폰트 -->
+		<style>
+		@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+	</style>
 
 	</head>
-	<body class="is-preload">
+	<body class="is-preload" style="font-family: 'Nanum Myeongjo', serif;"">
 	
 		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<span class="span1">
-					<button type="button" class="btn btn-outline-secondary" onclick="location.href='main1.jsp'">HOME</button>
-					<button type="button" class="btn btn-outline-secondary" onclick="location.href='LogoutServiceCon.do'">로그아웃</button>
-		
-				
-		
-				</span>
-				<!-- Header -->
-					<header id="header">
-						<h1>수면 건강 피드백</h1>
-						<p>현재 도도동님의 수면 상태에 대한 피드백입니다</p>
-					</header>
+		<div id="wrapper">
+			
+			<!-- Header -->
+			<header id="header">
+				<h1>수면 건강 피드백</h1>
+				<p>현재 도도동님의 수면 상태에 따른 피드백입니다</p>
+			</header>
+			
+			<nav id="nav">
+				<ul>
+					<li><a href="doctor main.jsp">Main</a></li>
+					<li><a href="doctormine.jsp">맞춤 피드백</a></li>
+					<li><a href="doctortip.jsp">수면 관련 팁</a></li>
+					<li><a href="doctorcheck.jsp">수면상태체크 </a></li>
+				</ul>
+			</nav>
+					
 
 				<!-- Main -->
 					<div id="main">
@@ -74,101 +75,72 @@
 								<!-- 현재 날짜, 닉네임 값 -->
 									<section>
 										<h4 id="survey"> <strong>2022.03.01~2022.03.07</strong>
-											 기간동안의 수면 데이터 입니다</h4>
-										
+											 기간동안의 수면 데이터를 바탕으로 맞춤 컨텐츠를 추천합니다</h4>
 									</section>
 
 								<!-- 피드백 페이지 -->
 									<section>
-										<br><br>
+										
 										<div class="row">
 											<div class="col-6 col-12-medium">
-												<h4 id = "history"><strong>히스토리</strong></h4>
 												<br>
-												<h5 id="txt">평균심박수</h5>
-												<br>									
+												<br>
+												<h4 id ="history">수면 패턴 점수</h4>
+												<br>
+
 												<div>
 													<canvas id="myChart"></canvas>
 												  </div>
-												<canvas id="myChart" width="400" height="80"></canvas>
-			
+	
+
+
+												  <br><br><br>
+												  <h4 id ="history" >운동 추천</h4>
+												  <br>
+
+												<table>
+													<tr align="center">
+														<td style="font-weight: bold;">인터벌 운동</td>
+													</tr>
+
+													<tr>
+														<td>인터벌 운동은 걷고 뛰고를 반복하는 운동으로 심폐지구력 향상에 탁월합니다.
+															기본적으로 격한 운동을 했을때의 최대심박수까지 가는 것을 목표로 합니다.</td>
+													</tr>
+
+													<tr align="center">
+														<td style="font-weight: bold;">저강도 인터벌 트레이닝(홈트레이닝)</td>
+													</tr>
+
+													<tr align="center">
+														<td><a href="https://www.youtube.com/watch?v=zNsUXIxwh6U"><img src="./img잡다한것/인터벌.PNG" alt=""></a></td>
+													</tr>
+													<tr align="center">
+														<td style="font-weight: bold;">고강도 인터벌 트레이닝(홈트레이닝)</td>
+													</tr>
+
+													<tr align="center">
+														<td><a href="https://www.youtube.com/watch?v=LG6CNzlj_6o"><img src="./img잡다한것/고강도 인터벌.PNG" alt=""></a></td>
+													</tr>
+
+												</table>
+
 												<br>
-												<h5 id ="txt">평균 데시벨</h5>
+												<h3 id ="history"><b>스트레스 완화 호흡법</b></h3>
 												<br>
-												<div>
-													<canvas id="myChart2"></canvas>
-												  </div>
-												<canvas id="myChart2" width="400" height="80"></canvas>
+													
 
 												
-		
-												<br>
-												<h5 id ="txt">평균 온/습도</h5>
-												 <br>
-												<div>
-													<canvas id="myChart3"></canvas>
-												  </div>
-												<canvas id="myChart3" width="400" height="80"></canvas>
-
-												<br>
-												<div>
-													<canvas id="myChart4"></canvas>
-												  </div>
-												<canvas id="myChart4" width="400" height="80"></canvas>
-
-
-
-												<br><br><br>
-												<h4 id ="history"> 분석 결과</h4>
-												<br>
-												<ul>
-													<li>현재 나이의 휴식기 평균 심박수는 69~72입니다 </li>
-													<br>
-													<h4><strong>현재 도도동님의 평균심박수는 72로 정상범위이지만 
-														평균에서 평균 이하로 갈 가능성이 높습니다
-														적절한 운동이 필요합니다</strong></h4>
-													
-													<br>
-													<br>
-													<li>데시벨 측정 결과 평균 35으로 일상생활시 소음정도로 측정됩니다 </li>
-													<br>
-													<h4><strong>조용한 주택의 거실의 데시벨이 40정도입니다.
-														현재 코골이 이외의 특정한 소음이 없기 때문에 현재의 소음 환경은
-														좋다고 평가할 수 있습니다.</strong></h4>
-													
-													<br>
-													
-												</ul>
-												<h3 id ="history"><strong>의사 피드백</strong></h3>
-												<br>
-
-
-												<h4 id="txt"><b>종합 소견</b></h4>
 												<br>
 												
-												<p>현재 도도동 님의 평균 심박 수는 72으로 26살 여성 기준 <u>정상 수치</u>입니다.
-													그러나 현재 전체 심박 수 히스토리 분석 결과 자는 동안 급격히 심박 수가 튀는 경우가 보입니다
-												자연스러운 현상이기도 하지만 이 수치가 많은 것으로 보아 스트레스를 받거나 잠에서 뒤척이는
-											경우가 많을 것으로 예상됩니다. 또한 최소 심박  수와 최대 심박수의 차이가 많이 나기 때문에 이 부분에 유의하셔야 할 것 같습니다.
-										<u>걱정될 정도의 수치는 보이지 않습니다.</u> 그래도 건강한 심장을 위해 심폐 지구력을 키우는 유산소 운동을 추천해드립니다
-									한 달 정도는 수치를 재면서 자보면서 심박 수 히스토리를 체크하세요												</p>
+												<p>운동을 하면 이런 그래프 형태로 증가 가능하다. 그러면 이렇게 된다는 데이터 보여주기</p>
 
-
-
-									<br>
-									<h4 id="txt"><strong>'나심장' 의사의 조언</strong></h4>
-									<br>
 									
-												<ul class="alt" id="survey">
-													<li>자기전 핸드폰 만지지 않기</li>
-													<li>하루 30분 이상 유산소 운동하기</li>
-													<li>한달동안 심박수 히스토리 확인해보기</li>
-												</ul>
 											</div>
 											
 											<div class="col-6 col-12-medium">
 												<br><br>
-												<h3 id ="history">수면에 좋은 생활습관</h3>
+												<h3 id ="history">수면에 좋은 제품 추천</h3>
 												<ol>
 													<b>
 													<li>카페인이 함유된 음료는 피하기</li>
@@ -179,11 +151,11 @@
 													<li>적절한 높이의 베게를 선택하기</li>
 												</b>
 												</ol>
-												
+												</div>
+												</div>
+												</section>
 											</div>
-										</div>
-											</div>
-										</div>
+										</div>	
 									</section>
 
 								
@@ -192,7 +164,7 @@
 
 
 									<table>
-										<tr id = "survey"><td>
+										<tr id = "survey" style="font-weight: bold;"><td>
 											제휴 병원 및 의료진
 										</td></tr>
 									
@@ -269,8 +241,8 @@
 											</div>
 										</form>
 									</section>
-
-								
+				
+							
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
@@ -284,19 +256,18 @@
 			<script>
 				const ctx = document.getElementById('myChart').getContext('2d');
 				const myChart = new Chart(ctx, {
-type: 'line',
+type: 'radar',
 data: {
-labels: ['3/1', '3/2', '3/3', '3/4', '3/5', '3/6','3/7'],
+labels: ['수면 시간', '심박수 일정도', '코골이', '수면 환경', '수면의 질'],
 datasets: [{
-	label: '하루 평균 수면 심박 수',
-	data: [73, 70, 77, 69, 68, 70, 71],
+	label: '도도동님의 수면패턴',
+	data: [80, 60, 30, 95, 80],
 	backgroundColor: [
 		'rgba(255, 99, 132, 0.2)',
 		'rgba(255, 99, 132, 0.2)',
 		'rgba(255, 99, 132, 0.2)',
 		'rgba(255, 99, 132, 0.2)',
 		'rgba(255, 99, 132, 0.2)',
-		'rgba(255, 99, 132, 0.2)'
 		
 	],
 	borderColor: [
@@ -305,7 +276,6 @@ datasets: [{
 		'rgba(250, 99, 132, 1)',
 		'rgba(250, 99, 132, 1)',
 		'rgba(250, 99, 132, 1)',
-		'rgba(250, 99, 132, 1)'
 		
 	],
 	borderWidth: 1
