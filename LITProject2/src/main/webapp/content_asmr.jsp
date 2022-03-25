@@ -5,7 +5,7 @@
 <html>
 
 <head>
-	<title>recommand</title>
+	<title>DreamCatcher</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
@@ -14,22 +14,37 @@
 	</noscript>
 
 	<style>
-		@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
-
+@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+			@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
 
 		#img {
 			width: 20px;
 			height: 20px;
 		}
+        .span1 {
+	right: 10px;
+	top: 10px;
+	position: absolute;
+}
+#id1{
+	padding-top: 110px;
+}
 	</style>
 
 </head>
 
-<body class="is-preload" style="font-family: 'Nanum Myeongjo', serif;">
+<body class="is-preload" style="font-family: 'Nanum Myeongjo', serif;"></body>
 
 	<!-- Wrapper -->
 	<div id="wrapper">
+        <span class="span1">
+            <button type="button" class="btn btn-outline-secondary" onclick="location.href='main1.jsp'" style="font-family: 'Nanum Myeongjo', serif;">HOME</button>
+            <button type="button" class="btn btn-outline-secondary" onclick="location.href='main1.jsp'" style="font-family: 'Nanum Myeongjo', serif;">Mypage</button>
+            <button type="button" class="btn btn-outline-secondary" onclick="location.href='LogoutServiceCon.do'" style="font-family: 'Nanum Myeongjo', serif;">로그아웃</button>
 
+        
+
+        </span>
 		<!-- 맨위로 버튼 누를때 이동해올 곳 -->
 		<h1 id="top"></h1>
 

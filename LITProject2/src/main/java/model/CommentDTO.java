@@ -19,6 +19,13 @@ public class CommentDTO {
 	}
 	
 	
+	@Override
+	public String toString() {
+		return "CommentDTO [cmt_seq=" + cmt_seq + ", article_seq=" + article_seq + ", cmt_content=" + cmt_content
+				+ ", cmt_date=" + cmt_date + ", mem_id=" + mem_id + ", likes=" + likes + "]";
+	}
+
+
 	public CommentDTO(int article_seq, String cmt_content, String mem_id) {
 		super();
 		this.article_seq = article_seq;

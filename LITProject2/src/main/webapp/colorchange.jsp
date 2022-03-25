@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 
@@ -17,6 +18,8 @@
 </noscript>
 
 <style>
+@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+			@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
 #p1 {
 	margin: auto;
 	text-align: center;
@@ -72,11 +75,12 @@ padding-top:100px;
 </style>
 
 </head>
-<body class="is-preload">
+<body class="is-preload" style="font-family: 'Nanum Myeongjo', serif;"></body>
 	<span class="span1">
 		<button type="button" onclick="location.href='main1.jsp'"
-		class="btn btn-outline-secondary">HOME</button>
-	   <button type="button" onclick="location.href='LogoutServiceCon.do'" class="btn btn-outline-secondary">·Î±×¾Æ¿ô</button>
+		class="btn btn-outline-secondary" style="font-family: 'Nanum Myeongjo', serif;" >HOME</button>
+	   <button type="button" onclick="location.href='LogoutServiceCon.do'" 
+	   style="font-family: 'Nanum Myeongjo', serif;" class="btn btn-outline-secondary">·Î±×¾Æ¿ô</button>
 	</span>
 	<!-- Wrapper -->
 	<div id="wrapper">
