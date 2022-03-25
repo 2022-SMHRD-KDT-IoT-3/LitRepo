@@ -22,7 +22,18 @@ public class BoardDTO {
 		this.article_type = article_type;
 	}
 	
-	public BoardDTO(String article_title, String article_content, String article_file, String mem_id, String article_type) {
+	public BoardDTO(String article_title, String article_content, String article_file, String mem_id,
+			String article_type) {
+		super();
+		this.article_title = article_title;
+		this.article_content = article_content;
+		this.article_file = article_file;
+		this.mem_id = mem_id;
+		this.article_type = article_type;
+	}
+
+	public BoardDTO(int article_seq, String article_title, String article_content, String article_file, String mem_id, String article_type) {
+		this.article_seq = article_seq;
 		this.article_title = article_title;
 		this.article_content = article_content;
 		this.article_file = article_file;

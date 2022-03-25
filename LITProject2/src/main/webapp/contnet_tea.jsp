@@ -40,7 +40,14 @@
 			bottom: -50px;
 			position: relative;
 		}
-
+        .span1 {
+				right: 10px;
+	top: 10px;
+	position: absolute;
+}
+#id1{
+	padding-top: 40px;
+}
 
 	</style>
 
@@ -48,7 +55,13 @@
 	<body class="is-preload">
 
 		<!-- Wrapper -->
-			<div id="wrapper">
+        <div id="wrapper">
+            <span class="span1">
+    
+                <button type="button" onclick="location.href='main1.jsp'" class="btn btn-outline-secondary">HOME</button>
+                <button type="button" onclick="location.href='mypage.jsp'" class="btn btn-outline-secondary">마이페이지</button>
+                <button type="button" onclick="location.href='LogoutServiceCon.do'" class="btn btn-outline-secondary">로그아웃</button>
+            </span>
 				
 				<!-- 맨위로 버튼 누를때 이동해올 곳 -->
 				<h1 id ="top"></h1>

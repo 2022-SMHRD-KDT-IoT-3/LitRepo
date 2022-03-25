@@ -2,6 +2,7 @@
     pageEncoding="EUC-KR"%>
 
 
+
 <!DOCTYPE HTML>
 
 <html>
@@ -73,10 +74,9 @@ padding-top:100px;
 </head>
 <body class="is-preload">
 	<span class="span1">
-	
-			<button type="button" class="btn btn-outline-secondary">HOME</button>
-			<button type="button" class="btn btn-outline-secondary">·Î±×¾Æ¿ô</button>
-	
+		<button type="button" onclick="location.href='main1.jsp'"
+		class="btn btn-outline-secondary">HOME</button>
+	   <button type="button" onclick="location.href='LogoutServiceCon.do'" class="btn btn-outline-secondary">·Î±×¾Æ¿ô</button>
 	</span>
 	<!-- Wrapper -->
 	<div id="wrapper">

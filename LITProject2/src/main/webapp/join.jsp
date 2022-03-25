@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 
-
 <!DOCTYPE HTML>
 <html>
 <head>
 
-<title>lit!</title>
+<title>DreamCatcher</title>
 
 <meta charset="utf-8" />
 <meta name="viewport"
@@ -117,11 +116,12 @@
 	<!-- Wrapper -->
 	<div id="wrapper">
 		<span class="span1">
-			<button type="button" class="btn btn-outline-secondary" id="up">HOME</button>
+			<button type="button"  onclick="location.href='main1.jsp'"
+			 class="btn btn-outline-secondary" id="up">HOME</button>
 		
 	
 			
-			<button type="button" class="btn btn-outline-secondary" id="up">로그인</button>
+			<button type="button" onclick="location.href='login.jsp'" class="btn btn-outline-secondary" id="up">로그인</button>
 	
 			
 
