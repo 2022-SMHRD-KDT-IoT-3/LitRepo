@@ -64,7 +64,8 @@
 				<tr>
 					<td>
 						<div class="card" style="width: 18rem;">
-							<a href="https://www.coupang.com/vp/products/6325118485?itemId=13202429754&vendorItemId=80460929836&q=%EB%9D%BC%EC%9E%84%ED%96%A5%EC%B4%88&itemsCount=36&searchId=1c01afa374e748a9a756862503091113&rank=20&isAddedCart="><img src="./img_perfume/시트러스라임.jpg" class="card-img-top" width="300px"></a>
+						<!-- target="_blank"완료 -->
+							<a href="https://www.coupang.com/vp/products/6325118485?itemId=13202429754&vendorItemId=80460929836&q=%EB%9D%BC%EC%9E%84%ED%96%A5%EC%B4%88&itemsCount=36&searchId=1c01afa374e748a9a756862503091113&rank=20&isAddedCart="target="_blank"><img src="./img_perfume/시트러스라임.jpg" class="card-img-top" width="300px"></a>
 							<div class="card-body">
 							  <p class="card-text" style="text-align: center">머릿속까지 상큼한 라임의 향</p>
 							</div>
@@ -73,7 +74,7 @@
 					
 					<td>
 						<div class="card" style="width: 18rem;">
-							<a href="https://www.coupang.com/vp/products/6226574087?itemId=12490607147&vendorItemId=79759305850&q=%EC%9E%90%EB%AA%BD%ED%96%A5%EC%B4%88&itemsCount=36&searchId=dc15ac1eb05b4226a0a9349d9931dc5e&rank=1&isAddedCart="><img src="./img_perfume/시트러스 자몽.jpg" class="card-img-top" width="300px"></a>
+							<a href="https://www.coupang.com/vp/products/6226574087?itemId=12490607147&vendorItemId=79759305850&q=%EC%9E%90%EB%AA%BD%ED%96%A5%EC%B4%88&itemsCount=36&searchId=dc15ac1eb05b4226a0a9349d9931dc5e&rank=1&isAddedCart="target="_blank"><img src="./img_perfume/시트러스 자몽.jpg" class="card-img-top" width="300px"></a>
 							<div class="card-body">
 							  <p class="card-text" style="text-align: center;">톡하고 터지는 자몽 향</p>
 							</div>
@@ -83,7 +84,7 @@
 				<tr>
 					<td>
 						<div class="card" style="width: 18rem;">
-							<a href=""><img src="./img_perfume/시트러스풀꽃.jpg" class="card-img-top" width="300px"></a>
+							<a href="https://www.coupang.com/vp/products/6102014865?itemId=2310815176&vendorItemId=70307610788&q=%ED%92%80%EA%BD%83%ED%96%A5%EC%B4%88&itemsCount=36&searchId=d3a92d1f93ef4c85bb78244116282e6a&rank=28&isAddedCart="target="_blank"><img src="./img_perfume/시트러스풀꽃.jpg" class="card-img-top" width="300px"></a>
 							<div class="card-body">
 							  <p class="card-text" style="text-align: center;"> 코 끝 속 은은한 풀꽃내음</p>
 							</div>
@@ -92,7 +93,7 @@
 					
 					<td>
 						<div class="card" style="width: 18rem;">
-							<a href="https://www.coupang.com/vp/products/1898819346?itemId=9957786562&vendorItemId=77240936710&q=%ED%92%80%EA%BD%83%ED%96%A5%EC%B4%88&itemsCount=36&searchId=4f537df94ce84ab58e2d20793c40faa8&rank=29&isAddedCart="><img src="./img_perfume/시트러스라벤더.jpg" class="card-img-top" width="300px"></a>
+							<a href="https://www.coupang.com/vp/products/1898819346?itemId=9957786562&vendorItemId=77240936710&q=%ED%92%80%EA%BD%83%ED%96%A5%EC%B4%88&itemsCount=36&searchId=4f537df94ce84ab58e2d20793c40faa8&rank=29&isAddedCart="target="_blank"><img src="./img_perfume/시트러스라벤더.jpg" class="card-img-top" width="300px"></a>
 							<div class="card-body">
 							  <p class="card-text" style="text-align: center;"> 보라빛 향기 속 상큼함, 레몬라벤더</p>
 							</div>
