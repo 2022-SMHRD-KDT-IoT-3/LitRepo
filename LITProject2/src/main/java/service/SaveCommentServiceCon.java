@@ -26,11 +26,12 @@ public class SaveCommentServiceCon implements Command{
 				
 		
 		CommentDTO dto = new CommentDTO(num, coment, id);
+		System.out.println(dto.toString());
 		
 		CommentDAO dao = new CommentDAO();
 		
 		int cnt = dao.insertComment(dto);
-		
+		System.out.println(cnt);
 		PrintWriter out = response.getWriter();
 		
 		out.print(cnt);

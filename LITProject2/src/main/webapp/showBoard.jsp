@@ -23,9 +23,7 @@
 	BoardDAO dao = new BoardDAO();
 	ArrayList<BoardDTO> dto = dao.showBoard();
 	session = request.getSession();
-
 	ArrayList<BoardDTO> bdto = (ArrayList<BoardDTO>) session.getAttribute("board");
-
 	MemberDTO sdto = (MemberDTO) session.getAttribute("info");
 	%>
 	<section>
