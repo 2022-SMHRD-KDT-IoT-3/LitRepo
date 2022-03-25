@@ -1,10 +1,10 @@
 <%@page import="model.MemberDTO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <meta charset="utf-8" />
 <meta name="viewport"
@@ -13,12 +13,19 @@
 <noscript>
 	<link rel="stylesheet" href="assets/css/noscript.css" />
 </noscript>
-</head>
+</head> 
 <body>
 		<%
-			session = request.getSession();
-		
+		session = request.getSession();
+				
 			MemberDTO dto = (MemberDTO) session.getAttribute("info");
+			int num = Integer.parseInt(request.getParameter("num"));
+			System.out.println("ê¸€ ë²ˆí˜¸ : "+num);
+			
+			String article_num = request.getParameter("article_num");
+			
+		
+		
 		
 		%>
 	
@@ -26,31 +33,29 @@
 	
 		<div id = "board">
 				
-				<!-- post ¹æ½ÄÀ¸·Î µ¥ÀÌÅÍ º¸³¾ ¶§ content type 
-				 		1. ±âº»°ª application/x-www-form-urlencoded -> key=value
+				<!-- post ë°©ì‹ìœ¼ë¡œ ë°ì´í„° ë³´ë‚¼ ë•Œ content type 
+				 		1. ê¸°ë³¸ê°’ application/x-www-form-urlencoded -> key=value
 				 		2. text : text/plain 
-				 		3. ÆÄÀÏ Àü¼Û ½Ã : multipart/form-data-->
+				 		3. íŒŒì¼ ì „ì†¡ ì‹œ : multipart/form-data-->
 					
 				<form action = "UpdateBoardServiceCon.do" method="post" enctype="multipart/form-data">
 				<table id="list">
 					<tr>
-						<td>Á¦¸ñ</td>
+						<td>ì œëª©</td>
 						<td><input type="text" name="title"></td>
 					</tr>
 					<tr>
-						<td>ÀÛ¼ºÀÚ</td>
-						
-						<td><input  type="text" name="writer"><!-- ¼¼¼Ç »ç¿ëÀÚ ÀÌ¸§ --> </td>
+						<td>ìž‘ì„±ìž</td>
 						<td><%= dto.getMem_id() %> </td>
 					</tr>
 					<tr>
-						<td>±Û À¯Çü</td>
+						<td>ê¸€ ìœ í˜•</td>
 						<td>
 							<select name = "boardtype">
-								<option  value= "free">ÀÚÀ¯</option>
-								<option  value= "q&a">Áú¹®</option>
-								<option  value = "infomation">Á¤º¸</option>
-								<option  value = "sleep">¼ö¸é</option>
+								<option  value= "free">ìžìœ </option>
+								<option  value= "q&a">ì§ˆë¬¸</option>
+								<option  value = "infomation">ì •ë³´</option>
+								<option  value = "sleep">ìˆ˜ë©´</option>
 							
 							</select>
 						
@@ -60,7 +65,7 @@
 					</tr>
 					
 					<tr>
-						<td colspan="2">³»¿ë</td>
+						<td colspan="2">ë‚´ìš©</td>
 					</tr>
 					<tr>
 						<td colspan="2">
@@ -70,8 +75,10 @@
 					</tr>
 					<tr>
 						<td colspan="2" align="center">
-							<button type="button" onclick="location.href='Board.jsp'">¸ñ·Ï</button>
-							<input type="submit" value="¼öÁ¤ÇÏ±â">
+							<input type="hidden" name="num" value="<%= num %>">
+							<input type="hidden" name="article_num" value="<%=article_num%>"> 
+							<button type="button" onclick="location.href='Board.jsp'">ëª©ë¡</button>
+							<input type="submit" value="ìˆ˜ì •í•˜ê¸°">
 						</td>
 					</tr>
 				</table>

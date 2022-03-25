@@ -19,11 +19,14 @@
 </head>
 <body>
 	<%
-	int num = Integer.parseInt(request.getParameter("num"));
+	
+	int num = Integer.parseInt(request.getParameter("article_num"));	// 글 목록 번호
 	BoardDAO dao = new BoardDAO();
 	ArrayList<BoardDTO> dto = dao.showBoard();
 	session = request.getSession();
-	ArrayList<BoardDTO> bdto = (ArrayList<BoardDTO>) session.getAttribute("board");
+
+	//ArrayList<BoardDTO> bdto = (ArrayList<BoardDTO>) session.getAttribute("board");
+
 	MemberDTO sdto = (MemberDTO) session.getAttribute("info");
 	%>
 	<section>
@@ -54,17 +57,20 @@
 						<img src="file/<%=dto.get(num).getArticle_file()%>"></td>
 				</tr>
 
-			
+				
+				
 				<tr>
 					<td colspan="2" align="center">
-						<button id="" onclick="location.href='updateBoard.jsp'">글수정</button>
+						<button type="button" onclick="location.href='Board.jsp'">글목록</button>
+						<% if(dto != null){ %>
+						<% if(dto.get(num).getMem_id().equals(sdto.getMem_id())){ %>	
+						<button id="" onclick="location.href='updateBoard.jsp?num=<%= dto.get(num).getArticle_seq()%>&article_num=<%=num %>'">글수정</button>
 
-						<button id="deleteCon"
-							onclick="location.href='DeleteBoardServiceCon.do?num=<%=dto.get(num).getArticle_seq()%>'">글
-							삭제</button>
+						<button id="deleteCon" onclick="location.href='DeleteBoardServiceCon.do?num=<%=dto.get(num).getArticle_seq()%>'">글삭제</button>
+						<% }}%>
 					</td>
 				</tr>
-			
+				
 
 
 				<tr>
@@ -81,7 +87,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td id="replyList" name="num" value="<%= dto.get(num).getArticle_seq()%>"></td>
+					<td id="replyList" name="replyList" value="<%= dto.get(num).getArticle_seq()%>"></td>
 				</tr>
 			</table>
 
@@ -107,7 +113,7 @@
 					},
 					success : function(cnt) {
 						alert("댓글 등록 완료");
-						$("reply").val("");
+						$("#coment").val(""); 
 						
 						getReply();
 					},
@@ -127,12 +133,12 @@
 				},
 				success : function(json){	// ShowCommentServiceCon에서 json을 받아옴
 					json = json.replace(/\n/gi,"\\r\\n");
-				$("replyList").text("");	// 댓글 리스트 영역 초기화
+				$("#replyList").text("");	// 댓글 리스트 영역 초기화
 				let obj = JSON.parse(json);	// json 문자열 파싱
 				let replyList = obj.replyList;
 				let output="";	// 댓글 목록을 누적하여 보여주기 위한 변수
 				for(let i=0; i<replyList.length;i++){	// replyList는 이차원배열
-					output+="<div >";
+					output += "<div>";
 					for(let j=0; j<replyList[i].length; j++){
 						let reply = replyList[i][j];	// 각 행의 각 행을 reply 변수에 넣어줌
 						if(j==0){
@@ -140,17 +146,25 @@
 							output += "&nbsp;&nbsp;"+reply.id+"&nbsp;&nbsp;";	//&nbsp; -> 공백을 나타내는 문자
 							
 						} else if(j==1){
-							output += "&nbsp;&nbsp;"+reply.date;
-							output += "&nbsp;&nbsp;&nbsp;&nbsp;<button>댓글수정</button>&nbsp;&nbsp;";
-							output += "&nbsp;&nbsp;<button>댓글 삭제</button>&nbsp;&nbsp;"
+							output += "&nbsp;&nbsp;"+reply.date+"&nbsp;&nbsp;";
+							output += "&nbsp;&nbsp;<button>댓글수정</button>&nbsp;&nbsp;";
+							output += "&nbsp;&nbsp;"
+							output += "<button >댓글 삭제</button>"
+							output += "&nbsp;&nbsp;"
 						} else if(j==2){
-							output += "<pre>"+reply.content+"</pre></div>"
+							output += "<pre>"+reply.content+"</pre></div>"; 
 						}
 						
 					}
 				}
 				$("#replyList").html(output);
+				},
+				
+				error : function(){
+					alert("댓글 제공 실패");
+					
 				}
+				
 			})
 		}
 		getReply();

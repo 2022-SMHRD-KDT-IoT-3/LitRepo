@@ -64,7 +64,7 @@
 						 %>
 						 <%}%>
 						 <%= type %></td>
-						 <td><a href="showBoard.jsp?num=<%= i %>"> <%= list.get(i).getArticle_title() %></a></td>
+						 <td><a href="showBoard.jsp?article_num=<%= i %>"> <%= list.get(i).getArticle_title() %></a></td>
 						 <td><%= list.get(i).getMem_id() %></td>
 						 <td><%= list.get(i).getArticle_date() %></td>
 						 </tr>	
