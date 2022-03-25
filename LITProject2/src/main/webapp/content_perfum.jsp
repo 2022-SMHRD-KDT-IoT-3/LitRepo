@@ -43,13 +43,13 @@
 
 		<nav id="nav">
 			<ul>
-
-				<li><a href="content_main.jsp">Main</a></li>
-				<li><a href="content_perfum.jsp">All</a></li>
-				<li><a href="perfume_시트러스.jsp">시트러스</a></li>
-				<li><a href="perfume_플로럴.jsp">플로럴</a></li>
-				<li><a href="perfume_프루티.jsp">프루티</a></li>
-				<li><a href="perfume_우디.jsp">우디</a></li>
+<!-- 이름 통일 -->
+                <li><a href="content_main.jsp">Main</a></li>
+                <li><a href="content_perfum.jsp">All</a></li>
+				<li><a href="perfume_시트러스.jsp">Citrus</a></li>
+				<li><a href="perfume_플로럴.jsp">Flower</a></li>
+				<li><a href="perfume_프루티.jsp">Fruit</a></li>
+				<li><a href="perfume_우디.jsp">Wood</a></li>
 
 			</ul>
 		</nav>

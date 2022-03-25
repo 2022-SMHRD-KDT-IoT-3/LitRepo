@@ -44,9 +44,10 @@
 		<nav id="nav">
 			<ul>
 				<li><a href="content_main.jsp">Main</a></li>
-				<li><a href="content_perfum.jsp">향초</a></li>
+                <li><a href="content_perfum.jsp">향초</a></li>
 				<li><a href="content_meditation.jsp">명상</a></li>
-				<li><a href="content_living.jsp">리빙</a></li>
+				<li><a href="content_asmr.jsp">ASMR</a></li>
+				<li><a href="content_living.jsp">리빙 제품</a></li>
 				<li><a href="content_tea.jsp">차</a></li>
 
 			</ul>
@@ -129,7 +130,7 @@
 
 			<br>
 			<br>
-			<h4 id="p2">추가하고 싶은 향기가 있다면 알려주세요</h4>
+			<h4 id="p2">추가하고 싶은 컨텐츠 있다면 알려주세요</h4>
 			<p id="p2">사용자의 의견을 우선하여 컨텐츠를 추가하겠습니다</p>
 			<br>
 

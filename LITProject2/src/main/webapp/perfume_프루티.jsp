@@ -44,6 +44,8 @@
 
 		<nav id="nav">
 			<ul>
+			<!-- 메인 추가 -->
+			    <li><a href="content_main.jsp">Main</a></li>
 				<li><a href="content_perfum.jsp">All</a></li>
 				<li><a href="perfume_시트러스.jsp">Citrus</a></li>
 				<li><a href="perfume_플로럴.jsp">Flower</a></li>

@@ -72,54 +72,36 @@
 		<h1 id="top"></h1>
 
 		<!-- Header -->
+		<!-- jjh 여기부터 수정 -->
 		<header id="header">
-			<h1 id="id1">수면 결과 분석</h1>
-			<br>
-			<br>
-		</header>
+            <h1>수면 결과 분석</h1>
+            <p>현재 도도동님의 수면 상태에 따른 결과분석 입니다</p>
+        </header>
+        
+        <nav id="nav">
+            <ul>
+                <li><a href="doctor main.jsp">Main</a></li>
+                <li><a href="doctormine.jsp">맞춤 피드백</a></li>
+                <li><a href="doctortip.jsp">수면 관련 팁</a></li>
+                <li><a href="doctorcheck.jsp">수면상태체크 </a></li>
+            </ul>
+        </nav>	
+		
+					<div id="main">
 
-		<!-- 늘리면 보이는 메뉴 -->
-		<nav id="nav">
-			<ul>
-				<li><a href="doctor main.jsp">의사 피드백</a></li>
-				<li><a href="doctormine.jsp">맞춤 피드백</a></li>
-				<li><a href="doctortip.jsp">수면 관련 팁</a></li>
-				<li><a href="doctorcheck.jsp">수면상태체크 </a></li>
+					
+						<section id="content" class="main">
 
-			</ul>
-		</nav>
+							<h4><b>2022.03.01부터 2022.03.10까지의 측정데이터입니다</b></h4>
 
-		<!-- 질문 : 그러면 jsp 했을때 어떻게 되는건지? -->
-		<!-- 줄였을때 메뉴 영역 -->
-		<table>
-			<tr align="center">
-				<td>
-					<a id="bt" href="doctor main.jsp">의사 피드백</a>
-					<a id="bt" href="doctormine.jsp">맞춤 피드백</a>
-					<a id="bt" href="doctortip.jsp">수면 관련 팁</a>
-					<a id="bt" href="doctorcheck.jsp">수면상태체크</a>
-				</td>
-			</tr>
-		</table>
+			            </section>
 
-
-
-		<br>
-		<br>
-		<br>
-		<br>
-		<!-- Content -->
-		<section id="content" class="main">
-			<section>
-				<h5><b>2022.03.01부터 2022.03.10까지의 측정데이터입니다</b></h5>
-
-			</section>
-
-			<!-- 피드백 페이지 -->
-			<section>
-				<br><br>
-				<div class="row" id="main">
-					<div class="col-6 col-12-medium">
+			                <!-- 피드백 페이지 -->
+			                <!-- jjh 여기 까지 수정 -->
+			            <section>
+				
+				       <div class="row">
+				          	<div class="col-6 col-12-medium">
 						<h4 id="history"><strong>히스토리</strong></h4>
 						<br>
 						<h5 id="txt">평균심박수</h5>
