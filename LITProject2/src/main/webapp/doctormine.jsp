@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
- <!DOCTYPE HTML>
+    <!DOCTYPE HTML>
 <style>
 
 /* 글 가운데 정렬 용도, 여기저기 쓰임 */
@@ -89,11 +89,9 @@ video { max-width: 80%; display: block; margin: 20px auto; }
 												<br>
 
 												<div>
-													<canvas id="myChart"></canvas>
+													<canvas id="myChart"></canvas>                                                    
 												  </div>
 	
-
-
 												  <br><br><br>
 												  <h4 id ="history" >운동 추천</h4>
 												  <br>
@@ -102,7 +100,6 @@ video { max-width: 80%; display: block; margin: 20px auto; }
 													<tr align="center">
 														<td style="font-weight: bold;">인터벌 운동</td>
 													</tr>
-
 													<tr>
 														<td>인터벌 운동은 걷고 뛰고를 반복하는 운동으로 심폐지구력 향상에 탁월합니다.
 															기본적으로 격한 운동을 했을때의 최대심박수까지 가는 것을 목표로 합니다.</td>
@@ -279,8 +276,31 @@ datasets: [{
 		
 	],
 	borderWidth: 1
+
+}, { 
+    // 평균 수면패턴 추가부분!
+    label: '평균 수면패턴',
+	data: [85, 50, 45, 95, 95],
+	backgroundColor: [
+		'rgba(78, 56, 245, 0.2)',
+		'rgba(78, 56, 245, 0.2)',
+        'rgba(78, 56, 245, 0.2)',
+        'rgba(78, 56, 245, 0.2)',
+        'rgba(78, 56, 245, 0.2)',
+		
+	],
+	borderColor: [
+        'rgba(78, 56, 245, 1)',
+		'rgba(78, 56, 245, 1)',
+        'rgba(78, 56, 245, 1)',
+        'rgba(78, 56, 245, 1)',
+        'rgba(78, 56, 245, 1)',
+		
+	],
+	borderWidth: 1
 }]
 },
+
 options: {
 scales: {
 	y: {
@@ -455,7 +475,7 @@ beginAtZero: true
 }
 });
 </script>
-
+            
 
 
 
