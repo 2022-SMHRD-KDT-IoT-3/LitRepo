@@ -97,7 +97,7 @@
 		</head>
 
 		<body class="is-preload">
-
+				
 			<% HttpSession session1=request.getSession(); MemberDTO dto=(MemberDTO) session1.getAttribute("info");
 				String birthday=dto.getMem_birthday().replace(" 00:00:00", "" ); System.out.println(birthday); %>
 
