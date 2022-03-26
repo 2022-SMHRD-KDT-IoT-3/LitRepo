@@ -26,11 +26,9 @@
 	margin: 10px;
 	font-size: 20px;
 }
-#header{
-	margin-top:30px;
-}
+
 #id {
-	font-size: 25px;
+	font-size: 30px;
 }
 
 #id2 {
@@ -40,13 +38,15 @@
 
 #join {
 	/*위에 회원가입글씨*/
-	font-size: 30px;
+	font-size: 40px;
 	font-weight: bold;
 }
 
 #exampleFormControlInput1 {
+	/*생년월일 입력창크기와 색상*/
 	padding: 15px 15px;
 	font-size: 20px;
+	border-color:rgba(255, 255, 255, 0.35);
 }
 
 .btn-group-lg>.btn, .btn-lg {
@@ -64,7 +64,8 @@
     font-weight: 350;
     line-height: 1.5;
     color: #636363;
-    background-color: rgba(222, 222, 222, 0.25);
+    background-color: rgba(255, 255, 255, 0.075);
+	border-color:rgba(255, 255, 255, 0.35);
     background-clip: padding-box;
     border: 1px solid #dddddd;
     -webkit-appearance: none;
@@ -103,13 +104,48 @@
 	font-size:12px;
 }
 #main{
-	background-color:rgb(255 255 255 / 50%);
+	background-color:rgb(255 255 255 / 0%);
+}#main label {
+    color: #FFFFFF;
 }
 .go{
 	background-color: transparent;
     box-shadow: inset 0 0 0 1px #ffffff;
-    color: #636363 !important;
+    color: #FFFFFF
+
 }
+#main input[type="submit"], #main input[type="reset"], #main input[type="button"], #main button, #main .button {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px #dddddd;
+    color: #ffffff !important;
+}
+#main input[type="checkbox"] + label, #main input[type="radio"] + label {
+    color: #ffffff;
+}
+#main input, #main select, #main textarea {
+    color: #ffffff;
+}
+input[type="submit"], input[type="reset"], input[type="button"], button, .button {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / 35%);
+    color: #ffffff !important;
+	border-radius: 8px;
+	font-size: 1.6rem;
+	font-weight: 300;
+    height: 2.75em;
+    line-height: 2.75em;
+	border: 1px solid;
+}
+#main input[type="text"], #main input[type="password"], #main input[type="email"], #main select, #main textarea {
+    background-color: rgba(255, 255, 255, 0.075);
+    border-color: rgba(255,255,255,0.35);
+}
+.form-label{
+	font-size:30px;
+	font-weight: bold;
+}
+
+
 </style>
 </head>
 <body class="is-preload" style="font-family: 'Nanum Myeongjo', serif;">
@@ -132,9 +168,7 @@
 		<br>
 		<header id="header">
 			<h1 id="join">회원가입</h1>
-			<br></br>
 		</header>
-<br>
 		<!-- Main -->
 		<div id="main">
 
