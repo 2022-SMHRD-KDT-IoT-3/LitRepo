@@ -77,8 +77,8 @@
 	width:80px;
 	font-size:12px;
 }
-#content.main{
-	background-color:rgb(255 255 255 / 50%);
+#content{
+	background-color:rgb(255 255 255 / 0%);
 }
 </style>
 
@@ -100,7 +100,7 @@
 		</header>
 		<br>
 		<!-- Main -->
-		<div id="main">
+		<div id="content">
 			<!-- Content -->
 			<section id="content" class="main">
 				<!-- Form -->

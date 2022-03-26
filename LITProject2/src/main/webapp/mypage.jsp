@@ -35,13 +35,24 @@
 				text-align:center;
 				padding-bottom:30px;
 			}
-			.span1 {
-	right: 5px;
-	margin-right: 10px;
-	top: 2px;
+            .span1 {
+	right: 10px;
+	top: 10px;
 	position: absolute;
-	border:1px solid #86458a;
-	border-radius: 30px;
+}
+.btn-outline-secondary {
+	/*위에 홈 로그인버튼*/
+	background-color: transparent;
+    box-shadow: inset 0 0 0 0px rgb(255 255 255 / 35%);
+    color: #ffffff;
+	border-radius: 8px;
+	border-color:rgb(255 255 255 / 35%);
+	padding-right:10px;
+	width:80px;
+	font-size:12px;
+}
+#header{
+    padding-top:100px;
 }
 		</style>
 
@@ -71,7 +82,11 @@
 
 		<!-- Wrapper -->
 			<div id="wrapper">
-
+                <div id="wrapper">
+                    <span class="span1">
+                        <button type="button" onclick="location.href='main1.jsp'" class="btn btn-outline-secondary"style="font-family: 'Nanum Myeongjo', serif;" >HOME</button>
+                        <button type="button" onclick="location.href='LogoutServiceCon.do'" class="btn btn-outline-secondary"style="font-family: 'Nanum Myeongjo', serif;">로그아웃</button>
+            </span>
 				<!-- Header -->
 					<header id="header">
 						<h1 id="join">마이페이지</h1>
