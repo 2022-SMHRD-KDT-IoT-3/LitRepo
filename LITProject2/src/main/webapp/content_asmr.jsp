@@ -30,6 +30,12 @@
 #id1{
 	padding-top: 95px;
 }
+
+#nav{
+display:inline;
+}
+
+
 	</style>
 
 </head>
