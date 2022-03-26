@@ -141,34 +141,21 @@ margin-bottom:140px;
 			</div>
 			<br>
 			<div id="box">
-			<!-- Nav -->
-			<nav id="nav">
-				<ul>
-					<li><a href=>색상</a></li>
-					<li><a href="content main.html">컨텐츠 추천</a></li>
-					<li><a href="doctor main.html">의사 피드백</a></li>
-					<li><a href="Board.jsp">게시판</a></li>
-					<li><a href=>기타</a></li>
-				</ul>
-			</nav>
-		
+			
 
 			<!-- 메뉴 영역 -->
 			<table id="category">
 				<tr align="center">
 					<td>
-						<a id="bt">색상</a>
-						<a id="bt">컨텐츠 추천</a>
-						<a id="bt">의사피드백</a>
+						<a id="bt" href="">색상</a>
+						<a id="bt" href = "content_main.jsp">컨텐츠 추천</a>
+						<a id="bt" href = "doctor main.jsp">의사피드백</a>
 						<a id="bt" href="Board.jsp">게시판</a>
 						<a id="bt">기타</a>
 					</td>
 				</tr>
 			</table>
 		</div>
-
-
-
 
 
 			<!-- Main : 흰색 배경 있는 부분 -->

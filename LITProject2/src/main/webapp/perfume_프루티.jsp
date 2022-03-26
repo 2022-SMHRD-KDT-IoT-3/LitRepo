@@ -21,6 +21,13 @@
 		width: 20px;
 		height: 20px;
 	}
+	 #bt {
+            text-align: center;
+            margin-left: 22px;
+            margin-right: 20px;
+            color: white;
+            font-size : 17px;
+        }
 	
 	</style>
 
@@ -42,24 +49,19 @@
 		</header>
 
 
-		<nav id="nav">
-			<ul>
-			<!-- 메인 추가 -->
-			    <li><a href="content_main.jsp">Main</a></li>
-				<li><a href="content_perfum.jsp">All</a></li>
-				<li><a href="perfume_시트러스.jsp">Citrus</a></li>
-				<li><a href="perfume_플로럴.jsp">Flower</a></li>
-				<li><a href="perfume_프루티.jsp">Fruit</a></li>
-				<li><a href="perfume_우디.jsp">Wood</a></li>
+		<table>
+            <tr align="center">
+                <td>
+                	<a id ="bt" href = "content_main.jsp">Main</a>
+                    <a id="bt" href="content_perfum.jsp">All</a>
+                    <a id="bt" href="perfume_시트러스.jsp">Citrus</a>
+                    <a id="bt" href="perfume_플로럴.jsp">Flower</a>
+                    <a id="bt" href="perfume_프루티.jsp">Fruit</a>
+                    <a id="bt" href="perfume_우디.jsp">Wood</a>
+                </td>
+            </tr>
+        </table>
 
-			</ul>
-		</nav>
-
-
-		<br>
-		<br>
-		<br>
-		<br>
 		<!-- Content -->
 		<section id="content" class="main">
 			<table>

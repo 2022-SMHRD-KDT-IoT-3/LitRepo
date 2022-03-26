@@ -44,9 +44,10 @@
 
         #bt {
             text-align: center;
-            margin-left: 20px;
+            margin-left: 22px;
             margin-right: 20px;
             color: white;
+            font-size : 17px;
         }
 
         #bt1 {
@@ -96,7 +97,7 @@
 <body class="is-preload" style="font-family: 'Nanum Myeongjo', serif;">
     <br>
 
-    <button type="button" onclick="location.href='main1.jsp'" class="btn btn-outline-secondary">HOME</button>
+    <button type="button" onclick="location.href='main_login.jsp'" class="btn btn-outline-secondary">HOME</button>
     </span>
 
     <!-- Wrapper -->
@@ -113,16 +114,7 @@
         </header>
 
 
-        <nav id="nav" style="color: #f7f7f7;;">
-            <ul>
-                <li><a id="bt1" href="content_perfum.jsp">향초</a></li>
-                <li><a id="bt1" href="content_meditation.jsp">명상</a></li>
-                <li><a id="bt1" href="content_asmr.jsp">ASMR</a></li>
-                <li><a id="bt1" href="content_living.jsp">리빙 제품</a></li>
-                <li><a id="bt1" href="content_tea.jsp">차</a></li>
-
-            </ul>
-        </nav>
+        
 
         <table>
             <tr align="center">
