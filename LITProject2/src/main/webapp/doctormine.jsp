@@ -23,19 +23,21 @@
 	background-color:antiquewhite;
 	border-radius: 10px;
 }
+.span1 {
+	right: 10px;
+	top: 10px;
+	position: absolute;
+}
+#header{
+	margin-top: 90px;
+}
 /* 비디오 */
 video { max-width: 80%; display: block; margin: 20px auto; }
-
-#bt {
-			text-align: center;
-			margin-left: 20px;
-			margin-right: 20px;
-		}
 
 </style>
 <html>
 	<head>
-		<title>doctorFeedback</title>
+		<title>DreamCatcher</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -52,29 +54,27 @@ video { max-width: 80%; display: block; margin: 20px auto; }
 
 	</head>
 	<body class="is-preload" style="font-family: 'Nanum Myeongjo', serif;"">
-	<br>
-<button type="button" onclick="location.href='main_login.jsp'" class="btn btn-outline-secondary"
-		style="margin-left: 10px;">HOME</button>
+	
 		<!-- Wrapper -->
 		<div id="wrapper">
-			
+            <span class="span1">
+                <button type="button" onclick="location.href='main1.jsp'" class="btn btn-outline-secondary"style="font-family: 'Nanum Myeongjo', serif;" >HOME</button>
+                <button type="button" onclick="location.href='LogoutServiceCon.do'" class="btn btn-outline-secondary"style="font-family: 'Nanum Myeongjo', serif;">로그아웃</button>
+    </span>
 			<!-- Header -->
 			<header id="header">
 				<h1>수면 건강 피드백</h1>
 				<p>현재 도도동님의 수면 상태에 따른 피드백입니다</p>
 			</header>
 			
-			 <table id="category">
-				<tr align="center">
-					<td>
-						<a id="bt" href="doctor main.jsp">메인</a>
-						<a id="bt" href = "doctormine.jsp">수면 건강 피드백</a>
-						<a id="bt" href = "doctortip.jsp">수면 관련 팁</a>
-						<a id="bt" href="doctorcheck.jsp">수면상태체크</a>
-					</td>
-				</tr>
-			</table>
-		
+			<nav id="nav">
+				<ul>
+					<li><a href="doctor main.jsp">Main</a></li>
+					<li><a href="doctormine.jsp">맞춤 피드백</a></li>
+					<li><a href="doctortip.jsp">수면 관련 팁</a></li>
+					<li><a href="doctorcheck.jsp">수면상태체크 </a></li>
+				</ul>
+			</nav>
 					
 
 				<!-- Main -->

@@ -1,11 +1,11 @@
 <%@page import="model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+   pageEncoding="EUC-KR"%>
 <!DOCTYPE HTML>
 <html>
 <head>
 <!-- 웹페이지 이름 -->
-<title>lit!</title>
+<title>DreamCatcher</title>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -17,6 +17,9 @@
 	crossorigin="anonymous"></script>
 
 <style>
+		@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+			@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
+
 .span1 {
 	right: 10px;
 	top: 10px;
@@ -26,11 +29,17 @@
 #wrapper {
 	margin-top: 60px;
 }
+#header.alt h1 {
+				font-size: 5.5em;
+			}
+#under {
+	padding-bottom:50px;
+}
 </style>
 
 
 </head>
-<body class="is-preload">
+<body class="is-preload" style="font-family: 'Nanum Myeongjo', serif;"></body>
 
 
 	<!-- Wrapper -->
@@ -38,9 +47,11 @@
 
 		<!-- 로그인 버튼 -->
 
-			<span class="span1">
-			<button type="button" class="btn btn-outline-secondary" onclick="location.href='join.jsp'">회원가입</button>
-			<button type="button" class="btn btn-outline-secondary" onclick="location.href='login.jsp'">로그인</button>
+			<span class="span1" >
+			<button type="button" class="btn btn-outline-secondary" onclick="location.href='join.jsp'"
+			style="font-family: 'Nanum Myeongjo', serif;">회원가입</button>
+			<button type="button" class="btn btn-outline-secondary" onclick="location.href='login.jsp'"
+			style="font-family: 'Nanum Myeongjo', serif;">로그인</button>
 			
 
 		</span>
@@ -48,8 +59,8 @@
 
 		<!-- Header(제일 위에 보여지는 화면) -->
 		<header id="header" class="alt">
-			<h1>Dream Catcher</h1>
-			<p>
+			<h1 style="font-family: 'Tangerine', cursive;">Dream Catcher</h1>
+			<p id="under">
 				당신의 불면증을 가져갑니다<br />
 
 

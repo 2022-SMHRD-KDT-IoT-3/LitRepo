@@ -5,7 +5,7 @@
 <html>
 
 <head>
-	<title>recommand</title>
+	<title>DreamCatcher</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
@@ -21,15 +21,14 @@
 		width: 20px;
 		height: 20px;
 	}
-	
-	
-		 #bt {
-            text-align: center;
-            margin-left: 22px;
-            margin-right: 20px;
-            color: white;
-            font-size : 17px;
-        }
+	 .span1 {
+	right: 10px;
+	top: 10px;
+	position: absolute;
+}
+#id1{
+	padding-top: 95px;
+}
 	</style>
 
 </head>
@@ -38,7 +37,15 @@
 
 	<!-- Wrapper -->
 	<div id="wrapper">
-
+            <span class="span1">
+    
+                <button type="button" onclick="location.href='main1.jsp'" class="btn btn-outline-secondary"
+                style="font-family: 'Nanum Myeongjo', serif;">HOME</button>
+                <button type="button" onclick="location.href='mypage.jsp'" class="btn btn-outline-secondary"
+                style="font-family: 'Nanum Myeongjo', serif;">마이페이지</button>
+                <button type="button" onclick="location.href='LogoutServiceCon.do'" class="btn btn-outline-secondary"
+                style="font-family: 'Nanum Myeongjo', serif;">로그아웃</button>
+            </span>
 		<!-- 맨위로 버튼 누를때 이동해올 곳 -->
 		<h1 id="top"></h1>
 
@@ -50,21 +57,24 @@
 		</header>
 
 
+		<nav id="nav">
+			<ul>
+			<!-- 메인 추가 -->
+			    <li><a href="content_main.jsp">Main</a></li>
+				<li><a href="content_perfum.jsp">All</a></li>
+				<li><a href="perfume_시트러스.jsp">Citrus</a></li>
+				<li><a href="perfume_플로럴.jsp">Flower</a></li>
+				<li><a href="perfume_프루티.jsp">Fruit</a></li>
+				<li><a href="perfume_우디.jsp">Wood</a></li>
 
-		 <table>
-            <tr align="center">
-                <td>
-                	<a id ="bt" href = "content_main.jsp">Main</a>
-                    <a id="bt" href="content_perfum.jsp">All</a>
-                    <a id="bt" href="perfume_시트러스.jsp">Citrus</a>
-                    <a id="bt" href="perfume_플로럴.jsp">Flower</a>
-                    <a id="bt" href="perfume_프루티.jsp">Fruit</a>
-                    <a id="bt" href="perfume_우디.jsp">Wood</a>
-                </td>
-            </tr>
-        </table>
+			</ul>
+		</nav>
 
-	
+
+		<br>
+		<br>
+		<br>
+		<br>
 		<!-- Content -->
 		<section id="content" class="main">
 			<table>

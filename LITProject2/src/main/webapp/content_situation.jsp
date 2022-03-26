@@ -48,18 +48,20 @@
 #header{
     padding-top:100px;
 }
-
 </style>
 
 </head>
 <body class="is-preload">
 	<!-- Wrapper -->
 	<div id="wrapper">
-		<span class="span1">
+		<span class="span1"style="font-family: 'Nanum Myeongjo', serif;">
 
-			<button type="button" onclick="location.href='main1.jsp'" class="btn btn-outline-secondary">HOME</button>
-			<button type="button" onclick="location.href='mypage.jsp'" class="btn btn-outline-secondary">마이페이지</button>
-			<button type="button" onclick="location.href='LogoutServiceCon.do'" class="btn btn-outline-secondary">로그아웃</button>
+			<button type="button" onclick="location.href='main1.jsp'" class="btn btn-outline-secondary"
+			style="font-family: 'Nanum Myeongjo', serif;">HOME</button>
+			<button type="button" onclick="location.href='mypage.jsp'" class="btn btn-outline-secondary"
+			style="font-family: 'Nanum Myeongjo', serif;">마이페이지</button>
+			<button type="button" onclick="location.href='LogoutServiceCon.do'" class="btn btn-outline-secondary"
+			style="font-family: 'Nanum Myeongjo', serif;">로그아웃</button>
 		</span>
 
 		<!-- Header -->

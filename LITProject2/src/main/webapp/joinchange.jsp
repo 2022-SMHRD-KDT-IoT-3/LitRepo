@@ -15,6 +15,7 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 		<style>
+            @import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
 			/* 프로필 영역 스타일 가운데 정렬 */
 			#profile{
 				margin: auto;
@@ -52,21 +53,21 @@
 		</style>
 
 	</head>
-	<body class="is-preload">
-		<span class="span1">
-		
-				<button type="button" onclick="location.href='main1.jsp'"
-				class="btn btn-outline-secondary">HOME</button>
-				<button type="button" onclick="location.href='LogoutServiceCon.do'"
-				class="btn btn-outline-secondary">로그아웃</button>
-		
-		</span>
-
-
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Header -->
+    <body class="is-preload" style="font-family: 'Nanum Myeongjo', serif;"></body>
+    
+    
+    <!-- Wrapper -->
+    <div id="wrapper">
+        
+        <span class="span1">
+        
+                <button type="button" onclick="location.href='main1.jsp'"
+                class="btn btn-outline-secondary">HOME</button>
+                <button type="button" onclick="location.href='LogoutServiceCon.do'"
+                class="btn btn-outline-secondary">로그아웃</button>
+        
+        </span>
+        <!-- Header -->
 					<header id="header">
 						<h1 id="join">회원정보수정</h1>
 						<br></br>
@@ -129,6 +130,7 @@
 							<div class="d-grid  col-8 mx-auto" id="gender">
 							</br></br>
 								<button type="button" class="btn btn-secondary btn-lg" id="btn1">회원 정보 수정</button>
+								<!-- 수정완료된 정보들이 마이페이지에 다시 담기게 (마이페이지로이동) -->
 								<br>
 							</div>
 

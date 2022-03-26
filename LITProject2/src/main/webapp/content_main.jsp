@@ -30,11 +30,11 @@
         @import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
 
 
-      .carousel-inner #img1 {
-         width : 100%;
-         height : auto;
-      
-      }
+		.carousel-inner #img1 {
+			width : 100%;
+			height : auto;
+		
+		}
 
 
         #img {
@@ -44,10 +44,9 @@
 
         #bt {
             text-align: center;
-            margin-left: 22px;
+            margin-left: 20px;
             margin-right: 20px;
             color: white;
-            font-size : 17px;
         }
 
         #bt1 {
@@ -90,19 +89,40 @@
             font-size: 12px;
             margin-left: 10px;
         }
+        .btn btn-outline-secondary1{
+            background-color: transparent;
+            box-shadow: inset 0 0 0 0px rgb(255 255 255 / 35%);
+            color: #ffffff;
+            border-radius: 8px;
+            border-color: rgb(255 255 255 / 35%);
+            padding-right: 10px;
+            width: 80px;
+            font-size: 12px;
+            margin-left: 10px;   
+        }
+        .span1 {
+	right: 10px;
+	top: 10px;
+	position: absolute;
+}
+#header{
+	padding-top: 90px;
+}
     </style>
 
 </head>
 
 <body class="is-preload" style="font-family: 'Nanum Myeongjo', serif;">
     <br>
-
-    <button type="button" onclick="location.href='main_login.jsp'" class="btn btn-outline-secondary">HOME</button>
-    </span>
-
+    
     <!-- Wrapper -->
     <div id="wrapper">
-
+        <span class="span1">
+        <button type="button" onclick="location.href='main1.jsp'" class="btn btn-outline-secondary"style="font-family: 'Nanum Myeongjo', serif;">HOME</button>
+        <button type="button" class="btn btn-outline-secondary" onclick="location.href='main1.jsp'" style="font-family: 'Nanum Myeongjo', serif;">Mypage</button>
+        <button type="button" class="btn btn-outline-secondary" onclick="location.href='LogoutServiceCon.do'" style="font-family: 'Nanum Myeongjo', serif;">로그아웃</button>
+        </span>
+        
         <!-- 맨위로 버튼 누를때 이동해올 곳 -->
         <h1 id="top"></h1>
 
@@ -114,7 +134,16 @@
         </header>
 
 
-        
+        <nav id="nav" style="color: #f7f7f7;;">
+            <ul>
+                <li><a id="bt1" href="content_perfum.jsp">향초</a></li>
+                <li><a id="bt1" href="content_meditation.jsp">명상</a></li>
+                <li><a id="bt1" href="content_asmr.jsp">ASMR</a></li>
+                <li><a id="bt1" href="content_living.jsp">리빙 제품</a></li>
+                <li><a id="bt1" href="content_tea.jsp">차</a></li>
+
+            </ul>
+        </nav>
 
         <table>
             <tr align="center">

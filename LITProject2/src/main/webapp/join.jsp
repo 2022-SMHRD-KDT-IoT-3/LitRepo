@@ -21,6 +21,7 @@
 	crossorigin="anonymous">
 
 <style>
+    @import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
 #gender {
 	margin: 10px;
 	font-size: 20px;
@@ -111,7 +112,7 @@
 }
 </style>
 </head>
-<body class="is-preload">
+<body class="is-preload" style="font-family: 'Nanum Myeongjo', serif;">
 
 	<!-- Wrapper -->
 	<div id="wrapper">

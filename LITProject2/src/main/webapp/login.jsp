@@ -21,6 +21,7 @@
 
 
 <style>
+    @import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
 #id1 {
 	font-weight: bold;
 	margin: auto;
@@ -49,13 +50,13 @@
 	font-weight: bold;
 }
 
-#btn {
-	background-color: rgb(255, 255, 255)
-}
 
 #btn1 {
-	border: 3px solid #946697;
+	background-color: transparent;
+    color: #6c757d;
+ border: 1px solid
 }
+
 .span1 {
 	right: -2.5px;
 	margin-right: 10px;
@@ -76,10 +77,13 @@
 	width:80px;
 	font-size:12px;
 }
+#content.main{
+	background-color:rgb(255 255 255 / 50%);
+}
 </style>
 
 </head>
-<body class="is-preload">
+<body class="is-preload" style="font-family: 'Nanum Myeongjo', serif;"></body>
 
 
 	<form action="LoginServiceCon.do" method="post">
@@ -116,10 +120,10 @@
 					<div>
 						<div class="d-grid gap-3 col-8 mx-auto">
 							</br>
-							</br> <input type="submit" class="btn btn-secondary btn-lg" id="btn1">로그인
-							</button>
-							<button type="button" class="btn btn-secondary btn-lg" id="btn2">회원
-								가입</button>
+							</br> <input type="submit" class="btn btn-secondary btn-lg" id="btn1" value="로그인">
+							
+							<input type="submit" class="btn btn-secondary btn-lg" id="btn1" value="회원가입">
+								
 						</div>
 
 						<div class="col-12"></div>

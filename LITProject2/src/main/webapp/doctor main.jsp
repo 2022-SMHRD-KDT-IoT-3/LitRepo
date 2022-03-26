@@ -5,7 +5,7 @@
 <html>
 
 <head>
-	<title>recommand</title>
+	<title>DreamCatcher</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
@@ -56,6 +56,14 @@
 			margin-left: 20px;
 			margin-right: 20px;
 		}
+        .span1 {
+	right: 10px;
+	top: 10px;
+	position: absolute;
+}
+#header{
+	padding-top: 90px;
+}
 	</style>
 
 
@@ -64,10 +72,12 @@
 
 <body class="is-preload" style="font-family: 'Nanum Myeongjo', serif;">
 	<br>
-	<button type="button" onclick="location.href='main_login.jsp'" class="btn btn-outline-secondary" style="margin-left: 10px;">HOME</button>
-	<!-- Wrapper -->
+    <!-- Wrapper -->
 	<div id="wrapper">
-
+        <span class="span1">
+            <button type="button" onclick="location.href='main1.jsp'" class="btn btn-outline-secondary"style="font-family: 'Nanum Myeongjo', serif;" >HOME</button>
+            <button type="button" onclick="location.href='LogoutServiceCon.do'" class="btn btn-outline-secondary"style="font-family: 'Nanum Myeongjo', serif;">로그아웃</button>
+</span>
 		<!-- 맨위로 버튼 누를때 이동해올 곳 -->
 		<h1 id="top"></h1>
 
@@ -78,17 +88,14 @@
             <p>현재 도도동님의 수면 상태에 따른 결과분석 입니다</p>
         </header>
         
-        
-        <table id="category">
-				<tr align="center">
-					<td>
-						<a id="bt" href="doctor main.jsp">메인</a>
-						<a id="bt" href = "doctormine.jsp">수면 건강 피드백</a>
-						<a id="bt" href = "doctortip.jsp">수면 관련 팁</a>
-						<a id="bt" href="doctorcheck.jsp">수면상태체크</a>
-					</td>
-				</tr>
-			</table>
+        <nav id="nav">
+            <ul>
+                <li><a href="doctor main.jsp">Main</a></li>
+                <li><a href="doctormine.jsp">맞춤 피드백</a></li>
+                <li><a href="doctortip.jsp">수면 관련 팁</a></li>
+                <li><a href="doctorcheck.jsp">수면상태체크 </a></li>
+            </ul>
+        </nav>	
 		
 					<div id="main">
 

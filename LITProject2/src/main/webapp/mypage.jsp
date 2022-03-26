@@ -15,6 +15,7 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 		<style>
+            @import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
 			/* 프로필 영역 스타일 가운데 정렬 */
 			#profile{
 				margin: auto;
@@ -45,7 +46,7 @@
 		</style>
 
 </head>
-<body class="is-preload">
+<body class="is-preload" style="font-family: 'Nanum Myeongjo', serif;"></body>
 
 <%
 	HttpSession session1 = request.getSession();
@@ -61,8 +62,10 @@
 
 		<span class="span1">
 		
-				<button type="button" class="btn btn-outline-secondary" onclick="location.href='main_login.jsp'">HOME</button>
-				<button type="button" class="btn btn-outline-secondary" onclick="location.href='LogoutServiceCon.do'">로그아웃</button>
+				<button type="button" class="btn btn-outline-secondary" onclick="location.href='main_login.jsp'"
+                style="font-family: 'Nanum Myeongjo', serif;">HOME</button>
+				<button type="button" class="btn btn-outline-secondary" onclick="location.href='LogoutServiceCon.do'"
+                style="font-family: 'Nanum Myeongjo', serif;">로그아웃</button>
 		
 		</span>
 
