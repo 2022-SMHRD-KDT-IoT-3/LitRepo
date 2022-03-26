@@ -64,11 +64,12 @@
 		<table>
             <tr align="center">
                 <td>
-                    <a id="bt" href="content_perfum.jsp">향초</a>
-                    <a id="bt" href="content_meditation.jsp">명상</a>
-                    <a id="bt" href="content_asmr.jsp">ASMR</a>
-                    <a id="bt" href="content_living.jsp">리빙 제품</a>
-                    <a id="bt" href="content_tea.jsp">차</a>
+                    <a id="bt" href="content_main.jsp">Main</a>
+                    <a id="bt" href="content_perfum.jsp">All</a>
+                    <a id="bt" href="perfume_시트러스.jsp">Citrus</a>
+                    <a id="bt" href="perfume_플로럴.jsp">Flower</a>
+                    <a id="bt" href="perfume_프루티.jsp">Fruit</a>
+                    <a id="bt" href="perfume_우디.jsp">Wood</a>
                 </td>
             </tr>
         </table>

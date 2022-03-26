@@ -156,7 +156,8 @@
 
 	</div>
 
-	<button type="button" id="gotop"><a href="#top">맨 위로</a></button>
+<button type="button" id="gotop"><a href="#top">맨 위로</a></button>
+
 
 
 	<br><br><br><br><br>
