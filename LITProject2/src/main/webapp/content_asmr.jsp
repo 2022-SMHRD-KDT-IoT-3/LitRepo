@@ -30,10 +30,13 @@
 #id1{
 	padding-top: 95px;
 }
+ #bt {
+            text-align: center;
+            margin-left: 20px;
+            margin-right: 20px;
+            color: white;
+        }
 
-#nav{
-display:inline;
-}
 
 
 	</style>
@@ -61,23 +64,19 @@ display:inline;
 		</header>
 
 
-		<nav id="nav">
-			<ul>
-			<!-- 추가 -->
-				<li><a href="content_main.jsp">Main</a></li>
-                <li><a href="content_perfum.jsp">향초</a></li>
-				<li><a href="content_meditation.jsp">명상</a></li>
-				<li><a href="content_asmr.jsp">ASMR</a></li>
-				<li><a href="content_living.jsp">리빙 제품</a></li>
-				<li><a href="content_tea.jsp">차</a></li>
+		<table>
+            <tr align="center">
+                <td>
+                    <a id="bt" href="content_perfum.jsp">향초</a>
+                    <a id="bt" href="content_meditation.jsp">명상</a>
+                    <a id="bt" href="content_asmr.jsp">ASMR</a>
+                    <a id="bt" href="content_living.jsp">리빙 제품</a>
+                    <a id="bt" href="content_tea.jsp">차</a>
+                </td>
+            </tr>
+        </table>
 
-			</ul>
-		</nav>
 
-
-		<br>
-		<br>
-		<br>
 		<br>
 		<!-- Content -->
 		<section id="content" class="main">

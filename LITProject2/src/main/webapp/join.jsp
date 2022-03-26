@@ -128,11 +128,13 @@
 
 		</span>
 		<!-- Header -->
+		<br>
+		<br>
 		<header id="header">
 			<h1 id="join">회원가입</h1>
 			<br></br>
 		</header>
-
+<br>
 		<!-- Main -->
 		<div id="main">
 

@@ -145,8 +145,8 @@ margin-bottom:140px;
 			<nav id="nav">
 				<ul>
 					<li><a href=>색상</a></li>
-					<li><a href="content main.html">컨텐츠 추천</a></li>
-					<li><a href="doctor main.html">의사 피드백</a></li>
+					<li><a href="content main.jsp">컨텐츠 추천</a></li>
+					<li><a href="doctor main.jsp">의사 피드백</a></li>
 					<li><a href="Board.jsp">게시판</a></li>
 					<li><a href=>기타</a></li>
 				</ul>

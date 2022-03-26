@@ -106,7 +106,7 @@
 	position: absolute;
 }
 #header{
-	padding-top: 90px;
+	padding-top: 85px;
 }
     </style>
 
@@ -132,19 +132,9 @@
             <br>
             <br>
         </header>
-
-
-        <nav id="nav" style="color: #f7f7f7;;">
-            <ul>
-                <li><a id="bt1" href="content_perfum.jsp">향초</a></li>
-                <li><a id="bt1" href="content_meditation.jsp">명상</a></li>
-                <li><a id="bt1" href="content_asmr.jsp">ASMR</a></li>
-                <li><a id="bt1" href="content_living.jsp">리빙 제품</a></li>
-                <li><a id="bt1" href="content_tea.jsp">차</a></li>
-
-            </ul>
-        </nav>
-
+		<br>
+		<br>
+		
         <table>
             <tr align="center">
                 <td>
@@ -156,8 +146,8 @@
                 </td>
             </tr>
         </table>
-
-
+		<br>
+<br>
         <br><br>
         <!-- Content -->
         <section id="content" class="main">
