@@ -64,7 +64,7 @@ void makeJson(String result) { //String 형태의 json 형식 파싱
   BPM = root["BPM"];
   temperature = root["Temperature"];
   humidity = root["Humidity"];
-  sound = root["Sound"];d
+  sound = root["Sound"];
   }
   
   Serial.print("Json data : ");
