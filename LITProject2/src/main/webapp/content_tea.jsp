@@ -62,6 +62,7 @@
 <table>
             <tr align="center">
                 <td>
+                    <a id="bt" href="content_main.jsp">Main</a>
                     <a id="bt" href="content_perfum.jsp">향초</a>
                     <a id="bt" href="content_meditation.jsp">명상</a>
                     <a id="bt" href="content_asmr.jsp">ASMR</a>

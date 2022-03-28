@@ -55,7 +55,7 @@
 
 		<!-- Header -->
 		<header id="header">
-			<h1 id="id1">향초 추천</h1>
+			<h1 id="id1">향초</h1>
 			<br>
 			<br>
 		</header>
