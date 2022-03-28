@@ -46,7 +46,7 @@
 	<div id="wrapper">
             <span class="span1">
     
-                <button type="button" onclick="location.href='main1.jsp'" class="btn btn-outline-secondary"
+                <button type="button" onclick="location.href='main_login.jsp'" class="btn btn-outline-secondary"
                 style="font-family: 'Nanum Myeongjo', serif;">HOME</button>
                 <button type="button" onclick="location.href='mypage.jsp'" class="btn btn-outline-secondary"
                 style="font-family: 'Nanum Myeongjo', serif;">마이페이지</button>

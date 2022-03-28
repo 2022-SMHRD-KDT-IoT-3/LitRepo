@@ -144,7 +144,13 @@ input[type="submit"], input[type="reset"], input[type="button"], button, .button
 	font-size:30px;
 	font-weight: bold;
 }
+#check{
+	width:110px;
+	font-size:20px;
+	margin-left:410px;
+	margin-top:-54px;
 
+}
 
 </style>
 </head>
@@ -179,12 +185,18 @@ input[type="submit"], input[type="reset"], input[type="button"], button, .button
 				
 				<form action="JoinServiceCon.do" method="post">
 				
+
 				<section>
 					<div class="mb-3" id="id">
-						<label for="exampleFormControlInput1" class="form-label">아이디</label>
+						<label for="exampleFormControlInput1" class="form-label" >아이디</label>
 						<input type="text" class="form-control"
-							id="exampleFormControlInput1" name = "id" placeholder>
-					</div>
+							id="exampleFormControlInput1" name = "id" placeholder style="width:400">
+							
+							<button id="check">확인</button>
+						</div>
+							
+							
+						
 					<div class="mb-3" id="id">
 						<label for="exampleFormControlInput1" class="form-label">비밀번호</label>
 						<input type="password" class="form-control"
