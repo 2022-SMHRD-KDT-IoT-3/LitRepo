@@ -108,7 +108,7 @@ b {
 			<tr>
 				<td><a href="doctor main.jsp">Main</a></td>
 				<td><a href="doctormine.jsp">맞춤 피드백</a></td>
-				<td><a href="doctortip.jsp">수면 관련 Tip</a></td>
+				<td><a href="doctortip.jsp">의사 상담</a></td>
 				<td><a href="doctorcheck.jsp">수면상태체크</a></td>
 			</tr>
 		</table>
