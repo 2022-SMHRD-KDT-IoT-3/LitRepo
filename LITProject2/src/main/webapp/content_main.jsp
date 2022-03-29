@@ -165,35 +165,35 @@
                                 </ol>
                                 <div class="carousel-inner" role="listbox">
                                     <div class="item active">
-                                        <img src="./img_content/메인향초.jpg" id="img1">
+                                        <a href="https://www.coupang.com/np/search?q=%ED%96%A5%EC%B4%88&src=1042016&spec=10304102&addtag=200&ctag=%ED%96%A5%EC%B4%88&lptag=%ED%96%A5%EC%B4%88&itime=20220328172647&pageType=SEARCH&pageValue=%ED%96%A5%EC%B4%88&wPcid=17485827805766941254798&wRef=www.google.com&wTime=20220328172647&redirect=landing&gclid=CjwKCAjwuYWSBhByEiwAKd_n_mGJf7lTGhHlgLRdsDdU3vGFVTJe14I7X2SS2Qvh2Xx-JPcEBDvCrBoCfHcQAvD_BwE"target="_blank"><img src="./img_content/메인향초.jpg" id="img1"></a>
                                         <div class="carousel-caption">
                                             향초
                                         </div>
                                     </div>
 
                                     <div class="item">
-                                        <img src="./img_content/메인명상.jpg" id="img1">
+                                        <a href="https://www.youtube.com/results?search_query=%EB%AA%85%EC%83%81" target="_blank"><img src="./img_content/메인명상.jpg" id="img1"></a>
                                         <div class="carousel-caption">
                                             명상
                                         </div>
                                     </div>
 
                                     <div class="item">
-                                        <img src="./img_content/메인리빙.jpg" id="img1">
+                                        <a href="https://ohou.se/productions/feed?query=%EC%9D%B4%EB%B6%88&search_affect_type=Typing&input_source=productions" target="_blank"><img src="./img_content/메인리빙.jpg" id="img1"></a>
                                         <div class="carousel-caption">
                                             리빙
                                         </div>
                                     </div>
 
                                     <div class="item">
-                                        <img src="./img_content/메인ASMR.jpg" id="img1">
+                                        <a href="https://www.youtube.com/results?search_query=asmr" target="_blank"><img src="./img_content/메인ASMR.jpg" id="img1"></a>
                                         <div class="carousel-caption">
                                             ASMR
                                         </div>
                                     </div>
 
                                     <div class="item">
-                                        <img src="./img_content/메인차.jpg" id="img1">
+                                        <a href="https://www.coupang.com/np/search?component=&q=%EC%B0%A8&channel=user" target="_blank"><img src="./img_content/메인차.jpg" id="img1"></a>
                                         <div class="carousel-caption">
                                             차
                                         </div>

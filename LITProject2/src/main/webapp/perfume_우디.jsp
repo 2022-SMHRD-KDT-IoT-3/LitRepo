@@ -46,7 +46,7 @@
 	<div id="wrapper">
         <span class="span1">
     
-            <button type="button" onclick="location.href='main1.jsp'" class="btn btn-outline-secondary"
+            <button type="button" onclick="location.href='main_login.jsp'" class="btn btn-outline-secondary"
             style="font-family: 'Nanum Myeongjo', serif;">HOME</button>
             <button type="button" onclick="location.href='mypage.jsp'" class="btn btn-outline-secondary"
             style="font-family: 'Nanum Myeongjo', serif;">마이페이지</button>
@@ -66,7 +66,7 @@
             <tr align="center">
                 <td>
                     <a id="bt" href="content_main.jsp">Main</a>
-                    <a id="bt" href="cotent_perfum.jsp">All</a>
+                    <a id="bt" href="content_perfum.jsp">All</a>
                     <a id="bt" href="perfume_시트러스.jsp">Citrus</a>
                     <a id="bt" href="perfume_플로럴.jsp">Flower</a>
                     <a id="bt" href="perfume_프루티.jsp">Fruit</a>

@@ -51,7 +51,7 @@
 	<!-- Wrapper -->
 	<div id="wrapper">
         <span class="span1">
-            <button type="button" onclick="location.href='main1.jsp'" class="btn btn-outline-secondary"style="font-family: 'Nanum Myeongjo', serif;" >HOME</button>
+            <button type="button" onclick="location.href='main_login.jsp'" class="btn btn-outline-secondary"style="font-family: 'Nanum Myeongjo', serif;" >HOME</button>
             <button type="button" onclick="location.href='LogoutServiceCon.do'" class="btn btn-outline-secondary"style="font-family: 'Nanum Myeongjo', serif;">로그아웃</button>
 </span>
 		<!-- 맨위로 버튼 누를때 이동해올 곳 -->
@@ -65,20 +65,17 @@
 		</header>
 
 
-		<nav id="nav">
-			<ul>
-				<li><a href="doctor main.jsp">Main</a></li>
-				<li><a href="doctormine.jsp">맞춤 피드백</a></li>
-				<li><a href="doctortip.jsp">수면 관련 팁</a></li>
-				<li><a href="doctorcheck.jsp">수면상태체크 </a></li>
-			</ul>
-		</nav>
+	<table class="menu">
+				<tr>
+					<td><a href="doctor main.jsp">Main</a></td>
+					<td><a href="doctormine.jsp">맞춤 피드백</a></td>
+					<td><a href="doctortip.jsp">수면 관련 Tip</a></td>
+					<td><a href="doctorcheck.jsp">수면상태체크</a></td>
+				</tr>
+			</table>
 
 
-		<br>
-		<br>
-		<br>
-		<br>
+
 		<!-- Content -->
 		<section id="content" class="main">
 

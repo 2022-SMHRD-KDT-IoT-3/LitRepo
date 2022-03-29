@@ -1,495 +1,447 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-    <!DOCTYPE HTML>
-<style>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR" %>
+	<!DOCTYPE HTML>
 
-/* 글 가운데 정렬 용도, 여기저기 쓰임 */
-#survey{
-	margin: auto;
-	text-align: center;
-}
+	<html>
 
-#history{
-	background-color: lightgrey;
-	text-align: center;
-	font-size: 20px;
-	border-radius: 10px;
-	
-}
-
-#txt{
-	text-align: center;
-	margin: auto;
-	background-color:antiquewhite;
-	border-radius: 10px;
-}
-.span1 {
-	right: 10px;
-	top: 10px;
-	position: absolute;
-}
-#header{
-	margin-top: 90px;
-}
-/* 비디오 */
-video { max-width: 80%; display: block; margin: 20px auto; }
-
-</style>
-<html>
 	<head>
 		<title>DreamCatcher</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<noscript>
+			<link rel="stylesheet" href="assets/css/noscript.css" />
+		</noscript>
 		<!-- 차트 js -->
 		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
 
-		<!-- 폰트 -->
 		<style>
-		@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
-	</style>
+			@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+
+
+			#img {
+				width: 20px;
+				height: 20px;
+			}
+
+			/* 글 가운데 정렬 용도, 여기저기 쓰임 */
+			#survey {
+				margin: auto;
+				text-align: center;
+			}
+
+
+			/* 라벨태그 */
+			#history {
+				background-color: lightgrey;
+				text-align: center;
+				font-size: 20px;
+				border-radius: 10px;
+				font-weight: bold;
+			}
+
+
+			#txt {
+				text-align: center;
+				margin: auto;
+				background-color: antiquewhite;
+				border-radius: 10px;
+				font-weight: bold;
+			}
+
+			#bt {
+				text-align: center;
+				margin-left: 20px;
+				margin-right: 20px;
+			}
+
+			.span1 {
+				right: 10px;
+				top: 10px;
+				position: absolute;
+			}
+
+			#header {
+				padding-top: 90px;
+			}
+
+			.point {
+				background-color: rgba(255, 127, 80, 0.527);
+				border-radius: 7px;
+				font-weight: bold;
+
+			}
+
+			.bd{
+				font-weight: bold;
+				font-size: 23px;
+				background-color: rgba(255, 127, 80, 0.527);;
+				border-radius: 6px;
+			}
+			
+		</style>
+
+
 
 	</head>
-	<body class="is-preload" style="font-family: 'Nanum Myeongjo', serif;"">
-	
+
+	<body class="is-preload" style="font-family: 'Nanum Myeongjo', serif;">
+		<br>
 		<!-- Wrapper -->
 		<div id="wrapper">
-            <span class="span1">
-                <button type="button" onclick="location.href='main1.jsp'" class="btn btn-outline-secondary"style="font-family: 'Nanum Myeongjo', serif;" >HOME</button>
-                <button type="button" onclick="location.href='LogoutServiceCon.do'" class="btn btn-outline-secondary"style="font-family: 'Nanum Myeongjo', serif;">로그아웃</button>
-    </span>
+			<span class="span1">
+				<button type="button" onclick="location.href='main_login.jsp'" class="btn btn-outline-secondary"
+					style="font-family: 'Nanum Myeongjo', serif;">HOME</button>
+				<button type="button" onclick="location.href='LogoutServiceCon.do'" class="btn btn-outline-secondary"
+					style="font-family: 'Nanum Myeongjo', serif;">로그아웃</button>
+			</span>
+			<!-- 맨위로 버튼 누를때 이동해올 곳 -->
+			<h1 id="top"></h1>
+
 			<!-- Header -->
+			<!-- jjh 여기부터 수정 -->
 			<header id="header">
-				<h1>수면 건강 피드백</h1>
-				<p>현재 도도동님의 수면 상태에 따른 피드백입니다</p>
+				<h1>수면 결과 분석</h1>
+				<br>
+				<p>2022.03.01 ~ 2022.03.07</p>
 			</header>
-			
-			<nav id="nav">
-				<ul>
-					<li><a href="doctor main.jsp">Main</a></li>
-					<li><a href="doctormine.jsp">맞춤 피드백</a></li>
-					<li><a href="doctortip.jsp">수면 관련 팁</a></li>
-					<li><a href="doctorcheck.jsp">수면상태체크 </a></li>
-				</ul>
-			</nav>
-					
 
-				<!-- Main -->
-					<div id="main">
+			<table class="menu">
+				<tr>
+					<td><a href="doctor main.jsp">Main</a></td>
+					<td><a href="doctormine.jsp">맞춤 피드백</a></td>
+					<td><a href="doctortip.jsp">수면 관련 Tip</a></td>
+					<td><a href="doctorcheck.jsp">수면상태체크</a></td>
+				</tr>
+			</table>
 
-						<!-- Content -->
-							<section id="content" class="main">
-
-								<!-- 현재 날짜, 닉네임 값 -->
-									<section>
-										<h4 id="survey"> <strong>2022.03.01~2022.03.07</strong>
-											 기간동안의 수면 데이터를 바탕으로 맞춤 컨텐츠를 추천합니다</h4>
-									</section>
-
-								<!-- 피드백 페이지 -->
-									<section>
-										
-										<div class="row">
-											<div class="col-6 col-12-medium">
-												<br>
-												<br>
-												<h4 id ="history">수면 패턴 점수</h4>
-												<br>
-
-												<div>
-													<canvas id="myChart"></canvas>                                                    
-												  </div>
-	
-												  <br><br><br>
-												  <h4 id ="history" >운동 추천</h4>
-												  <br>
-
-												<table>
-													<tr align="center">
-														<td style="font-weight: bold;">인터벌 운동</td>
-													</tr>
-													<tr>
-														<td>인터벌 운동은 걷고 뛰고를 반복하는 운동으로 심폐지구력 향상에 탁월합니다.
-															기본적으로 격한 운동을 했을때의 최대심박수까지 가는 것을 목표로 합니다.</td>
-													</tr>
-
-													<tr align="center">
-														<td style="font-weight: bold;">저강도 인터벌 트레이닝(홈트레이닝)</td>
-													</tr>
-
-													<tr align="center">
-														<td><a href="https://www.youtube.com/watch?v=zNsUXIxwh6U"><img src="./img잡다한것/인터벌.PNG" alt=""></a></td>
-													</tr>
-													<tr align="center">
-														<td style="font-weight: bold;">고강도 인터벌 트레이닝(홈트레이닝)</td>
-													</tr>
-
-													<tr align="center">
-														<td><a href="https://www.youtube.com/watch?v=LG6CNzlj_6o"><img src="./img잡다한것/고강도 인터벌.PNG" alt=""></a></td>
-													</tr>
-
-												</table>
-
-												<br>
-												<h3 id ="history"><b>스트레스 완화 호흡법</b></h3>
-												<br>
-													
-
-												
-												<br>
-												
-												<p>운동을 하면 이런 그래프 형태로 증가 가능하다. 그러면 이렇게 된다는 데이터 보여주기</p>
-
-									
-											</div>
-											
-											<div class="col-6 col-12-medium">
-												<br><br>
-												<h3 id ="history">수면에 좋은 제품 추천</h3>
-												<ol>
-													<b>
-													<li>카페인이 함유된 음료는 피하기</li>
-													<li>너무 배고프거나 배부른 상태로 잠들지 않기</li>
-													<li>항상 일정한 시간에 일어나기</li>
-													<li>규칙적인 운동하기</li>
-													<li>취침 전 과도한 수분 섭취 피하기</li>
-													<li>적절한 높이의 베게를 선택하기</li>
-												</b>
-												</ol>
-												</div>
-												</div>
-												</section>
-											</div>
-										</div>	
-									</section>
-
-								
-									<br><br><br>	
-								<section>
+			<div id="main">
 
 
-									<table>
-										<tr id = "survey" style="font-weight: bold;"><td>
-											제휴 병원 및 의료진
-										</td></tr>
-									
-									</table>
+				<section id="content" class="main">
+
+
+					<div class="row">
+						<div class="col-6 col-12-medium">
+							<br>
+							<br>
+							<h4 id="history">수면 패턴 점수</h4>
+							<br>
+							<!-- 비교 차트 -->
+							<div>
+								<canvas id="myChart"></canvas>
+							</div>
+
+							<table style="color: gray;">
+								<tr>
+									<td></td>
+									<td>수면시간</td>
+									<td>심박수 일정도</td>
+									<td>코골이</td>
+									<td>수면환경</td>
+									<td>수면의 질</td>
+								</tr>
+								<tr>
+									<td>평균 점수</td>
+									<td>75</td>
+									<td>70</td>
+									<td>65</td>
+									<td>70</td>
+									<td>65</td>
+								</tr>
+
+								<tr>
+									<td>나의 점수</td>
+									<td>85</td>
+									<td>50</td>
+									<td>45</td>
+									<td>95</td>
+									<td>90</td>
+								</tr>
+							</table>
+
+							<br>
+							<p style="text-align: center;"> <b class="point">조용하다는 것을 강조해줄 별명집단</b></p>
+							<p style="text-align: center;">현재 '김도은'님은 사용자 평균에 비해 <u> 매우 좋은 수면환경</u>을 가지고 있습니다. 코골이점수도
+								낮으며
+								전체적으로 조용한 환경으로 보입니다. 또한 하루 7시간 이상의 수면시간을 가지는 것으로 보아 전체적인 수면 점수가 높게 나올 수 있었습니다.
+								<u>일정한 운동</u>으로 심박수 일정도가 유지된다면 더 좋은 수면 점수를 가질 수 있을 것입니다.
+							</p>
 
 
 
-									<table>
-										<tr>
-											<td>광주 북구 병원</td>
-											<td>광주 서구 병원</td>
-											<td>광주 동구 병원</td>
-											<td>광주 남구 병원</td>
-										</tr>
-
-									</table>
-
-									<table>
-										<tr>
-											<td>나심장 의사</td>
-											<td>김병원 의사</td>
-											<td>김간호 의사</td>
-											<td>안아파 의사</td>
-										</tr>
-									</table>
-								</section>	
+							<br><br>
+							<h4 id="history">운동 추천</h4>
 
 
+							<table style="text-align: center;">
+								<tr align="center" style="color: gray;">
+									<td colspan="4" style="font-weight: bold;">인터벌 운동</td>
+								</tr>
+								<tr style="color: gray;">
+									<td colspan="4">인터벌 운동은 걷고 뛰고를 반복하는 운동으로 심폐지구력 향상에 탁월합니다.
+										최대심박수까지 ~하여 ~를 목표로 합니다.</td>
+								</tr>
 
-								<br><br><br><br>
-								<!-- 설문조사 -->
-									<section>
-										<h2 id="survey" >서비스 만족도 조사</h2>
-										<h5 id="survey">참여하신 분들 중 추첨하여 기프티콘을 보내드립니다</h5>
+								<tr style="color: gray;">
+									<td colspan="4" style="font-weight: bold;">한달 운동 목표량</td>
+								</tr>
+
+								<!-- 인터벌 목표량 차트 -->
+								<tr style="color: gray;">
+									<td colspan="4">
+										<div>
+											<canvas id="myChart3"></canvas>
+										</div>
 										<br>
-										<form method="post" action="#">
-											<div class="row gtr-uniform">
-												<div class="col-6 col-12-xsmall">
-													<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-												</div>
-												<div class="col-6 col-12-xsmall">
-													<input type="text" name="demo-email" id="demo-email" value="" placeholder="Phone" />
-												</div>
-												<div class="col-4 col-12-small">
-													<input type="radio" id="verygood" name="demo-priority" checked>
-													<label for="verygood">매우 만족</label>
-												</div>
-												<div class="col-4 col-12-small">
-													<input type="radio" id="good" name="demo-priority">
-													<label for="good">만족</label>
-												</div>
-												<div class="col-4 col-12-small">
-													<input type="radio" id="normal" name="demo-priority">
-													<label for="normal">보통</label>
-												</div>
-												<div class="col-4 col-12-small">
-													<input type="radio" id="bad" name="demo-priority">
-													<label for="bad">불만족</label>
-												</div>
-												<div class="col-4 col-12-small">
-													<input type="radio" id="verybad" name="demo-priority">
-													<label for="verybad">매우 불만족</label>
-												</div>
-												
-												<div class="col-12">
-													<textarea name="demo-message" id="demo-message" placeholder="하시고 싶은 말씀이 있으시다면 남겨주세요" rows="5"></textarea>
-												</div>
-												<div class="col-12">
-													<ul class="actions">
-														<li><input type="submit" value="Send Message" class="primary" /></li>
-														<li><input type="reset" value="Reset" /></li>
-													</ul>
-												</div>
-											</div>
-										</form>
-									</section>
-				
+										<p class="point">2주간 1바퀴 증가를 목표로 서서히 늘려갑니다</p>
+										<p>가까운 산책로, 운동장 등으로 처음 5분간 몸을 풀면서 천천히 걷습니다. 이 과정을 통해 몸을 이완시켜줍니다. 그 후 2분간 천천히 걷기
+											- 2분간 빠르게 뛰기 - 1분간 천천히 걷기를 반복합니다.</p>
+									</td>
+								</tr>
+
+
+								<tr align="center" style="color: gray;">
+									<td colspan="4" style="font-weight: bold;">저강도 인터벌 트레이닝(홈트레이닝)</td>
+								</tr>
+
+								<tr align="center" style="color: gray;">
+									<td colspan="4"><a href="https://www.youtube.com/watch?v=zNsUXIxwh6U"><img
+												src="./img_doctor/인터벌.PNG" alt=""></a></td>
+								</tr>
+
+								<br>
+								<tr align="center" style="color: gray;">
+									<td colspan="4" style="font-weight: bold;">고강도 인터벌 트레이닝(홈트레이닝)</td>
+								</tr>
+
+								<tr align="center" style="color: gray;">
+									<td colspan="4"><a href="https://www.youtube.com/watch?v=LG6CNzlj_6o"><img
+												src="./img_doctor/고강도 인터벌.PNG" alt=""></a></td>
+								</tr>
+								
+								<br>
+								<tr align="center" style="color: gray;">
+									<br>
+									<td colspan="4" style="font-weight: bold;">운동 추천(70kg기준)</td>
+								</tr>
+
+								<tr align="center" style="color: gray;">
+									<td><img src="./img_sport/cyclist.png" style="width: 100px; height: 100px;" alt=""><br><b class="bd">cyclie</b><br>70kg 기준 1시간 588 칼로리</td>
+									<td><img src="./img_sport/hiking.png" style="width: 100px; height: 100px;" alt=""><br><b class="bd">hiking</b><br>70kg 기준 1시간 588 칼로리</td>
+									<td><img src="./img_sport/running.png" style="width: 100px; height: 100px;" alt=""><br><b class="bd">running</b><br>10km/h 70kg 기준 1시간 735칼로리</td>
+									<td><img src="./img_sport/swimming.png" style="width: 100px; height: 100px;" alt=""><br><b class="bd">swimming</b><br>70kg 기준 1시간 514 칼로리</td>
+								</tr>
+
+							</table>
+
+							<br>
+							<br>
+							<h3 id="history">스트레스 완화 호흡법</h3>
+							<br>
+							<center><a href="https://www.youtube.com/watch?v=qkDjMJkLxIo"> <img
+										src="./img_doctor/호흡법이미지.PNG" alt=""></a> </center>
+							<br>
+							<h5 style="text-align: center;">보건복지부 추천 영상입니다</h5>
+							<br>
+
+							<p style="text-align: center;" class="point">순서</p>
+
+							<table style="color: gray;">
+
+								<tr>
+									<td colspan="2">편안한 자세로 앉아준 후 한 손은 배위에 다른 손은 가슴에 얹어봅니다. 코로 숨을 들이쉴 때는 배가 나오고 입으로 숨을 내쉴 때는 배가 들어갑니다. 내쉬는 호흡을 들이쉬는 호흡보다 길게, 충분히 내쉽니다.</td>
+								</tr>
+
+								<tr>
+									<td>1</td>
+									<td>넷을 셀 동안 숨을 들이마신다</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>셋을 셀 동안 호흡을 멈춘다</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>다섯을 셀 동안 숨을 천천히 내쉰다</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>셋을 셀 동안 호흡을 멈춘다</td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>이 과정을 3번 반복합니다</td>
+								</tr>
 							
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+							</table>
 
-<!-- 심박수 차트 -->
-			<script>
-				const ctx = document.getElementById('myChart').getContext('2d');
-				const myChart = new Chart(ctx, {
-type: 'radar',
-data: {
-labels: ['수면 시간', '심박수 일정도', '코골이', '수면 환경', '수면의 질'],
-datasets: [{
-	label: '도도동님의 수면패턴',
-	data: [80, 60, 30, 95, 80],
-	backgroundColor: [
-		'rgba(255, 99, 132, 0.2)',
-		'rgba(255, 99, 132, 0.2)',
-		'rgba(255, 99, 132, 0.2)',
-		'rgba(255, 99, 132, 0.2)',
-		'rgba(255, 99, 132, 0.2)',
-		
-	],
-	borderColor: [
-		'rgba(250, 99, 132, 1)',
-		'rgba(250, 99, 132, 1)',
-		'rgba(250, 99, 132, 1)',
-		'rgba(250, 99, 132, 1)',
-		'rgba(250, 99, 132, 1)',
-		
-	],
-	borderWidth: 1
 
-}, { 
-    // 평균 수면패턴 추가부분!
-    label: '평균 수면패턴',
-	data: [85, 50, 45, 95, 95],
-	backgroundColor: [
-		'rgba(78, 56, 245, 0.2)',
-		'rgba(78, 56, 245, 0.2)',
-        'rgba(78, 56, 245, 0.2)',
-        'rgba(78, 56, 245, 0.2)',
-        'rgba(78, 56, 245, 0.2)',
-		
-	],
-	borderColor: [
-        'rgba(78, 56, 245, 1)',
-		'rgba(78, 56, 245, 1)',
-        'rgba(78, 56, 245, 1)',
-        'rgba(78, 56, 245, 1)',
-        'rgba(78, 56, 245, 1)',
-		
-	],
-	borderWidth: 1
-}]
-},
+						</div>
 
-options: {
-scales: {
-	y: {
-		beginAtZero: true
-	}
-}
-}
-});
-</script>		
 
-<!-- 데시벨 차트 -->
-<script type="text/javascript">
-	var context = document
-		.getElementById('myChart2')
-		.getContext('2d');
-	var myChart2 = new Chart(context, {
-		type: 'bar', // 차트의 형태
-		data: { // 차트에 들어갈 데이터
-			labels: [
-				//x 축
-				'3/1','3/2','3/3','3/4','3/5','3/6','3/7'
-			],
-			datasets: [
-				{ //데이터
-					label: '하루 평균 수면 데시벨', //차트 제목
-					fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
-					data: [
-						40,42,38,39,35,41,40 //x축 label에 대응되는 데이터 값
-					],
-					backgroundColor: [
-						//색상
-						
-						'rgba(25, 190, 124,0.5)',
-						'rgba(25, 190, 124,0.5)',
-						'rgba(25, 190, 124,0.5)',
-						'rgba(25, 190, 124,0.5)',
-						'rgba(25, 190, 124,0.5)',
-						'rgba(25, 190, 124,0.5)',
-						'rgba(25, 190, 124,0.5)'
-						
-					],
-					borderColor: [
-						//경계선 색상
-						'rgba(25, 159, 64, 1)',
-						'rgba(25, 159, 64, 1)',
-						'rgba(25, 159, 64, 1)',
-						'rgba(25, 159, 64, 1)',
-						'rgba(25, 159, 64, 1)',
-						'rgba(25, 159, 64, 1)',
-						'rgba(25, 159, 64, 1)'
-					],
-					borderWidth: 1 //경계선 굵기
-				}/* ,
-				{
-					label: 'test2',
-					fill: false,
-					data: [
-						8, 34, 12, 24
-					],
-					backgroundColor: 'rgb(157, 109, 12)',
-					borderColor: 'rgb(157, 109, 12)'
-				} */
-			]
-		},
-		options: {
-			scales: {
-				yAxes: [
-					{
-						ticks: {
+						<div class="col-6 col-12-medium">
+							<br><br>
+							<h3 id="history">수면에 좋은 습관</h3>
+							<ol>
+								<b>
+									<li>카페인이 함유된 음료는 피하기</li>
+									<li>너무 배고프거나 배부른 상태로 잠들지 않기</li>
+									<li>항상 일정한 시간에 일어나기</li>
+									<li>규칙적인 운동하기</li>
+									<li>취침 전 과도한 수분 섭취 피하기</li>
+									<li>적절한 높이의 베게를 선택하기</li>
+								</b>
+							</ol>
+						</div>
+					</div>
+			</div>
+		</div>
+		</div>
+		</section>
+
+
+
+
+
+		<br>
+		<br>
+		<h4 style="text-align: center;">추가하고 싶은 카테고리가 있다면 알려주세요</h4>
+		<p style="text-align:center;">사용자의 의견을 우선하여 컨텐츠를 추가하겠습니다</p>
+		<br>
+
+		</section>
+
+
+		</div>
+
+		<button type="button" id="gotop"><a href="#top">맨 위로</a></button>
+
+
+		<br><br><br><br><br>
+		</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+		<!-- 비교 차트 -->
+		<script>
+			const ctx = document.getElementById('myChart').getContext('2d');
+			const myChart = new Chart(ctx, {
+				type: 'radar',
+				data: {
+					labels: ['수면 시간', '심박수 일정도', '코골이', '수면 환경', '수면의 질'],
+					datasets: [{
+						label: '김도은님의 수면패턴',
+						data: [85, 50, 45, 95, 90],
+						backgroundColor: [
+							'rgba(255, 99, 132, 0.2)',
+							'rgba(255, 99, 132, 0.2)',
+							'rgba(255, 99, 132, 0.2)',
+							'rgba(255, 99, 132, 0.2)',
+							'rgba(255, 99, 132, 0.2)'
+
+						],
+						borderColor: [
+							'rgba(250, 99, 132, 1)',
+							'rgba(250, 99, 132, 1)',
+							'rgba(250, 99, 132, 1)',
+							'rgba(250, 99, 132, 1)',
+							'rgba(250, 99, 132, 1)'
+
+						],
+						borderWidth: 1
+
+					}, {
+						// 평균 수면패턴 추가부분!
+						label: '평균 수면패턴',
+						data: [75, 70, 65, 70, 65],
+						backgroundColor: [
+							'rgba(78, 56, 245, 0.2)',
+							'rgba(78, 56, 245, 0.2)',
+							'rgba(78, 56, 245, 0.2)',
+							'rgba(78, 56, 245, 0.2)',
+							'rgba(78, 56, 245, 0.2)'
+
+						],
+						borderColor: [
+							'rgba(78, 56, 245, 1)',
+							'rgba(78, 56, 245, 1)',
+							'rgba(78, 56, 245, 1)',
+							'rgba(78, 56, 245, 1)',
+							'rgba(78, 56, 245, 1)'
+
+						],
+						borderWidth: 1
+					}]
+				},
+
+				options: {
+					scales: {
+						y: {
 							beginAtZero: true
 						}
 					}
-				]
-			}
-		}
-	});
-</script>
+				}
+			});
+		</script>
 
-<!-- 온습도 차트 -->
-
-<script>
-	const ctx1 = document.getElementById('myChart3').getContext('2d');
-	const myChar3 = new Chart(ctx1, {
-type: 'line',
-data: {
-labels: ['3/1', '3/2', '3/3', '3/4', '3/5', '3/6','3/7'],
-datasets: [{
-label: '하루 평균 실내 온도',
-data: [20, 21, 23, 20, 18, 17, 20],
-backgroundColor: [
-'rgba(255, 99, 12, 0.2)',
-'rgba(255, 99, 12, 0.2)',
-'rgba(255, 99, 12, 0.2)',
-'rgba(255, 99, 12, 0.2)',
-'rgba(255, 99, 12, 0.2)',
-'rgba(255, 99, 12, 0.2)',
-'rgba(255, 99, 12, 0.2)'
+		<script>
+			const ctx1 = document.getElementById('myChart3').getContext('2d');
+			const myChar3 = new Chart(ctx1, {
+				type: 'bar',
+				data: {
+					labels: ['~3/12', '~3/17', '~3/22', '~3/27', '~4/1', '~4/6'],
+					datasets: [{
+						label: '뛰는 횟수',
+						data: [4, 4, 5, 5, 6, 7, 0],
+						backgroundColor: [
 
 
-],
-borderColor: [
-'rgba(250, 99, 12, 1)',
-'rgba(250, 99, 12, 1)',
-'rgba(250, 99, 12, 1)',
-'rgba(250, 99, 12, 1)',
-'rgba(250, 99, 12, 1)',
-'rgba(250, 99, 12, 1)',
-'rgba(250, 99, 12, 1)'
+							'rgba(255, 99, 12, 0.2)',
+							'rgba(255, 99, 12, 0.2)',
+							'rgba(255, 99, 12, 0.2)',
+							'rgba(255, 99, 12, 0.2)',
+							'rgba(255, 99, 12, 0.2)',
+							'rgba(255, 99, 12, 0.2)'
 
-],
-borderWidth: 1
-}]
-},
-options: {
-scales: {
-y: {
-beginAtZero: true
-}
-}
-}
-});
-</script>
+
+						],
+						borderColor: [
+							'rgba(250, 99, 12, 1)',
+							'rgba(250, 99, 12, 1)',
+							'rgba(250, 99, 12, 1)',
+							'rgba(250, 99, 12, 1)',
+							'rgba(250, 99, 12, 1)',
+							'rgba(250, 99, 12, 1)',
+							'rgba(250, 99, 12, 1)'
+
+						],
+						borderWidth: 1
+					}]
+				},
+				options: {
+					scales: {
+						y: {
+							beginAtZero: true
+						}
+					}
+				}
+			});
+		</script>
 
 
 
 
 
+	</body>
 
-<!-- 평균 실내 습도 -->
-<script>
-	const ctx2 = document.getElementById('myChart4').getContext('2d');
-	const myChar4 = new Chart(ctx2, {
-type: 'line',
-data: {
-labels: ['3/1', '3/2', '3/3', '3/4', '3/5', '3/6','3/7'],
-datasets: [{
-label: '하루 평균 실내 습도',
-data: [20, 21, 23, 20, 18, 17, 20],
-backgroundColor: [
-
-'rgba(75, 192, 192, 0.2)',
-'rgba(75, 192, 192, 0.2)',
-'rgba(75, 192, 192, 0.2)',
-'rgba(75, 192, 192, 0.2)',
-'rgba(75, 192, 192, 0.2)',
-'rgba(75, 192, 192, 0.2)',
-'rgba(75, 192, 192, 0.2)'
-
-
-],
-borderColor: [
-'rgba(0,0,255,2)',
-'rgba(0,0,255,2)',
-'rgba(0,0,255,2)',
-'rgba(0,0,255,2)',
-'rgba(0,0,255,2)',
-'rgba(0,0,255,2)',
-'rgba(0,0,255,2)',
-'rgba(0,0,255,2)'
-
-
-],
-borderWidth: 1
-}]
-},
-options: {
-scales: {
-y: {
-beginAtZero: true
-}
-}
-}
-});
-</script>
-            
-
-
-
-</body>
-</html>
-    
+	</html>

@@ -46,7 +46,7 @@
 	<div id="wrapper">
 		<span class="span1">
 
-			<button type="button" onclick="location.href='main1.jsp'" class="btn btn-outline-secondary"style="font-family: 'Nanum Myeongjo', serif;" >HOME</button>
+			<button type="button" onclick="location.href='main_login.jsp'" class="btn btn-outline-secondary"style="font-family: 'Nanum Myeongjo', serif;" >HOME</button>
 			<button type="button" onclick="location.href='mypage.jsp'" class="btn btn-outline-secondary"style="font-family: 'Nanum Myeongjo', serif;">마이페이지</button>
 			<button type="button" onclick="location.href='LogoutServiceCon.do'" class="btn btn-outline-secondary"style="font-family: 'Nanum Myeongjo', serif;">로그아웃</button>
 		</span>
@@ -62,6 +62,7 @@
 <table>
             <tr align="center">
                 <td>
+                    <a id="bt" href="content_main.jsp">Main</a>
                     <a id="bt" href="content_perfum.jsp">향초</a>
                     <a id="bt" href="content_meditation.jsp">명상</a>
                     <a id="bt" href="content_asmr.jsp">ASMR</a>
