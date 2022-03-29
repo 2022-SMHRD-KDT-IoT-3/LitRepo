@@ -97,8 +97,10 @@ padding-top:100px;
 			<!-- Content -->
 			<section id="content" class="main">
 			
-				<form action="#">
+				<form action="ColorChangeServiceCon.do" method ="post">
 					<input type="color" name="color" id="color">
+					
+					<input type="submit" value="색 변환">
 				</form>
 				<p id="p3">색상을 선택해주세요</p>
 		
