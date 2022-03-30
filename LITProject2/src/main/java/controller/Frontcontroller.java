@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import Inter.Command;
 import service.DeleteBoardServiceCon;
+import service.DeleteCommentServiceCon;
+import service.EditCommentServiceCon;
 import service.JoinService;
 import service.LoginServiceCon;
 import service.LogoutServiceCon;
@@ -78,6 +80,12 @@ public class Frontcontroller extends HttpServlet {
 			nextPage = com.execute(request, response);
 			
 			
+		} else if (command.equals("EditCommentServiceCon.do")) {
+			com = new EditCommentServiceCon();
+			nextPage = com.execute(request, response);
+		} else if (command.equals("DeleteCommentServiceCon.do")) {
+			com = new DeleteCommentServiceCon();
+			nextPage = com.execute(request, response);
 		}
 		
 		
