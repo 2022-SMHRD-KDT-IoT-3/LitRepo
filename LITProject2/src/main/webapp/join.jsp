@@ -166,7 +166,7 @@
 			}
 
 			.form-label {
-				font-size: 23px;
+				font-size: 19px;
 				font-weight: bold;
 			}
 
@@ -181,7 +181,11 @@
     background-color: transparent;
     box-shadow: inset 0 0 0 0px #ffffff;
     color: #ffffff !important;
+    }
+table td {
+    padding: 0.31em;
 }
+
 			
 		</style>
 	</head>
@@ -226,9 +230,9 @@
 										<td><label for="exampleFormControlInput1"
 												class="form-label">아이디</label>
 										<td><input type="text" class="form-control" id="exampleFormControlInput1"
-												name="id" style="width:215px;"></td>
+												name="id" style="width:180px;"></td>
 										<td><button type="button" class="btn btn-secondary"
-												style="width:94px">확인</button></td>
+												style="width:70px">확인</button></td>
 							</div>
 							</table>
 						</section>
@@ -237,9 +241,9 @@
 						<div class="mb-3" id="id">
 							<table id="first" style="margin-top:-52px;" >
 							<tr>
-							<td><label for="exampleFormControlInput1" class="form-label" style="font-size:18px">비밀번호</label></td>
+							<td><label for="exampleFormControlInput1" class="form-label" style="font-size:15px">비밀번호</label></td>
 							<td><input type="password" class="form-control" id="exampleFormControlInput1" name="pw"
-								placeholder style="width:360px;"></td>
+								placeholder></td>
 							</tr>
 						</table>
 						</div>
@@ -249,7 +253,7 @@
 							<tr>
 							<td><label for="exampleFormControlInput1" class="form-label">닉네임</label></td>
 							<td><input type="text" class="form-control" id="exampleFormControlInput1" name="nickname"
-								placeholder style="width:360px"></td>
+								placeholder></td>
 							</tr>
 							</table>
 						</div>
@@ -257,16 +261,16 @@
 
 						<div id="id">
 							<table id="first" style="margin-top:-76px;">
-							<td><label for="exampleFormControlInput1" class="form-label" id="id">성별</label>
+							<td><label for="exampleFormControlInput1" class="form-label" id="id" style="font-size:19px;">성별</label>
 							<br>
 							<div class="form-check form-check-inline">
 								<input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="F">
-								<label class="form-check-label" for="inlineRadio1">여자</label>
+								<label class="form-check-label" for="inlineRadio1" style="font-size:20px;">여자</label>
 							</div>
 
 							<div class="form-check form-check-inline">
 								<input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="M">
-								<label class="form-check-label" for="inlineRadio2">남자</label>
+								<label class="form-check-label" for="inlineRadio2" style="font-size:20px;">남자</label>
 							</td>
 							</table>
 							</div>
