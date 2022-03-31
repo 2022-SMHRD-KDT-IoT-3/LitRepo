@@ -4,8 +4,8 @@
 #include <HTTPClient.h>
 
 
-const char* ssid     = "jeongyong";
-const char* password = "123456789";
+const char* ssid     = "==ssid==";
+const char* password = "==password==";
 
 
 
