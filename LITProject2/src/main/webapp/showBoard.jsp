@@ -29,6 +29,15 @@
 
 	MemberDTO sdto = (MemberDTO) session.getAttribute("info");
 	ArrayList<CommentDTO> cmtlist = (ArrayList<CommentDTO>) request.getAttribute("cmtlist");
+	
+	// 게시물을 조회하면 db에 조회수가 1 추가..
+	
+	// 글 조회수
+	int count = dto.get(num).getArticle_cnt()+1;
+	// 글 시퀀스
+	int seq = dto.get(num).getArticle_seq();
+	// DB로 넘겨줄방법..
+	int complete = dao.updateCount(count, seq);
 	%>
 
 	<input type="hidden" value="<%=sdto.getMem_id()%>" id="myId">
@@ -47,7 +56,7 @@
 				</tr>
 				<tr>
 					<td>조회수</td>
-					<td><%=dto.get(num).getArticle_cnt()%></td>
+					<td><%= count %></td>
 				</tr>
 				<tr>
 					<td>작성일자</td>
@@ -69,8 +78,8 @@
 						<%
 						if (dto != null) {
 						%> <%
- if (dto.get(num).getMem_id().equals(sdto.getMem_id())) {
- %>
+						if (dto.get(num).getMem_id().equals(sdto.getMem_id())) {
+						%>
 						<button id=""
 							onclick="location.href='updateBoard.jsp?num=<%=dto.get(num).getArticle_seq()%>&article_num=<%=num%>'">글수정</button>
 

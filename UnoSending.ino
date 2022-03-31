@@ -15,13 +15,7 @@ int soundPin = A2;// 사운드센서 Uno A2
 DHT dht(DHTPIN, DHTTYPE); // dht 매개변수
 
 
-uint8_t rateValueArray[10];
-
-
-
-
 DFRobot_Heartrate heartrate(DIGITAL_MODE);
-
 
 void setup() {
   Serial.begin(9600);
