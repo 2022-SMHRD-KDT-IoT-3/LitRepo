@@ -233,7 +233,7 @@
 
 										output += "&nbsp;&nbsp;<button class='cmt_before tabActive" + i + "'  ' onClick='editBtn("+i+ ")' >댓글수정</button>&nbsp;&nbsp;";
 										output += "&nbsp;&nbsp;"
-										output += "<button id='deletereplyBtn" + i + "' class='cmt_before' data-reply-seq='" + reply_seq + "'>댓글 삭제</button>"
+										output += "<button id='deletereplyBtn" + i + "' class='cmt_before' onClick='deleteBtn(" + reply_seq + ")'>댓글 삭제</button>"
 										output += "&nbsp;&nbsp;"
 
 										output += "<div class='reply_edit_hidden" + i + "' style='display:none'>";
@@ -306,17 +306,16 @@
 		};	// edit reply method end
 		
 		
-		for(let i=0; i<replyList.length;i++){
-		$(document).on("click","#deletereplyBtn"+i,function(){
+		function deleteBtn(reply_seq){
 			
-			var replySeq = $(this).data("replySeq");
-			console.log("function 값 : " + replySeq)
+			//var replySeq = $(this).data("replySeq");
+			console.log("function 값 : " + reply_seq)
 			if (confirm('정말 삭제하시겠습니까?') == true) {
 				$.ajax({
 					url : "DeleteCommentServiceCon.do",
 					type : "post",
 					data : {
-						num : replySeq
+						num : reply_seq
 					},
 					success : function() {
 						location.reload();
@@ -324,7 +323,6 @@
 				})
 			}
 			
-		})
 		};	// editreplyBtn method end
 
 	</script>
