@@ -232,7 +232,7 @@ table td {
 										<td><input type="text" class="form-control" id="exampleFormControlInput1"
 												name="id" style="width:180px;"></td>
 										<td><button type="button" class="btn btn-secondary"
-												style="width:70px">확인</button></td>
+												style="width:70px" onclick="idCheck()">확인</button></td>
 							</div>
 							</table>
 						</section>
@@ -345,6 +345,44 @@ table td {
 
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
+		 <script>
+        function idCheck(){
+        	if($('input[name=id]').val() != ''){
+        	
+            $.ajax({
+                type : 'get',
+                url : 'idCheckServiceCon.do',
+                data : {
+                    'id' : $('input[name=id]').val()
+                },
+                success : function(check){
+                	
+                	if(check == 'true'){
+                    alert('아이디가 중복되었습니다.')
+					} else {
+					alert('중복되는 아이디가 없습니다.')
+					}
+                    
+                },
+                error : function(){
+                    
+
+                }
+
+            })
+        	} else{
+        		
+        		alert('정확한 아이디를 입력해주십시오.')
+        		
+        	}
+
+        }
+
+
+
+    </script>
+		
+		
 		<script src="assets/js/jquery.scrollex.min.js"></script>
 		<script src="assets/js/jquery.scrolly.min.js"></script>
 		<script src="assets/js/browser.min.js"></script>
