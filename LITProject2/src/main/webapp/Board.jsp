@@ -2,11 +2,10 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page import="model.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
 <title>Insert title here</title>
 <title>Elements - Stellar by HTML5 UP</title>
 <meta charset="utf-8" />
@@ -32,7 +31,7 @@
 	
 	
 	<section>
-		<h2>ÀÚÀ¯ °Ô½ÃÆÇ</h2>
+		<h2>ìžìœ  ê²Œì‹œíŒ</h2>
 		<h3></h3>
 		<div class="table-wrapper">
 			<table>
@@ -41,30 +40,30 @@
 						<form id="category">
 							<th>
 									<select name="category">
-										<option value="A">ÀüÃ¼º¸±â</option>
-										<option value="F">ÀÚÀ¯</option>
-										<option value="I">Á¤º¸</option>
-										<option value="S">¼ö¸é</option>
-										<option value="Q">Áú¹®</option>
+										<option value="A">ì „ì²´ë³´ê¸°</option>
+										<option value="F">ìžìœ </option>
+										<option value="I">ì •ë³´</option>
+										<option value="S">ìˆ˜ë©´</option>
+										<option value="Q">ì§ˆë¬¸</option>
 									</select>
 							</th>
 							<th>
-								<button type="button" >¼±ÅÃ»çÇ×º¸±â<a href=""></a></button>
+								<button type="button" >ì„ íƒì‚¬í•­ë³´ê¸°<a href=""></a></button>
 							</th>
 						</form>
 						<th></th>
 						<th></th>
 						<th></th>
-						<th><input><input type='button' value='°Ë»ö'></th>
+						<th><input><input type='button' value='ê²€ìƒ‰'></th>
 					</tr>
 					
 					<tr>
-						<th>±Û ¹øÈ£</th>
-						<th>±Û À¯Çü</th>
-						<th>Á¦¸ñ</th>
-						<th>Á¶È¸¼ö</th>
-						<th>ÀÛ¼ºÀÚ</th>
-						<th>ÀÛ¼ºÀÏÀÚ</th>
+						<th>ê¸€ ë²ˆí˜¸</th>
+						<th>ê¸€ ìœ í˜•</th>
+						<th>ì œëª©</th>
+						<th>ì¡°íšŒìˆ˜</th>
+						<th>ìž‘ì„±ìž</th>
+						<th>ìž‘ì„±ì¼ìž</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -79,13 +78,13 @@
 						 <td> <%= i + 1 %></td>
 						 <td>
 						 <% if(list.get(i).getArticle_type().equals("F")){
-							 	type="ÀÚÀ¯";
+							 	type="ìžìœ ";
 						 	}else if(list.get(i).getArticle_type().equals("I")){
-						 		type="Á¤º¸";
+						 		type="ì •ë³´";
 						 	} else if(list.get(i).getArticle_type().equals("S")){
-						 		type="¼ö¸é";
+						 		type="ìˆ˜ë©´";
 						 	} else if(list.get(i).getArticle_type().equals("Q")){
-						 		type="Áú¹®";
+						 		type="ì§ˆë¬¸";
 						 %>
 						 <%}%>
 						 <%= type %></td>
@@ -100,7 +99,7 @@
 				</tbody>
 				<tfoot>
 					<tr>
-						<td colspan="5" align="center"><button onclick='location.href="writeBoard.jsp"'>±Û ¾²±â</button></td>
+						<td colspan="5" align="center"><button onclick='location.href="writeBoard.jsp"'>ê¸€ ì“°ê¸°</button></td>
 					</tr>
 				</tfoot>
 			</table>
@@ -110,7 +109,7 @@
 	<script src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript">
 		
-		// ÇÊ¿ä¾øÀ»Áöµµ
+		// í•„ìš”ì—†ì„ì§€ë„
 		$(document).on("click", "#category", function(){
 			
 			$.ajax({
