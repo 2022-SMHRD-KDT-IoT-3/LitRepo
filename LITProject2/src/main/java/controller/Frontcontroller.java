@@ -19,6 +19,7 @@ import service.SaveCommentServiceCon;
 import service.ShowCommentServiceCon;
 import service.UpdateBoardServiceCon;
 import service.WriteBoardService;
+import service.idCheckServiceCon;
 
 @WebServlet("*.do")
 public class Frontcontroller extends HttpServlet {
@@ -86,6 +87,11 @@ public class Frontcontroller extends HttpServlet {
 		} else if (command.equals("DeleteCommentServiceCon.do")) {
 			com = new DeleteCommentServiceCon();
 			nextPage = com.execute(request, response);
+		} else if (command.equals("idCheckServiceCon.do")) {
+			com = new idCheckServiceCon();
+			
+			nextPage = com.execute(request, response);
+			
 		}
 		
 		
