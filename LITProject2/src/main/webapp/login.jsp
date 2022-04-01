@@ -120,9 +120,9 @@
                <div>
                   <div class="d-grid gap-3 col-8 mx-auto">
                      </br>
-                     </br> <input type="submit" class="btn btn-secondary btn-lg" id="btn1" value="로그인">
+                     </br> <input type="button" onclick="loginCheck()" class="btn btn-secondary btn-lg" id="btn1" value="로그인">
                      
-                     <input type="submit" class="btn btn-secondary btn-lg" id="btn1" value="회원가입">
+                     <input type="button"  onclick="location.href='join.jsp'" class="btn btn-secondary btn-lg" id="btn1" value="회원가입">
                         
                   </div>
 
@@ -171,6 +171,66 @@
 
    <!-- Scripts -->
    <script src="assets/js/jquery.min.js"></script>
+   <script>
+
+   	function loginCheck(){
+   		var id = $('input[name=id]').val();
+   		var pw = $('input[name=pw]').val();
+   		
+   		if(id != "" && pw != ""){
+   		$.ajax({
+   			
+   			type : 'post',
+            url : 'LoginServiceCon.do',
+            data : {
+                'id' : id,
+                'pw' : pw
+            },
+            success : function(check){
+            	
+            	if(check == 'false'){
+                	alert('아이디나 비밀번호가 틀렸거나 존재하지 않습니다.');
+				} else{
+					
+					location.href = 'main_login.jsp'
+				}
+                
+            },
+            error : function(){
+                
+            }
+   			
+   			
+   		}
+   			
+   		) }else{
+
+   			
+   			alert('정확한 정보를 입력해주십시오.');
+   		}
+   		
+   		
+   		
+   		
+   		
+   		
+   	}
+   
+  
+   	
+   	
+   	
+   	
+   
+   
+   
+   
+   
+   
+   </script>
+   
+   
+   
    <script src="assets/js/jquery.scrollex.min.js"></script>
    <script src="assets/js/jquery.scrolly.min.js"></script>
    <script src="assets/js/browser.min.js"></script>

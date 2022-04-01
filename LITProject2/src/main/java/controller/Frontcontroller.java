@@ -99,7 +99,7 @@ public class Frontcontroller extends HttpServlet {
 		
 		if(nextPage != null) {
 			response.sendRedirect(nextPage);
-		}
+		} 
 	
 	}
 

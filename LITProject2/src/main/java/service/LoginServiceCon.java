@@ -1,6 +1,7 @@
 package service;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -24,6 +25,11 @@ public class LoginServiceCon implements Command {
 
 
 		MemberDTO dto = new MemberDAO().login(id, pw);
+		
+		PrintWriter out = response.getWriter();
+		
+		boolean check = true;
+		
 
 		
 		if(dto != null) {
@@ -34,16 +40,23 @@ public class LoginServiceCon implements Command {
 			
 			session.setAttribute("info", dto);
 			
+			out.print(check);
+			
+			
 			
 		} else {
 			
 			System.out.println("로그인 실패");
 			
+			check = false;
+			
+			out.print(check);
+
 		}
 		
+		out.close();
 		
-		
-		return "main_login.jsp";
+		return null;
 	}
 
 }
