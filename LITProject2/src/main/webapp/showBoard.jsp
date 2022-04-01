@@ -29,6 +29,15 @@
 
 	MemberDTO sdto = (MemberDTO) session.getAttribute("info");
 	ArrayList<CommentDTO> cmtlist = (ArrayList<CommentDTO>) request.getAttribute("cmtlist");
+	
+	// 게시물을 조회하면 db에 조회수가 1 추가..
+	
+	// 글 조회수
+	int count = dto.get(num).getArticle_cnt()+1;
+	// 글 시퀀스
+	int seq = dto.get(num).getArticle_seq();
+	// DB로 넘겨줄방법..
+	int complete = dao.updateCount(count, seq);
 	%>
 
 	<input type="hidden" value="<%=sdto.getMem_id()%>" id="myId">
@@ -47,7 +56,7 @@
 				</tr>
 				<tr>
 					<td>조회수</td>
-					<td><%=dto.get(num).getArticle_cnt()%></td>
+					<td><%= count %></td>
 				</tr>
 				<tr>
 					<td>작성일자</td>
@@ -69,8 +78,8 @@
 						<%
 						if (dto != null) {
 						%> <%
- if (dto.get(num).getMem_id().equals(sdto.getMem_id())) {
- %>
+						if (dto.get(num).getMem_id().equals(sdto.getMem_id())) {
+						%>
 						<button id=""
 							onclick="location.href='updateBoard.jsp?num=<%=dto.get(num).getArticle_seq()%>&article_num=<%=num%>'">글수정</button>
 
@@ -224,7 +233,7 @@
 
 										output += "&nbsp;&nbsp;<button class='cmt_before tabActive" + i + "'  ' onClick='editBtn("+i+ ")' >댓글수정</button>&nbsp;&nbsp;";
 										output += "&nbsp;&nbsp;"
-										output += "<button id='deletereplyBtn" + i + "' class='cmt_before' data-reply-seq='" + reply_seq + "'>댓글 삭제</button>"
+										output += "<button id='deletereplyBtn" + i + "' class='cmt_before' onClick='deleteBtn(" + reply_seq + ")'>댓글 삭제</button>"
 										output += "&nbsp;&nbsp;"
 
 										output += "<div class='reply_edit_hidden" + i + "' style='display:none'>";
@@ -297,17 +306,16 @@
 		};	// edit reply method end
 		
 		
-		for(let i=0; i<replyList.length;i++){
-		$(document).on("click","#deletereplyBtn"+i,function(){
+		function deleteBtn(reply_seq){
 			
-			var replySeq = $(this).data("replySeq");
-			console.log("function 값 : " + replySeq)
+			//var replySeq = $(this).data("replySeq");
+			console.log("function 값 : " + reply_seq)
 			if (confirm('정말 삭제하시겠습니까?') == true) {
 				$.ajax({
 					url : "DeleteCommentServiceCon.do",
 					type : "post",
 					data : {
-						num : replySeq
+						num : reply_seq
 					},
 					success : function() {
 						location.reload();
@@ -315,7 +323,6 @@
 				})
 			}
 			
-		})
 		};	// editreplyBtn method end
 
 	</script>

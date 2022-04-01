@@ -4,8 +4,8 @@
 #include <HTTPClient.h>
 
 
-const char* ssid     = "jeongyong";
-const char* password = "123456789";
+const char* ssid     = "==ssid==";
+const char* password = "==password==";
 
 
 
@@ -22,7 +22,7 @@ int sound;
 
 
 void setup(){
-  Serial.begin(115200);
+  Serial.begin(9600);
   ledcSetup(0, 5000, 8);
   ledcAttachPin(14, 0);
   ledcAttachPin(27, 1);
@@ -57,45 +57,46 @@ void makeJson(String result) { //String 형태의 json 형식 파싱
   JsonObject& root = jsonBuffer.parseObject(json);
 
   if(result.startsWith("{\"Red\"")){ // Red로 시작하는 json 형식
-  red = root["Re"];
+  red = root["Red"];
   green = root["Green"];
   blue = root["Blue"];
   } else if(result.startsWith("{\"BPM\"")){ // BPM으로 시작하는 json 형식
   BPM = root["BPM"];
-  temperature = root["Temperature"];
-  humidity = root["Humidity"];
   sound = root["Sound"];
+  } else if (result.startsWith("{\"Temperature\"")){
+  temperature = root["Temperature"];
+  humidity = root["Humidity"];    
   }
   
   Serial.print("Json data : ");
   root.printTo(Serial);
   Serial.println();
-}
+} 
 
 
 
 void loop(){
   if(Serial.available()){
     String dataSet = (String) Serial.readStringUntil('\n'); // '\n' 전까지 송신된 serial 읽기
-    Serial.println(dataSet);
     makeJson(dataSet);
-   
-   
-
   }
 
-
-
   
+
 if(WiFi.status() == WL_CONNECTED){
   HTTPClient http;
-  http.begin("http://172.30.1.40:8081/WebTest/LEDColorChange?BPM=" + (String) BPM + "&temp=" + (String) temperature + "&humi=" + (String) humidity + "&sound=" + (String) sound);
+  
+  
+  http.begin("http://172.30.1.40:8081/WebTest/DataReceiver?BPM=" + (String) BPM + "&temp=" + (String) temperature + "&humi=" + (String) humidity + "&sound=" + (String) sound);
+   
+    
     int httpCode = http.GET() ;
+    
+    
     if(httpCode > 0) {
 
       Serial.println(httpCode);
       String result = http.getString();
-      Serial.println(result);
       makeJson(result);
       
     }

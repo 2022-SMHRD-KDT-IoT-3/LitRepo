@@ -81,6 +81,7 @@ public class BoardDAO {
 		
 	}
 	
+	// 게시물 목록 메소드
 	public ArrayList<BoardDTO> showBoard() {
 		ArrayList<BoardDTO> list = new ArrayList<BoardDTO>();
 
@@ -101,7 +102,9 @@ public class BoardDAO {
 				String id = rs.getString(6);
 				int article_cnt = rs.getInt(7);
 				String article_type = rs.getString(8);
-
+				
+				//article_cnt++;
+				
 				BoardDTO dto = new BoardDTO(num, title, content, fileName, date, id, article_cnt, article_type);
 
 				list.add(dto);
@@ -116,6 +119,45 @@ public class BoardDAO {
 
 		return list;
 	}
+	// 게시물 카테고리 목록 메소드
+		public ArrayList<BoardDTO> showCategoryBoard(String category) {
+			ArrayList<BoardDTO> list = new ArrayList<BoardDTO>();
+
+			dbconn();
+			try {
+				String sql = "SELECT * FROM board_info where article_category=? ORDER BY article_date";
+
+				psmt = conn.prepareStatement(sql);
+				psmt.setString(1, category);
+				rs = psmt.executeQuery();
+
+				while (rs.next()) {
+					int num = rs.getInt(1);
+					String title = rs.getString(2);
+					String content = rs.getString(3);
+					String fileName = rs.getString(4);
+					String date = rs.getString(5);
+					String id = rs.getString(6);
+					int article_cnt = rs.getInt(7);
+					String article_type = rs.getString(8);
+					
+					//article_cnt++;
+					
+					BoardDTO dto = new BoardDTO(num, title, content, fileName, date, id, article_cnt, article_type);
+
+					list.add(dto);
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+
+			} finally {
+				dbclose();
+			}
+
+			return list;
+		}
+		
 	// 게시물 수정하는 메소드
 	public int updateBoard(BoardDTO dto) {
 		dbconn();
@@ -126,15 +168,16 @@ public class BoardDAO {
 			psmt.setString(2, dto.getArticle_content());
 			psmt.setString(3, dto.getArticle_file());
 			if(dto.getArticle_type().equals("free")) {
-				psmt.setString(5, "F");
+				psmt.setString(4, "F");
 			}else if(dto.getArticle_type().equals("q&a")) {
-				psmt.setString(5, "Q");
+				psmt.setString(4, "Q");
 			}else if(dto.getArticle_type().equals("infomation")) {
-				psmt.setString(5, "I");
+				psmt.setString(4, "I");
 			}else if(dto.getArticle_type().equals("sleep")) {
-				psmt.setString(5, "S");
+				psmt.setString(4, "S");
 			}
-			psmt.setString(6, dto.getMem_id());
+			psmt.setString(5, dto.getMem_id());
+			psmt.setInt(6, dto.getArticle_seq());
 			cnt = psmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -146,7 +189,7 @@ public class BoardDAO {
 	public int deleteBoard(int num) {
 		dbconn();
 		try {
-			String sql="delete from board_info where article_seq= TO_NUMBER(?)";
+			String sql="delete from board_info where article_seq= ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, num);
 			
@@ -158,5 +201,25 @@ public class BoardDAO {
 		} return cnt;
 	}
 	// 게시물 조회수 추가는 메소드
-	
+	public int updateCount(int count, int seq) {
+		dbconn();
+		try {
+			String sql = "update board_info set article_cnt=? where article_seq=?";
+			psmt= conn.prepareStatement(sql);
+			psmt.setInt(1, count);
+			psmt.setInt(2, seq);
+			
+			cnt= psmt.executeUpdate();
+			
+			if(cnt>0) {
+				System.out.println("조회수 추가 완료");
+			}else {
+				System.out.println("조회수 추가 실패");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			dbclose();
+		} return cnt;
+	}
 }
