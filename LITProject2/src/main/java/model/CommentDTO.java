@@ -33,7 +33,18 @@ public class CommentDTO {
 		this.mem_id = mem_id;
 	}
 
+	
+	public CommentDTO(int cmt_seq, String cmt_content) {
+		this.cmt_seq = cmt_seq;
+		this.cmt_content = cmt_content;
+	}
+	
+	
 
+	public CommentDTO(int cmt_seq) {
+		this.cmt_seq = cmt_seq;
+	}
+	
 	public int getCmt_seq() {
 		return cmt_seq;
 	}

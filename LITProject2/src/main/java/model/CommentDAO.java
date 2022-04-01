@@ -52,6 +52,11 @@ public class CommentDAO {
 			
 			
 			cnt = psmt.executeUpdate();
+			if(cnt>0) {
+				System.out.println("DB에 글 저장 완료!");
+			}else {
+				System.out.println("DB에 글 저장 실패");
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -62,13 +67,17 @@ public class CommentDAO {
 	public int updateComment(CommentDTO dto) {
 		dbconn();
 		try {
-			String sql = "update comment_info set cmt_content=?, cmt_date=sysdate where mem_id=? and article_seq=?";
+			String sql = "update comment_info set cmt_content=?, cmt_date = sysdate where cmt_seq=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getCmt_content());
-			psmt.setString(2, dto.getMem_id());
-			psmt.setInt(3, dto.getArticle_seq());
+			psmt.setInt(2, dto.getCmt_seq());
 			
 			cnt = psmt.executeUpdate();
+			if(cnt>0) {
+				System.out.println("DAO 댓글 수정 성공");
+			}else {
+				System.out.println("DAO 댓글 수정 실패");
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -157,6 +166,7 @@ public class CommentDAO {
 		try {
 			String sql = "DELETE FROM comment_info WHERE article_seq = ?";
 			psmt = conn.prepareStatement(sql);
+			System.out.println("[댓글삭제메소드]");
 			System.out.println(num);
 			psmt.setInt(1, num);
 			cnt = psmt.executeUpdate();
