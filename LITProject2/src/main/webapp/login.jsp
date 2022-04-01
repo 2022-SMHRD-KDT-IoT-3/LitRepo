@@ -122,7 +122,7 @@
                      </br>
                      </br> <input type="submit" class="btn btn-secondary btn-lg" id="btn1" value="로그인">
                      
-                     <input type="submit" class="btn btn-secondary btn-lg" id="btn1" value="회원가입">
+                     <button type="button" class="btn btn-secondary btn-lg" onclick="location.href='join.jsp'" id="btn1" style="font-family: 'Nanum Myeongjo', serif;">회원가입</button> 
                         
                   </div>
 
