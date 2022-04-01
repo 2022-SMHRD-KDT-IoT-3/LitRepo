@@ -122,7 +122,10 @@
                      </br>
                      </br> <input type="button" onclick="loginCheck()" class="btn btn-secondary btn-lg" id="btn1" value="로그인">
                      
+
                      <input type="button"  onclick="location.href='join.jsp'" class="btn btn-secondary btn-lg" id="btn1" value="회원가입">
+
+                     
                         
                   </div>
 

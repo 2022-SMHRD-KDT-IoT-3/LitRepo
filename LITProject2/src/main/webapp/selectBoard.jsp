@@ -21,9 +21,13 @@
 <body>
 	<% BoardDAO dao = new BoardDAO();
 	
-		ArrayList<BoardDTO> list = dao.showBoard();
+		System.out.println("selectBoard.jsp");
+		
+		ArrayList<BoardDTO> list = (ArrayList<BoardDTO>)session.getAttribute("list");
+		//ArrayList<BoardDTO> list = dao.showCategoryBoard(dto);
 		String type = "";
 		
+		System.out.println("list : " + list);
 		
 		
 	%>
@@ -108,7 +112,8 @@
 	
 	<script src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript">
-
+		
+	
 	</script>
 	<script src="assets/js/jquery.scrollex.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>

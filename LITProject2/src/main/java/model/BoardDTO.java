@@ -40,6 +40,10 @@ public class BoardDTO {
 		this.mem_id = mem_id;
 		this.article_type = article_type;
 	}
+	
+	public BoardDTO(String article_type) {
+		this.article_type = article_type;
+	}
 
 	public int getArticle_seq() {
 		return article_seq;

@@ -116,20 +116,42 @@ margin-bottom:140px;
 
 <body class="is-preload" style="font-family: 'Nanum Myeongjo', serif;"></body>
 
-<% HttpSession session1=request.getSession(); MemberDTO dto=(MemberDTO) session1.getAttribute("info"); %>
+<% HttpSession session1=request.getSession(); 
+
+	
+
+MemberDTO dto=(MemberDTO) session1.getAttribute("info"); 
+	
+
+
+%>
 
 	<!-- Wrapper -->
 	<div id="wrapper">
 
 		<!-- 로그인 버튼 -->
 
+<!-- admin 아이디 로그인 시 관리자 페이지 버튼 추가  -->
 		<span class="span1">
+			<% if(dto != null){%>
+                           <!-- 아이디가 admin이면 회원 전체 검색이 되도록 -->
+                           <%if(dto.getMem_id().equals("admin")){ %>
+                           <button type="button" onclick="location.href='select.jsp' " class="btn btn-secondary"
+				style="font-family: 'Nanum Myeongjo', serif;">회원전체검색</button> 		
+		
 			<button type="button" onclick="location.href='mypage.jsp' " class="btn btn-secondary"
 				style="font-family: 'Nanum Myeongjo', serif;">마이페이지</button>
 
+			<button type="button" onclick="location.href='LogoutServiceCon.do'" class="btn btn-outline-secondary"
+				style="font-family: 'Nanum Myeongjo', serif;">로그아웃</button>
+                           <%}else{ %>
+                          <button type="button" onclick="location.href='mypage.jsp' " class="btn btn-secondary"
+				style="font-family: 'Nanum Myeongjo', serif;">마이페이지</button>
 
 			<button type="button" onclick="location.href='LogoutServiceCon.do'" class="btn btn-outline-secondary"
 				style="font-family: 'Nanum Myeongjo', serif;">로그아웃</button>
+                           <%} %>
+                           <%} %>
 		</span>
 		<br><br><br>
 
