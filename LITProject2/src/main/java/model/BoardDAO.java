@@ -120,43 +120,43 @@ public class BoardDAO {
 		return list;
 	}
 	// 게시물 카테고리 목록 메소드
-		public ArrayList<BoardDTO> showCategoryBoard(String category) {
-			ArrayList<BoardDTO> list = new ArrayList<BoardDTO>();
+			public ArrayList<BoardDTO> showCategoryBoard(BoardDTO dto) {
+				ArrayList<BoardDTO> list = new ArrayList<BoardDTO>();
 
-			dbconn();
-			try {
-				String sql = "SELECT * FROM board_info where article_category=? ORDER BY article_date";
+				dbconn();
+				try {
+					String sql = "SELECT * FROM board_info where article_type=? ORDER BY article_date";
 
-				psmt = conn.prepareStatement(sql);
-				psmt.setString(1, category);
-				rs = psmt.executeQuery();
+					psmt = conn.prepareStatement(sql);
+					psmt.setString(1, dto.getArticle_type());
+					rs = psmt.executeQuery();
 
-				while (rs.next()) {
-					int num = rs.getInt(1);
-					String title = rs.getString(2);
-					String content = rs.getString(3);
-					String fileName = rs.getString(4);
-					String date = rs.getString(5);
-					String id = rs.getString(6);
-					int article_cnt = rs.getInt(7);
-					String article_type = rs.getString(8);
-					
-					//article_cnt++;
-					
-					BoardDTO dto = new BoardDTO(num, title, content, fileName, date, id, article_cnt, article_type);
+					while (rs.next()) {
+						int num = rs.getInt(1);
+						String title = rs.getString(2);
+						String content = rs.getString(3);
+						String fileName = rs.getString(4);
+						String date = rs.getString(5);
+						String id = rs.getString(6);
+						int article_cnt = rs.getInt(7);
+						String article_type = rs.getString(8);
+						
+						//article_cnt++;
+						
+						BoardDTO dto1 = new BoardDTO(num, title, content, fileName, date, id, article_cnt, article_type);
 
-					list.add(dto);
+						list.add(dto1);
+					}
+
+				} catch (Exception e) {
+					e.printStackTrace();
+
+				} finally {
+					dbclose();
 				}
 
-			} catch (Exception e) {
-				e.printStackTrace();
-
-			} finally {
-				dbclose();
+				return list;
 			}
-
-			return list;
-		}
 		
 	// 게시물 수정하는 메소드
 	public int updateBoard(BoardDTO dto) {

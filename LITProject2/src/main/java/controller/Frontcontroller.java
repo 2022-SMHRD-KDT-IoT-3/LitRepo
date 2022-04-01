@@ -17,6 +17,7 @@ import service.JoinService;
 import service.LoginServiceCon;
 import service.LogoutServiceCon;
 import service.SaveCommentServiceCon;
+import service.SelectBoardServiceCon;
 import service.ShowCommentServiceCon;
 import service.UpdateBoardServiceCon;
 import service.WriteBoardService;
@@ -93,6 +94,9 @@ public class Frontcontroller extends HttpServlet {
 			nextPage = com.execute(request, response);			
 		}else if(command.equals("DeleteServiceCon.do")) {
 			com = new DeleteServiceCon();
+			nextPage = com.execute(request, response);
+		}else if (command.equals("SelectBoardServiceCon.do")) {
+			com = new SelectBoardServiceCon();
 			nextPage = com.execute(request, response);
 		}
 		
