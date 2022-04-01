@@ -1,3 +1,7 @@
+<%@page import="model.PhysicalDTO"%>
+<%@page import="java.util.List"%>
+<%@page import="service.BodyCalculator"%>
+<%@page import="model.PhysicalDAO"%>
 <%@page import="model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
    pageEncoding="EUC-KR"%>
@@ -116,14 +120,29 @@ margin-bottom:140px;
 
 <body class="is-preload" style="font-family: 'Nanum Myeongjo', serif;"></body>
 
-<% HttpSession session1=request.getSession(); 
+<% 
 
+HttpSession session1=request.getSession(); 
+MemberDTO dto= (MemberDTO) session1.getAttribute("info"); 
+PhysicalDAO pdao = new PhysicalDAO();
+BodyCalculator bc = new BodyCalculator();
+
+List<PhysicalDTO> BPMavgList = null;
+String labels = " ";
+String data = " ";
+
+int bpmListSize = pdao.SelectBPMPerHour(dto.getMem_id()).size();
 	
-
-MemberDTO dto=(MemberDTO) session1.getAttribute("info"); 
+	if( bpmListSize != 0){
+	BPMavgList = pdao.SelectBPMPerHour(dto.getMem_id());
+	labels = bc.chart1Labels(BPMavgList);
 	
-
-
+	data = bc.chart1Data(BPMavgList);
+	} 
+	
+	
+	
+	
 %>
 
 	<!-- Wrapper -->
@@ -199,7 +218,7 @@ MemberDTO dto=(MemberDTO) session1.getAttribute("info");
 								</svg>
 								<br>
 							</p>
-							<p>사용자 : 김도은</p>
+							<p><%= dto.getMem_nick() %></p>
 
 
 						</div>
@@ -217,10 +236,20 @@ MemberDTO dto=(MemberDTO) session1.getAttribute("info");
 								<div class="col-6 col-12-medium">
 									<h5 id="txt">평균심박수</h5>
 									<br>
+									<%if(bpmListSize != 0) {%>
 									<div>
+										
 										<canvas id="myChart"></canvas>
+										
 									</div>
+									
+									
+									<!--  
 									<canvas id="myChart" width="400" height="80"></canvas>
+									-->
+									<%} else { %>
+										<h5>축적된 데이터가 없습니다.</h5>
+										<%} %>
 
 									<br>
 									<h5 id="txt">평균 데시벨</h5>
@@ -367,10 +396,10 @@ MemberDTO dto=(MemberDTO) session1.getAttribute("info");
 		const myChart = new Chart(ctx, {
 			type: 'line',
 			data: {
-				labels: ['3/1', '3/2', '3/3', '3/4', '3/5', '3/6', '3/7'],
+				labels: [<%= labels %>],
 				datasets: [{
 					label: '하루 평균 수면 심박 수',
-					data: [73, 70, 77, 69, 68, 70, 71],
+					data: [<%=data%>],
 					backgroundColor: [
 						'rgba(255, 99, 132, 0.2)',
 						'rgba(255, 99, 132, 0.2)',

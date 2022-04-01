@@ -1,14 +1,53 @@
 package model;
 
-public class PhysiclaDTO {
+public class PhysicalDTO {
 	private int sensing_seq;
 	private String mem_id;
 	private int sensing_pulse;
 	private int sensing_stress;
 	private String sensing_date;
+	private String BPMHour;
+	private int BPMavg;
 
 	
-	public PhysiclaDTO(int sensing_seq, String mem_id, int sensing_pulse, int sensing_stress, String sensing_date) {
+	public PhysicalDTO(String BPMHour, int BPMavg) {
+		super();
+		this.BPMHour = BPMHour;
+		this.BPMavg = BPMavg;
+	}
+
+
+
+
+	public String getBPMHour() {
+		return BPMHour;
+	}
+
+
+
+
+	public void setBPMHour(String BPMHour) {
+		this.BPMHour = BPMHour;
+	}
+
+
+
+
+	public int getBPMavg() {
+		return BPMavg;
+	}
+
+
+
+
+	public void setBPMavg(int BPMavg) {
+		this.BPMavg = BPMavg;
+	}
+
+
+
+
+	public PhysicalDTO(int sensing_seq, String mem_id, int sensing_pulse, int sensing_stress, String sensing_date) {
 		this.sensing_seq = sensing_seq;
 		this.mem_id = mem_id;
 		this.sensing_pulse = sensing_pulse;
@@ -16,6 +55,26 @@ public class PhysiclaDTO {
 		this.sensing_date = sensing_date;
 	}
 	
+	
+	
+	
+	public PhysicalDTO(int sensing_pulse) {
+		this.sensing_pulse = sensing_pulse;
+	}
+
+	
+	
+
+
+
+	public PhysicalDTO(String mem_id) {
+		super();
+		this.mem_id = mem_id;
+	}
+
+
+
+
 	public int getSensing_seq() {
 		return sensing_seq;
 	}
