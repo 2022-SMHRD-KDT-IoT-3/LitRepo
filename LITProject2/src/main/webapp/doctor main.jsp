@@ -23,6 +23,19 @@
 			@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
 
 
+			.btn-outline-secondary {
+				/*위에 홈 로그인버튼*/
+				background-color: transparent !important;
+				box-shadow: inset 0 0 0 0px rgb(255 255 255 / 35%) !important;
+				color: #ffffff !important;
+				border-radius: 8px !important;
+				border-color: rgb(255 255 255 / 35%) !important;
+				padding-right: 10px !important;
+				width: 80px !important;
+				font-size: 12px !important;
+			}
+
+
 			/* 버튼 */
 			.span1 {
 				right: 10px;
@@ -33,6 +46,7 @@
 			/* 메뉴 */
 			.menu {
 				text-align: center;
+
 			}
 
 			.Bigtitle {
@@ -58,6 +72,12 @@
 				font-weight: bold;
 			}
 
+			p {
+				font-weight: bold;
+				background-color: whitesmoke;
+				border-radius: 7px;
+			}
+
 			/* 결과 피드백 부분 */
 			.feedback {
 				padding: 50px;
@@ -75,6 +95,8 @@
 
 			.gotop {
 				margin-left: 15px;
+				border-color: white;
+				border-radius: 10px;
 			}
 
 			.magic {
@@ -91,7 +113,7 @@
 			.imgfile {
 				float: left;
 				height: 120px;
-				margin-right: 10px;
+				margin: 20px;
 			}
 
 			.doctortable {
@@ -99,9 +121,37 @@
 				text-align: center;
 				background-color: rgb(255, 255, 255);
 			}
+
+			/*  심박수 바 그래프 */
+			.pulse1 {
+				padding: 50px;
+			}
+
+			.pulse2 {
+				text-align: center;
+				font-weight: bold;
+			}
+
+			a {
+				color: white !important;
+				text-decoration: none !important;
+			}
+
+			.mylevel {
+				margin-left: 120px;
+				position: absolute;
+			}
+
+			.lastword {
+				text-align: center;
+				color: white;
+			}
 		</style>
 
 
+		<!-- 부트스트랩 -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+			integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 	</head>
 
@@ -110,10 +160,11 @@
 		<!-- Wrapper -->
 		<div id="wrapper">
 			<span class="span1">
-				<button type="button" onclick="location.href='main_login.jsp'" class="btn btn-outline-secondary"
-					style="font-family: 'Nanum Myeongjo', serif;">HOME</button>
-				<button type="button" onclick="location.href='LogoutServiceCon.do'" class="btn btn-outline-secondary"
-					style="font-family: 'Nanum Myeongjo', serif;">로그아웃</button>
+				<button type="button" onclick="location.href='main1.jsp'" class="btn btn-outline-secondary"
+					id="up">HOME</button>
+
+				<button type="button" onclick="location.href='login.jsp'" class="btn btn-outline-secondary"
+					id="up">로그아웃</button>
 			</span>
 			<!-- 맨위로 버튼 누를때 이동해올 곳 -->
 			<h1 id="top"></h1>
@@ -123,16 +174,16 @@
 			<header id="header">
 				<h1>수면 결과 분석</h1>
 				<br>
-				<p>2022.03.01 ~ 2022.03.07</p>
+				<div style="color: white;">2022.03.01 ~ 2022.03.07</div>
 			</header>
 
 			<br>
 			<table class="menu">
-				<tr>
 
+				<tr>
 					<td><a href="doctor main.jsp">Main</a></td>
 					<td><a href="doctormine.jsp">맞춤 피드백</a></td>
-					<td><a href="doctortip.jsp">의료서비스</a></td>
+					<td><a href="doctortip.jsp">의사 상담</a></td>
 					<td><a href="doctorcheck.jsp">수면상태체크</a></td>
 				</tr>
 			</table>
@@ -140,86 +191,165 @@
 
 			<div id="main">
 				<section>
-					<div class="row">
-						<div class="col-6 col-12-medium">
+					<div class="row">   
+						<div class="col-6 col-12-medium">       
 							<br> <br>
 							<h4 class="Bigtitle">히스토리</h4>
+
+							<!-- 심박수 시작 -->
 							<hr>
 							<h5 class="minititle">평균심박수</h5>
-							<br>
-							<div>
-								<canvas id="myChart"></canvas>
+							<!-- 직관적 이미지 추가 십박수 그래프 -->
+							<div class="pulse1">
+								<div class="progress">
+
+									<div class="progress-bar bg-danger" role="progressbar" style="width: 20%"
+										aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> 위험</div>
+									<div class="progress-bar bg-success" role="progressbar" style="width: 40%"
+										aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">적정</div>
+									<div class="progress-bar bg-info" role="progressbar" style="width: 20%"
+										aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">좋음</div>
+									<div class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="15"
+										aria-valuemin="0" aria-valuemax="100"> 매우 좋음</div>
+								</div>
+								<div class="mylevel"> ▲</div>
+
 							</div>
 							<br>
-							<div class="defaultfont">
-								최소 <b>68bpm</b>, 최대 <b>77bpm</b>
+							<div class="pulse2">
+								현재 '김도은' 님의 심박수는 <b>적정 수치</b>입니다
 							</div>
 
-							<br>
+							<details class="pulse1">
+								<summary>
+									<p style="text-align: center;">일주일 평균 심박수 보기</p>
+									<br>
+								</summary>
+
+								<canvas id="myChart"></canvas>
+								<br>
+								<br>
+								<div class="defaultfont">
+									최소 <b>68bpm</b>, 최대 <b>77bpm</b>
+								</div>
+							</details>
+
+							<!-- 데시벨 시작 -->
 							<hr>
 							<h5 class="minititle">평균 데시벨</h5>
 							<br>
-							<div>
+
+							<!-- 직관적 이미지 추가 데시벨 그래프 -->
+							<div class="pulse1">
+								<div class="progress">
+									<div class="progress-bar progress-bar-striped progress-bar-animated"
+										role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+										style="width: 75%"></div>
+								</div>
+							</div>
+
+							<div class="pulse2">
+								현재 '김도은' 님의 데시벨 레벨은 <b>매우 좋음</b> 입니다
+							</div>
+
+
+							<details class="pulse1">
+								<summary>
+									<p style="text-align: center;">일주일 평균 데시벨 보기</p>
+									<br>
+								</summary>
+
 								<canvas id="myChart2"></canvas>
-							</div>
-							<br>
-							<div class="defaultfont">
-								최소 <b>35dB</b>, 최대 <b>42dB</b>
-							</div>
+								<br>
+								<br>
+								<div class="defaultfont">
+									최소 <b>35dB</b>, 최대 <b>42dB</b>
+								</div>
+							</details>
 
 
-
-							<br>
+							<!-- 온습도 시작 -->
 							<hr>
 							<h5 class="minititle">평균 온/습도</h5>
-							<br>
 
-							<DIV>
-								<div>
-									<canvas id="myChart3"></canvas>
+							<!-- 직관적 이미지 추가 온습도 그래프 -->
+							<div class="pulse1">
+
+								<h5 style="text-align: center;">온도 레벨</h5>
+								<br>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="25"
+										aria-valuemin="0" aria-valuemax="100">20도</div>
 								</div>
+
+								<br>
+								<br>
+								<br>
+
+								<h5 style="text-align: center;">습도 레벨</h5>
+								<br>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar" style="width: 55%;" aria-valuenow="25"
+										aria-valuemin="0" aria-valuemax="100">55%</div>
+								</div>
+
+							</div>
+							<br>
+							<div class="pulse2">
+								현재 '김도은' 님의 수면환경은 <b>매우 좋음</b> 입니다
+							</div>
+
+
+							<details class="pulse1">
+								<summary>
+									<p style="text-align: center;">일주일 평균 온/습도 보기</p>
+									<br>
+								</summary>
+
+								<canvas id="myChart3"></canvas>
+								<br>
 								<br>
 								<div class="defaultfont">
 									최소 <b>17도</b>, 최대 <b>23도</b>
 								</div>
-								<br> <br>
+								<br>
+								<hr>
 								<div>
 									<canvas id="myChart4"></canvas>
 								</div>
 								<br>
+								<br>
 								<div class="defaultfont">
 									최소 <b>30%</b>, 최대 <b>35%</b>
 								</div>
+							</details>
 
-							</DIV>
 
+							<!-- 분석결과  summary -->
 							<hr>
 							<div style="text-align: center;">
 								<br>
-								<h4 class="Bigtitle">분석결과</h4>
+								<h4 class="Bigtitle">  분석결과 </h4>
 								<br>
 								<div>
-									<u>'김도은'</u> 님의 수면 심박수 : <b>60 ~ 72 bpm</b>
+									수면 심박수 : <b>60 ~ 72 bpm</b>
 								</div>
 								<div></div>
 								<br>
 								<div>
-									<u>'김도은'</u> 님의 수면 데시벨 : <b>35 ~ 40 dB</b>
+									수면 데시벨 : <b>35 ~ 40 dB</b>
 								</div>
 								<br>
 								<div>
-									실내 온/습도 레벨 : <b>적정</b>
+									실내 온/습도 레벨 : <b>매우 좋음</b>
 								</div>
 
 								<br>
+								<br>
 								<hr>
 								<br>
-								<h3 class="Bigtitle">의사 피드백</h3>
-								<br>
-
-
-								<h4 class="minititle">종합 소견</h4>
-
+								<h3 class="Bigtitle"> 의사 피드백 </h3>
+								
 								<div class="feedback">
 									<p>
 										현재 '김도은' 님의 평균 심박 수는 <b>72</b> 로 26살 여성 기준 <u>정상 수치</u>입니다. 그러나
@@ -239,39 +369,36 @@
 								<br>
 								<br>
 								<!-- 나심장의사의 조언 -->
-								<table  style="font-weight: bold;">
+								<table style="font-weight: bold;">
 									<tr></tr>
 									<tr class="doctortable">
 										<td>
-											<img class="imgfile" src="./img_doctor/diagnosis.png" alt="">
-
+											<br>
+											<img class="imgfile" src="./img_doctor/consultation.png" alt="">
 											<div><b>'나심장' 의사의 조언</b></div><br>
 
-											<div> 1. 유산소 운동 하루 30분 이상 하기</div>
+											<div> 1. 하루 30분 이상 유산소 운동하기</div>
 											<div> 2. 한달 간 심박수 수치 측정하기</div>
 											<div>3. 현재 온/습도 레벨 유지하기</div>
 										</td>
 									</tr>
 								</table>
-								<br>
 							</div>
 						</div>
 					</div>
 			</div>
 			</section>
 
-			<br> <br> <br> <br>
-			<p class="defaultfont" style="font-weight: bold;">"오늘의 분석 결과를 통해
-				맞춤 피드백 페이지에 필요한 정보를 제공해드립니다"</p>
+			<br> <br>
+			<br> <br>
+			<div class="lastword">"오늘의 분석 결과를 통해
+				맞춤 피드백 페이지에 필요한 정보를 제공해드립니다"</div>
 
-
-
-			<br> <br> <br>
+				<br><br><br>
 			</section>
-
-
 		</div>
 
+		<br>
 		<button type="button" class="gotop">
 			<a href="#top">맨 위로</a>
 		</button>
@@ -461,6 +588,9 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+			crossorigin="anonymous"></script>
 	</body>
 
 	</html>
