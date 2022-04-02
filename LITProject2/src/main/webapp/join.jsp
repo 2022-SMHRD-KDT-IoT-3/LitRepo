@@ -288,7 +288,7 @@ table td {
 								<div class="d-grid  col-8 mx-auto" id="gender">
 									</br>
 									</br>
-									<button type="button" class="go">회원가입</button>
+									<button type="submit" class="go">회원가입</button>
 									<br>
 								</table>
 								</div>
