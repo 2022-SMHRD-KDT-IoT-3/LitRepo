@@ -94,14 +94,13 @@
 	border-bottom:1px solid rgba(117, 49, 134, 0.3);
 	background-color:rgba(117, 49, 134, 0.3);
 }
-.btnc{
+.btnc {
     display: block;
-    padding: 25px;
+    padding: 5px;
     color: #fff;
     position: relative;
     font-size: 23px;
     border-style: none;
-
 }
 .subMenu{
     background: rgb(255, 255, 255);
@@ -347,7 +346,7 @@
 		<section>
 			<br> <br>
 			<br>
-			<p id="p2" style="font-size:20px;">오늘도 당신의 숙면을 위해 노력하겠습니다. 편안한 밤 되세요</p>
+			<p id="p2" style="font-size:16px;">오늘도 당신의 숙면을 위해 노력하겠습니다. 편안한 밤 되세요</p>
 			<ul class="actions">
 			</ul>
 		</section>

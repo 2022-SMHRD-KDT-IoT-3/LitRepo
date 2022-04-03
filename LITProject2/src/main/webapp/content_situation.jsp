@@ -21,9 +21,8 @@
 	font-size: 20px;
 }
 
-#p2 {
-	margin: auto;
-	text-align: center;
+#p2{
+text-align:center;
 }
 #id{
     margin:500px;
@@ -73,7 +72,7 @@
 
 		<!-- Main -->
 		<div id="main">
-			<div class="row">
+		<div class="row" style="background-color: rgb(237, 224, 250);">
 			<!-- Content -->
 			<section id="content" class="main">
 			
@@ -82,13 +81,13 @@
 				
 					<img src="상황/공부1.jpg" width="150" />
 					<a href=""></a>
-					<img src="상황/파티1.jpg" width="160" />
+					<img src="상황/파티1.jpg" width="155" />
 					<a href=""></a>
 					<img src="상황/일1.jpg" width="150" />
 					<a href=""></a>
 					<img src="상황/책1.jpg" width="150" />
 					<a href=""></a>
-					<img src="상황/아기1.jpg" width="150" />
+					<img src="상황/아기1.jpg" width="148" />
 	
 
 				</div>
@@ -103,7 +102,7 @@
 			<section>
 				<br> <br>
 				<br>
-				<p id="p2">오늘도 당신의 숙면을 위해 노력하겠습니다. 편안한 밤 되세요</p>
+				<p id="p2" style="font-size:16px">오늘도 당신의 숙면을 위해 노력하겠습니다. 편안한 밤 되세요</p>
 				<ul class="actions">
 				</ul>
 			</section>
