@@ -118,8 +118,8 @@
     <!-- Wrapper -->
     <div id="wrapper">
         <span class="span1">
-        <button type="button" onclick="location.href='main1.jsp'" class="btn btn-outline-secondary"style="font-family: 'Nanum Myeongjo', serif;">HOME</button>
-        <button type="button" class="btn btn-outline-secondary" onclick="location.href='main1.jsp'" style="font-family: 'Nanum Myeongjo', serif;">Mypage</button>
+        <button type="button" onclick="location.href='main_login.jsp'" class="btn btn-outline-secondary"style="font-family: 'Nanum Myeongjo', serif;">HOME</button>
+        <button type="button" class="btn btn-outline-secondary" onclick="location.href='mypage.jsp'" style="font-family: 'Nanum Myeongjo', serif;">마이페이지</button>
         <button type="button" class="btn btn-outline-secondary" onclick="location.href='LogoutServiceCon.do'" style="font-family: 'Nanum Myeongjo', serif;">로그아웃</button>
         </span>
         
@@ -138,7 +138,7 @@
         <table>
             <tr align="center">
                 <td>
-                    <a id="bt" href="content_perfum.jsp">향초</a>
+                    <a id="bt" href="perfume_시트러스.jsp">향초</a>
                     <a id="bt" href="content_meditation.jsp">명상</a>
                     <a id="bt" href="content_asmr.jsp">ASMR</a>
                     <a id="bt" href="content_living.jsp">리빙 제품</a>

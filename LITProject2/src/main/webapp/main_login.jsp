@@ -190,7 +190,8 @@ int bpmListSize = pdao.SelectBPMPerHour(dto.getMem_id()).size();
 						<a id="bt" href="content_main.jsp">컨텐츠 추천</a>
 						<a id="bt" href="doctor main.jsp">의사피드백</a>
 						<a id="bt" href="Board.jsp">게시판</a>
-						<a id="bt">기타</a>
+						<a id="bt" href="content_situation.jsp">상황별</a>
+						
 					</td>
 				</tr>
 			</table>
@@ -308,7 +309,7 @@ int bpmListSize = pdao.SelectBPMPerHour(dto.getMem_id()).size();
 									평균 심박데이터를 측정합니다
 								</li>
 								<li class="style3">
-									<h3>(3)</h3>5일동안 사용자의 심박, 코골이 데이터를 취합합니다<br>
+									<h3>(3)</h3>7일동안 사용자의 심박, 코골이 데이터를 취합합니다<br>
 									그 후 수면 데이터를 그래프화하여 그래프를 분석합니다
 
 								</li>
@@ -317,8 +318,8 @@ int bpmListSize = pdao.SelectBPMPerHour(dto.getMem_id()).size();
 									이상 징후 발견 시 사용자는 전문가 상담 서비스를 받을 수 있습니다
 								</li>
 								<li class="style5">
-									<h3>(5)</h3>측정데이터는 사용자의 이메일로 정기적으로 발송됩니다<br>
-									사용자는 웹을 통해 수면관련 컨텐츠를 제공받습니다
+									<h3>(5)</h3>사용자는 웹을 통해 수면관련 컨텐츠와 개인 맞춤형 피드백 컨텐츠를 제공받습니다<br>
+									
 
 								</li>
 							</ul>

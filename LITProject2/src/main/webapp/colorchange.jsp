@@ -170,7 +170,7 @@
 
 					<input type="color" name="color" id="color">
 					
-					<input type="submit" value="색 변환">
+					<input type="submit" style="margin-top:30px;color: #FFFFFF !important;" value="색 변환">
 				</form>
 				<p id="p3">색상을 선택해주세요</p>
 
@@ -346,7 +346,7 @@
 		<section>
 			<br> <br>
 			<br>
-			<p id="p2" style="font-size:16px;">오늘도 당신의 숙면을 위해 노력하겠습니다. 편안한 밤 되세요</p>
+			<p id="p2" style="font-size:1em;">오늘도 당신의 숙면을 위해 노력하겠습니다. 편안한 밤 되세요</p>
 			<ul class="actions">
 			</ul>
 		</section>

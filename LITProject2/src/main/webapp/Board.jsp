@@ -18,6 +18,11 @@
 
 
 </head>
+<style>
+input, select, textarea {
+    color: #000000;
+}
+</style>
 <body>
 	<% BoardDAO dao = new BoardDAO();
 	
@@ -34,6 +39,7 @@
 		<h2>자유 게시판</h2>
 		<h3></h3>
 		<div class="table-wrapper">
+		
 			<table>
 				<thead>
 					<tr>

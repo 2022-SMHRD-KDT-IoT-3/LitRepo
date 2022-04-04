@@ -144,7 +144,7 @@
 
          <section>
 
-            <dl class="alt">
+            <dl class="alt" style="color:white;">
                <dt>Address</dt>
                <dd>광주 동구 예술길 31-15</dd>
                <dt>Phone</dt>

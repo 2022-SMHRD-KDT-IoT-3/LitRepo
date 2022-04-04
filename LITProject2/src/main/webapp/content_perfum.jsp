@@ -102,7 +102,7 @@ text-align:center;
 		<table>
 			<tr align="center">
 				<td><a id="bt" href="content_main.jsp">Main</a> <a id="bt"
-					href="content_perfum.jsp">향초</a> <a id="bt"
+					href="perfume_시트러스">향초</a> <a id="bt"
 					href="content_meditation.jsp">명상</a> <a id="bt"
 					href="content_asmr.jsp">ASMR</a> <a id="bt"
 					href="content_living.jsp">리빙 제품</a> <a id="bt"
@@ -131,8 +131,7 @@ text-align:center;
 
 			<div class="col-md-6">
 				<a
-					href="https://www.coupang.com/vp/products/4797132556?itemId=6153998527&vendorItemId=73450212697&sourceType=srp_product_ads&clickEventId=9515a7fb-013c-4b3c-aad0-9f19250efe97&korePlacement=15&koreSubPlacement=1&q=%EC%95%88%EB%8C%80&itemsCount=36&searchId=deac6104dfaa4c1a92680379c2d6ca40&rank=0&isAddedCart="
-					target="_blank"><img src="img_perfume/시트러스풀꽃.jpg"
+					href="https://www.coupang.com/vp/products/6102014865?itemId=2310815176&vendorItemId=70307610788&q=%ED%92%80%EA%BD%83%ED%96%A5%EC%B4%88&itemsCount=36&searchId=d3a92d1f93ef4c85bb78244116282e6a&rank=28&isAddedCart="target="_blank"><img src="img_perfume/시트러스풀꽃.jpg"
 					class="living">
 				<p style="font-size: 23px; padding-left: 2.2em; text-align: left;">
 				코끝 속 은은한 풀꽃내음</a>

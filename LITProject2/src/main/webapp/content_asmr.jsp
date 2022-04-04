@@ -89,7 +89,7 @@ text-align:center;
             <tr align="center">
                 <td>
                     <a id="bt" href="content_main.jsp">Main</a>
-                    <a id="bt" href="content_perfum.jsp">향초</a>
+                    <a id="bt" href="perfume_시트러스.jsp">향초</a>
                     <a id="bt" href="content_meditation.jsp">명상</a>
                     <a id="bt" href="content_asmr.jsp">ASMR</a>
                     <a id="bt" href="content_living.jsp">리빙 제품</a>
@@ -106,7 +106,7 @@ text-align:center;
                 <div class="col-md-6"><a href="https://www.youtube.com/watch?v=KKi2qiuZZWQ"target="_blank"><img src="img_asmr/asmr바람.jpg"
             class="living"><p style="font-size:23px;padding-left: 6.8em;text-align: left;">바람</p></a></div>
 
-            <div class="col-md-6"><a href="https://www.coupang.com/vp/products/4797132556?itemId=6153998527&vendorItemId=73450212697&sourceType=srp_product_ads&clickEventId=9515a7fb-013c-4b3c-aad0-9f19250efe97&korePlacement=15&koreSubPlacement=1&q=%EC%95%88%EB%8C%80&itemsCount=36&searchId=deac6104dfaa4c1a92680379c2d6ca40&rank=0&isAddedCart="target="_blank"><img src="img_asmr/asmr장작.jpg"
+            <div class="col-md-6"><a href="https://www.youtube.com/watch?v=6ZSbWQkIYsU"target="_blank"><img src="img_asmr/asmr장작.jpg"
                 class="living"><p style="font-size:23px;padding-left: 6.8em;text-align: left;">장작</a></div>
                     <div class="col-md-6"><a href="https://www.youtube.com/watch?v=lYJ17n_oUkA"target="_blank"><img src="img_asmr/asmr숲.jpg"
                         class="living"><p style="font-size:23px;padding-left: 7.2em;text-align: left;">숲</a></div>
