@@ -28,7 +28,7 @@ public class LoginServiceCon implements Command {
 		
 		PrintWriter out = response.getWriter();
 		
-		boolean check = true;
+		String check = "true";
 		
 
 		
@@ -40,7 +40,15 @@ public class LoginServiceCon implements Command {
 			
 			session.setAttribute("info", dto);
 			
-			out.print(check);
+			if(dto.getMem_type().equals("D")) {
+				
+				check = "docter";
+				out.print(check);
+			} else {
+				
+				out.print(check);
+			}
+
 			
 			
 			
@@ -48,7 +56,7 @@ public class LoginServiceCon implements Command {
 			
 			System.out.println("로그인 실패");
 			
-			check = false;
+			check = "false";
 			
 			out.print(check);
 

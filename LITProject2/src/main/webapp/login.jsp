@@ -193,9 +193,12 @@
             	
             	if(check == 'false'){
                 	alert('아이디나 비밀번호가 틀렸거나 존재하지 않습니다.');
-				} else{
+				}  else if(check == 'true'){
 					
 					location.href = 'main_login.jsp'
+				} else if(check == 'docter'){
+					location.href = 'doctor main.jsp'
+					
 				}
                 
             },
