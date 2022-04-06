@@ -107,7 +107,7 @@ body {
 						<th style="padding-top: 15px;padding-bottom: 5px;">작성일자</th>
 					</tr>
 				</thead>
-				<tbody style="font-size:13px;">
+				<tbody style="text-align: center;font-size:13px;">
 
 
 					<%

@@ -328,7 +328,7 @@ int bpmListSize = pdao.SelectBPMPerHour(dto.getMem_id()).size();
 						<!-- Get Started -->
 						<section id="cta" class="main special">
 							<header class="major">
-								<h2>서비스를 관련된 문의사항이 있다면 아래의 번호로 연락해주세요</h2>
+								<h2>서비스에 관련된 문의사항이 있다면 아래의 번호로 연락해주세요</h2>
 								<p>언제나 친절히 상담해드리겠습니다<br />
 									당신의 건강한 수면을 위해 노력합니다</p>
 								phone : 010-0000-0000 <br>

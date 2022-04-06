@@ -136,6 +136,29 @@
 .nav:target .subMenu{
     max-height: 10em;
 }
+#on {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    border-radius: 30px;
+    border: groove;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 300;
+    height: 2.75em;
+    line-height: 1.75em;
+    min-width: 8.25em;
+    padding: 0 1.5em;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
 		</style>
 
 	</head>
@@ -341,6 +364,22 @@
             </li>
         </ui>
     </div>
+    <br>
+    <br>
+
+    <h2 style="font-size: 27px;
+    text-align: center;
+    background-color: #9873a9;">警菟錶該</h2>
+    <br>
+    <br>
+    			<section id="content" class="main">
+			
+				<img src="鼻��/警菟錶該.jpg" width="400" style="margin-left: 40px;">
+					<a href=""></a>
+<div>
+<button type="button" class="btn btn-outline-secondary" style="font-family: 'Nanum Myeongjo', serif;margin-left: 115px;margin-top: 30px;font-size: 15px;font-weight: bold;" id="on">ON</button>
+			    <button type="button" class="btn btn-outline-secondary" style="font-family: 'Nanum Myeongjo', serif;font-size: 15px;font-weight: bold;" id="on">OFF</button>
+ </div>
 	<!-- Footer -->
 	<footer id="footer">
 		<section>
