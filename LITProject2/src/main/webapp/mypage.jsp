@@ -92,12 +92,16 @@
 	
 	MemberDTO dto = (MemberDTO) session1.getAttribute("info");
 	
+	System.out.println(dto);
+	
 	String birthday = dto.getMem_birthday().replace(" 00:00:00", "");
 	System.out.println(birthday);
+	
+	
 %>
 
 
-
+		
 
 		<span class="span1">
 		
@@ -133,7 +137,7 @@
 			
 						</div>
 						<div id="sujung">
-							<p>회원정보 수정</p>
+							<button  onclick="location.href='joinchange.jsp'" style="font-family: 'Nanum Myeongjo', serif;">회원정보 수정</button>
 						</div>
 						<form>
 							<table id="table">

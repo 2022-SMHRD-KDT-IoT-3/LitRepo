@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@page import="model.MemberDTO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 
 <html>
@@ -15,8 +16,7 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 		<style>
-            @import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
-			/* ÇÁ·ÎÇÊ ¿µ¿ª ½ºÅ¸ÀÏ °¡¿îµ¥ Á¤·Ä */
+			/* í”„ë¡œí•„ ì˜ì—­ ìŠ¤íƒ€ì¼ ê°€ìš´ë° ì •ë ¬ */
 			#profile{
 				margin: auto;
 			text-align: center;
@@ -30,22 +30,12 @@
 			text-align: center;
 			}
 			.span1 {
-				right: 10px;
-	top: 10px;
+	right: 5px;
+	margin-right: 10px;
+	top: 2px;
 	position: absolute;
-}
-.btn-outline-secondary {
-	background-color: transparent;
-    box-shadow: inset 0 0 0 0px rgb(255 255 255 / 35%);
-    color: #ffffff;
-	border-radius: 8px;
-	border-color:rgb(255 255 255 / 35%);
-	padding-right:10px;
-	width:80px;
-	font-size:12px;
-}
-#header{
-	margin-top:30px;
+	border:1px solid #86458a;
+	border-radius: 30px;
 }
 
 
@@ -53,30 +43,41 @@
 		</style>
 
 	</head>
-    <body class="is-preload" style="font-family: 'Nanum Myeongjo', serif;"></body>
-    
-    
-    <!-- Wrapper -->
-    <div id="wrapper">
-        
-        <span class="span1">
-        
-                <button type="button" onclick="location.href='main1.jsp'"
-                class="btn btn-outline-secondary">HOME</button>
-                <button type="button" onclick="location.href='LogoutServiceCon.do'"
-                class="btn btn-outline-secondary">·Î±×¾Æ¿ô</button>
-        
-        </span>
-        <!-- Header -->
+	<body class="is-preload">
+	<%
+	HttpSession session1 = request.getSession();
+	
+	MemberDTO dto = (MemberDTO) session1.getAttribute("info");
+	
+	String birthday = dto.getMem_birthday().replace(" 00:00:00", "");
+	System.out.println(birthday);	
+	
+	
+	System.out.println(dto.getMem_gender());
+	
+	%>
+	
+		<span class="span1">
+		
+				<button type="button" class="btn btn-outline-secondary" onclick="location.href='main_login.jsp'">HOME</button>
+				<button type="button" class="btn btn-outline-secondary" onClick="location.href='login.jsp'">ë¡œê·¸ì•„ì›ƒ</button>
+		
+		</span>
+
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
 					<header id="header">
-						<h1 id="join">È¸¿øÁ¤º¸¼öÁ¤</h1>
+						<h1 id="join">íšŒì›ì •ë³´ìˆ˜ì •</h1>
 						<br></br>
 					</header>
 
 				<!-- Main -->
 				<div id="main">
 
-						<!-- ÇÁ·ÎÇÊ ¿µ¿ª Âü°í·Î ¼¼·Î ¿µ¿ª Å°¿ì°í ½ÍÀ¸¸é height·Î Á¶Á¤ÇÏ±â-->
+						<!-- í”„ë¡œí•„ ì˜ì—­ ì°¸ê³ ë¡œ ì„¸ë¡œ ì˜ì—­ í‚¤ìš°ê³  ì‹¶ìœ¼ë©´ heightë¡œ ì¡°ì •í•˜ê¸°-->
 						<div id="profile">
 						<svg xmlns="http://www.w3.org/2000/svg" width="100s" height="100" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
 							<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -84,90 +85,64 @@
 						</svg>
 						</div>
 						
-						<form>
+						<form action="JoinChangeServiceCon.do" method="post">
 							<table>
-								<form action="">
-									<!-- Ã¹¹øÂ° th -->
+									<!-- ì²«ë²ˆì§¸ th -->
 									<tr>
-										<td align="right">¾ÆÀÌµğ</td>
-										<td>Lit</td>
+										<td align="right">ì•„ì´ë””</td>
+										<td><input type="hidden" name="id" value="<%= dto.getMem_id() %>"><%= dto.getMem_id() %></td>
 										<td></td>
 									</tr>
 							 
 							
 									<tr>
-										<td align="right">ºñ¹Ğ¹øÈ£</td>
-										<td><input type="password" name="pw"></td>
-										<td><button type="button" class="btn btn-secondary">ºñ¹Ğ¹øÈ£ º¯°æ</button></td>
+										<td align="right">ë¹„ë°€ë²ˆí˜¸</td>
+										<td><input type="password" name="pw" value="<%= dto.getMem_pw() %>"></td>
 										
 									</tr>
 									<tr>
-										<td align="right">´Ğ³×ÀÓ</td>
-										<td><input type="text" name="nick"></td>
-										<td><button type="button" class="btn btn-secondary">´Ğ³×ÀÓ º¯°æ</button></td>
+										<td align="right">ë‹‰ë„¤ì„</td>
+										<td><input type="text" name="nick" value="<%= dto.getMem_nick() %>"></td>
 									</tr>
 
 									<tr>
-										<td align="right">¼ºº°</td>
-										<td>¿©ÀÚ</td>
-										<td></td>
-										
+										<td align="right">ì„±ë³„</td>
+										<td>
+											<input type="radio" name="gender" value="M" class="radio_gender" id="inlineRadio2" >
+											<label class="form-check-label" for="inlineRadio2" >ë‚¨ì</label>
+											<input type="radio" name="gender" value="F" class="readio_gender" id="inlineRadio1">
+											<label class="form-check-label" for="inlineRadio1" >ì—¬ì</label>
+										</td>
 									</tr>	
 
 									
        								 <tr>
-            							<td align="right" id="birthday">»ıÀÏ</td>
-            							<td id="day">2022-03-22</td>
-										</tr>
+            							<td align="right">ìƒì¼</td>
+            							<td>
+											<input type="date" class="form-control"
+											id="exampleFormControlInput1" id="line" name = "birthday" value="<%= birthday %>"></td>
+									</tr>
 
 							</table>
+								<!--  ë§ˆì§€ë§‰ ë²„íŠ¼ -->
+							<div>
+								<div class="d-grid  col-8 mx-auto" id="gender">
+								</br></br>
+									<input type="submit" class="btn btn-secondary btn-lg" id="btn1" value="íšŒì› ì •ë³´ ìˆ˜ì •">
+									<br>
+								</div>
+	
+								<div><br></div>
+							
+							</div>
+							
+						
 						</form>
 
 						<!-- Buttons -->
 						
-						<!--  ¸¶Áö¸· ¹öÆ° -->
-						<div>
-							<div class="d-grid  col-8 mx-auto" id="gender">
-							</br></br>
-								<button type="button" class="btn btn-secondary btn-lg" id="btn1">È¸¿ø Á¤º¸ ¼öÁ¤</button>
-								<!-- ¼öÁ¤¿Ï·áµÈ Á¤º¸µéÀÌ ¸¶ÀÌÆäÀÌÁö¿¡ ´Ù½Ã ´ã±â°Ô (¸¶ÀÌÆäÀÌÁö·ÎÀÌµ¿) -->
-								<br>
-							</div>
-
-							<div><br></div>
-						
 						</div>
-						
-					</div>
-					<footer id="footer">
-						<section>
-				
-							<dl class="alt" style="color:white;">
-								<dt>Address</dt>
-				
-								<dd>±¤ÁÖ µ¿±¸ ¿¹¼ú±æ 31-15</dd>
-								<dt>Phone</dt>
-								<dd>000-0000 x 0000</dd>
-								<dt>Email</dt>
-								<dd>
-									<a href="#">information@untitled.tld</a>
-								</dd>
-							</dl>
-							<ul class="icons">
-								<li><a href="#" class="icon brands fa-twitter alt"><span
-										class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands fa-facebook-f alt"><span
-										class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands fa-instagram alt"><span
-										class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands fa-github alt"><span
-										class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon brands fa-dribbble alt"><span
-										class="label">Dribbble</span></a></li>
-							</ul>
-						</section>
-				
-					</footer>
+				</div>
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>

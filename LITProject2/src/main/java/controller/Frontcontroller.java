@@ -13,6 +13,7 @@ import service.DeleteBoardServiceCon;
 import service.DeleteCommentServiceCon;
 import service.DeleteServiceCon;
 import service.EditCommentServiceCon;
+import service.JoinChangeServiceCon;
 import service.JoinService;
 import service.LoginServiceCon;
 import service.LogoutServiceCon;
@@ -21,7 +22,6 @@ import service.SelectBoardServiceCon;
 import service.ShowCommentServiceCon;
 import service.UpdateBoardServiceCon;
 import service.WriteBoardService;
-import service.idCheckServiceCon;
 
 @WebServlet("*.do")
 public class Frontcontroller extends HttpServlet {
@@ -81,22 +81,21 @@ public class Frontcontroller extends HttpServlet {
 		} else if (command.equals("LogoutServiceCon.do")) {
 			com = new LogoutServiceCon();
 			nextPage = com.execute(request, response);
-			
-			
 		} else if (command.equals("EditCommentServiceCon.do")) {
 			com = new EditCommentServiceCon();
 			nextPage = com.execute(request, response);
 		} else if (command.equals("DeleteCommentServiceCon.do")) {
 			com = new DeleteCommentServiceCon();
 			nextPage = com.execute(request, response);
-		} else if (command.equals("idCheckServiceCon.do")) {
-			com = new idCheckServiceCon();			
-			nextPage = com.execute(request, response);			
-		}else if(command.equals("DeleteServiceCon.do")) {
-			com = new DeleteServiceCon();
-			nextPage = com.execute(request, response);
-		}else if (command.equals("SelectBoardServiceCon.do")) {
+		} else if (command.equals("SelectBoardServiceCon.do")) {
 			com = new SelectBoardServiceCon();
+			nextPage = com.execute(request, response);
+		} else if (command.equals("JoinChangeServiceCon.do")) {
+			com = new JoinChangeServiceCon();
+			nextPage = com.execute(request, response);
+
+		} else if (command.equals("DeleteServiceCon.do")) {
+			com = new DeleteServiceCon();
 			nextPage = com.execute(request, response);
 		}
 		
@@ -105,7 +104,7 @@ public class Frontcontroller extends HttpServlet {
 		
 		if(nextPage != null) {
 			response.sendRedirect(nextPage);
-		} 
+		}
 	
 	}
 
