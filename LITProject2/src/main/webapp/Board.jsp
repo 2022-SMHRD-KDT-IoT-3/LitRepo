@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
+<title>DreamCatcher</title>
 <title>Elements - Stellar by HTML5 UP</title>
 <meta charset="utf-8" />
 <meta name="viewport"
@@ -32,8 +32,7 @@ input, select, textarea {
 table th {
     font-size: 0.8em;
     font-weight: 400;
-    padding: 0 0.25em 0.55em 0.25em;
-    text-align: left;
+    text-align: center;
 }
 	select {
     background-size: 1rem;
@@ -56,7 +55,15 @@ table td {
 }
 body {
     background-color: #935d8c;
-    color: rgb(255 255 255 / 80%);
+    color:#FFFFFF;
+}
+select {
+    background-size: 1rem;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 13px) center;
+    height: 2.75em;
+    padding-right: 2em;
+    text-overflow: ellipsis;
 }
 </style>
 <body style="font-family: 'Nanum Myeongjo', serif;">
@@ -116,7 +123,7 @@ body {
 
 					<tr>
 
-						<td><%=i + 1%></td>
+						<td style="width: 50px;"><%=i + 1%></td>
 						<td>
 							<%
 							if (list.get(i).getArticle_type().equals("F")) {
@@ -130,7 +137,7 @@ body {
 							%> <%
  }
  %> <%=type%></td>
-						<td><a href="showBoard.jsp?article_num=<%=i%>"> <%=list.get(i).getArticle_title()%></a></td>
+						<td style="width: 90px;"><a href="showBoard.jsp?article_num=<%=i%>"> <%=list.get(i).getArticle_title()%></a></td>
 						<td><%=list.get(i).getArticle_cnt()%></td>
 						<td><%=list.get(i).getMem_id()%></td>
 						<td><%=list.get(i).getArticle_date()%></td>
