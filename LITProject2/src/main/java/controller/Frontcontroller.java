@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import Inter.Command;
 import service.DeleteBoardServiceCon;
 import service.DeleteCommentServiceCon;
+import service.DeleteServiceCon;
 import service.EditCommentServiceCon;
 import service.JoinChangeServiceCon;
 import service.JoinService;
@@ -93,6 +94,9 @@ public class Frontcontroller extends HttpServlet {
 			com = new JoinChangeServiceCon();
 			nextPage = com.execute(request, response);
 
+		} else if (command.equals("DeleteServiceCon.do")) {
+			com = new DeleteServiceCon();
+			nextPage = com.execute(request, response);
 		}
 		
 		
