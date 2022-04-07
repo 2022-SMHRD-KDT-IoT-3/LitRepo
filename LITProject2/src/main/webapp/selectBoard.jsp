@@ -18,7 +18,51 @@
 
 
 </head>
-<body>
+<style>
+@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap')
+	;
+	table th {
+    font-size: 0.8em;
+    font-weight: 400;
+    text-align: center;
+}
+	select {
+    background-size: 1rem;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 0.5rem) center;
+    height: 2.75em;
+    padding-right: 2em;
+    text-overflow: ellipsis;
+}
+input, select, textarea {
+    color: #ffffff;
+}
+  .span1 {
+	right: 10px;
+	top: 10px;
+	position: absolute;
+}
+table td {
+    padding: 0.85em 0.3em;
+}
+body {
+    background-color: #935d8c;
+    color:#FFFFFF;
+}
+select {
+    background-size: 1rem;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 13px) center;
+    height: 2.75em;
+    padding-right: 2em;
+    text-overflow: ellipsis;
+}
+</style>
+
+<body style="font-family: 'Nanum Myeongjo', serif;">
 	<% BoardDAO dao = new BoardDAO();
 	
 		System.out.println("selectBoard.jsp");
@@ -35,7 +79,14 @@
 	
 	
 	<section>
-		<h2>자유 게시판</h2>
+	<span class="span1">
+		<button type="button" onclick="location.href='main_login.jsp'" class="btn btn-outline-secondary"
+			style="font-family: 'Nanum Myeongjo', serif;">HOME</button>
+		<button type="button" onclick="location.href='LogoutServiceCon.do'"
+			style="font-family: 'Nanum Myeongjo', serif;" class="btn btn-outline-secondary">로그아웃</button>
+	</span>
+	
+<h2 style="padding-top: 80px; font-weight: bold;padding-left: 190px;padding-bottom: 30px;">자유 게시판</h2>
 		<h3></h3>
 		<div class="table-wrapper">
 			<table>
@@ -52,7 +103,7 @@
 								</select>
 							</th>
 							<th>
-								<input type="submit" value="선택사항 보기" >
+								<input type="submit" style="font-family: 'Nanum Myeongjo', serif;font-size: 12.5px;"value="선택" >
 							</th>
 						</form>
 						<th></th>
@@ -61,13 +112,13 @@
 						<th><input><input type='button' value='검색'></th>
 					</tr>
 					
-					<tr>
-						<th>글 번호</th>
-						<th>글 유형</th>
-						<th>제목</th>
-						<th>조회수</th>
-						<th>작성자</th>
-						<th>작성일자</th>
+					<tr style="width:100px;padding-top: 20px;padding-bottom: 4px;">
+						<th style="padding-top: 15px;padding-bottom: 5px;">글 번호</th>
+						<th style="padding-top: 15px;padding-bottom: 5px;">글 유형</th>
+						<th style="padding-top: 15px;padding-bottom: 5px;">제목</th>
+						<th style="padding-top: 15px;padding-bottom: 5px;">조회수</th>
+						<th style="padding-top: 15px;padding-bottom: 5px;">작성자</th>
+						<th style="padding-top: 15px;padding-bottom: 5px;">작성일자</th>
 					</tr>
 				</thead>
 				<tbody>

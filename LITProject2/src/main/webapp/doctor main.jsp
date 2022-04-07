@@ -133,7 +133,7 @@
 			}
 
 			a {
-				color: white !important;
+				color: #FFFFFFA6 !important;
 				text-decoration: none !important;
 			}
 
@@ -146,6 +146,7 @@
 				text-align: center;
 				color: white;
 			}
+
 		</style>
 
 
@@ -160,10 +161,10 @@
 		<!-- Wrapper -->
 		<div id="wrapper">
 			<span class="span1">
-				<button type="button" onclick="location.href='main1.jsp'" class="btn btn-outline-secondary"
+				<button type="button"  onclick="location.href='main_login.jsp'" class="btn btn-outline-secondary"
 					id="up">HOME</button>
 
-				<button type="button" onclick="location.href='login.jsp'" class="btn btn-outline-secondary"
+				<button type="button" onclick="location.href='LogoutServiceCon.do'" class="btn btn-outline-secondary"
 					id="up">로그아웃</button>
 			</span>
 			<!-- 맨위로 버튼 누를때 이동해올 곳 -->
@@ -178,7 +179,7 @@
 			</header>
 
 			<br>
-			<table class="menu">
+			<table class="menu" style="color: inherit;">
 
 				<tr>
 					<td><a href="doctor main.jsp">Main</a></td>

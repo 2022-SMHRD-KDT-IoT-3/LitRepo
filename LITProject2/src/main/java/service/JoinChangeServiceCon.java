@@ -1,7 +1,6 @@
 package service;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -12,59 +11,43 @@ import Inter.Command;
 import model.MemberDAO;
 import model.MemberDTO;
 
-public class LoginServiceCon implements Command {
+public class JoinChangeServiceCon implements Command{
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-	
+		
+		System.out.println("[JoinChangeServiceCon]");
+		
 		request.setCharacterEncoding("UTF-8");
 
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-
-
-		MemberDTO dto = new MemberDAO().login(id, pw);
+		String nick = request.getParameter("nick");
+		String gender = request.getParameter("gender");
+		String birthday = request.getParameter("birthday");
 		
-		PrintWriter out = response.getWriter();
+		System.out.println("nick : " + nick);
+		System.out.println("birthday : " + birthday);
 		
-		String check = "true";
+		MemberDTO dto = new MemberDTO(id, pw, nick, gender, birthday);
 		
-
+		MemberDAO dao = new MemberDAO();
 		
-		if(dto != null) {
-			
-			System.out.println("로그인 성공");
+		int cnt = dao.update(dto);
+		
+		if(cnt>0) {
+			System.out.println("회원정보 수정완료");
 			
 			HttpSession session = request.getSession();
 			
 			session.setAttribute("info", dto);
 			
-			if(dto.getMem_type().equals("D")) {
-				
-				check = "docter";
-				out.print(check);
-			} else {
-				
-				out.print(check);
-			}
-
-			
-			
-			
-		} else {
-			
-			System.out.println("로그인 실패");
-			
-			check = "false";
-			
-			out.print(check);
-
+		}else {
+			System.out.println("회원정보 수정 실패");
 		}
 		
-		out.close();
-		
-		return null;
+		return "mypage.jsp";
 	}
 
 }

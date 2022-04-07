@@ -91,24 +91,24 @@ public class MemberDAO {
 	}
 
 	// 회원수정 메소드
-	public int update(MemberDTO dto) {
-		dbclose();
-		try {
-			String sql = "update mem_info set mem_pw=?, mem_nick=?, mem_gender=?, mem_birthday=? where mem_id=?";
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, dto.getMem_pw());
-			psmt.setString(2, dto.getMem_nick());
-			psmt.setString(3, dto.getMem_gender());
-			psmt.setString(4, dto.getMem_birthday());
-			psmt.setString(5, dto.getMem_id());
-			cnt = psmt.executeUpdate();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			dbclose();
+		public int update(MemberDTO dto) {
+			dbconn();
+			try {
+				String sql = "update mem_info set mem_pw=?, mem_nick=?, mem_gender=?, mem_birthdate=to_date(?, 'YYYY-MM-DD HH24:MI:SS') where mem_id=?";
+				psmt = conn.prepareStatement(sql);
+				psmt.setString(1, dto.getMem_pw());
+				psmt.setString(2, dto.getMem_nick());
+				psmt.setString(3, dto.getMem_gender());
+				psmt.setString(4, dto.getMem_birthday());
+				psmt.setString(5, dto.getMem_id());
+				cnt = psmt.executeUpdate();
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				dbclose();
+			}
+			return cnt;
 		}
-		return cnt;
-	}
 
 	// 회원정보 삭제 메소드
 	public int delete(String id) {

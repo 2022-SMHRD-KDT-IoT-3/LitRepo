@@ -94,14 +94,13 @@
 	border-bottom:1px solid rgba(117, 49, 134, 0.3);
 	background-color:rgba(117, 49, 134, 0.3);
 }
-.btnc{
+.btnc {
     display: block;
-    padding: 25px;
+    padding: 5px;
     color: #fff;
     position: relative;
     font-size: 23px;
     border-style: none;
-
 }
 .subMenu{
     background: rgb(255, 255, 255);
@@ -137,6 +136,29 @@
 .nav:target .subMenu{
     max-height: 10em;
 }
+#on {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    border-radius: 30px;
+    border: groove;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 300;
+    height: 2.75em;
+    line-height: 1.75em;
+    min-width: 8.25em;
+    padding: 0 1.5em;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
 		</style>
 
 	</head>
@@ -171,7 +193,7 @@
 
 					<input type="color" name="color" id="color">
 					
-					<input type="submit" value="색 변환">
+					<input type="submit" style="margin-top:30px;color: #FFFFFF !important;" value="색 변환">
 				</form>
 				<p id="p3">색상을 선택해주세요</p>
 
@@ -342,12 +364,28 @@
             </li>
         </ui>
     </div>
+    <br>
+    <br>
+
+    <h2 style="font-size: 27px;
+    text-align: center;
+    background-color: #9873a9;">캔들워머</h2>
+    <br>
+    <br>
+    			<section id="content" class="main">
+			
+				<img src="상황/캔들워머.jpg" width="400" style="margin-left: 40px;">
+					<a href=""></a>
+<div>
+<button type="button" class="btn btn-outline-secondary" style="font-family: 'Nanum Myeongjo', serif;margin-left: 115px;margin-top: 30px;font-size: 15px;font-weight: bold;" id="on">ON</button>
+			    <button type="button" class="btn btn-outline-secondary" style="font-family: 'Nanum Myeongjo', serif;font-size: 15px;font-weight: bold;" id="on">OFF</button>
+ </div>
 	<!-- Footer -->
 	<footer id="footer">
 		<section>
 			<br> <br>
 			<br>
-			<p id="p2" style="font-size:20px;">오늘도 당신의 숙면을 위해 노력하겠습니다. 편안한 밤 되세요</p>
+			<p id="p2" style="font-size:1em;">오늘도 당신의 숙면을 위해 노력하겠습니다. 편안한 밤 되세요</p>
 			<ul class="actions">
 			</ul>
 		</section>
