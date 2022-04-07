@@ -167,7 +167,7 @@
 				
 
 
-				<form action="#">
+				<form action="restoreColor" method = "post">
 
 					<input type="color" name="color" id="color">
 					

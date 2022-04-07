@@ -20,7 +20,7 @@ public class BodyCalculator {
 		}
 		labels = labels.substring(0, labels.length() - 1);
 
-		System.out.println(labels);
+	
 
 		return labels;
 
