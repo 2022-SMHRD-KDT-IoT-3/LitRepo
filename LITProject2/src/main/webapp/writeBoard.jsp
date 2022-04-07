@@ -2,10 +2,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
-<html>
+<html style="height: 00px;margin-top: 70px;">
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>DreamCatcher</title>
 <title>Elements - Stellar by HTML5 UP</title>
 <meta charset="utf-8" />
 <meta name="viewport"
@@ -19,7 +19,19 @@
 
 
 </head>
-<body>
+<style>
+@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap')
+	;
+	  .span1 {
+	right: 10px;
+	top: 10px;
+	position: absolute;
+}
+	</style>
+<body style="font-family: 'Nanum Myeongjo', serif;">
 		<%
 			//HttpSession session = request.getSession();
 		
@@ -30,8 +42,13 @@
 			System.out.println(dto.getMem_id());
 		%>
 	
-	
-	
+	<span class="span1">
+		<button type="button" onclick="location.href='main_login.jsp'" class="btn btn-outline-secondary"
+			style="font-family: 'Nanum Myeongjo', serif;">HOME</button>
+		<button type="button" onclick="location.href='LogoutServiceCon.do'"
+			style="font-family: 'Nanum Myeongjo', serif;" class="btn btn-outline-secondary">로그아웃</button>
+	</span>
+<h2 style="padding-top: 50px; font-weight: bold;padding-left: 190px;padding-bottom: 30px;">자유 게시판</h2>
 		<div id = "board">
 				
 				<!-- post 방식으로 데이터 보낼 때 content type 
@@ -52,7 +69,7 @@
 					<tr>
 						<td>글 유형</td>
 						<td>
-							<select name = "boardtype">
+							<select name="boardtype" style="font-family: 'Nanum Myeongjo', serif;">
 								<option  value= "free">자유</option>
 								<option  value= "q&a">질문</option>
 								<option  value = "infomation">정보</option>
@@ -70,14 +87,14 @@
 					</tr>
 					<tr>
 						<td colspan="2">
-							<input name="fileName" type="file" style="float: right;">
-							<textarea  name = "content" rows="10" style="resize: none;"></textarea>			
+							<input name="fileName" type="file" style="/* float: right; */margin-right: -60px;margin-bottom: 10px; font-family: 'Nanum Myeongjo', serif;">
+							<textarea name="content" rows="10" style="resize: none; font-family: 'Nanum Myeongjo', serif;"></textarea>
 						</td>
 					</tr>
 					<tr>
 						<td colspan="2">
-							<input type="reset" value="초기화">
-							<input type="submit" value="작성하기">
+							<input type="reset" style="font-family: 'Nanum Myeongjo', serif; margin-left: 125px;" value="초기화" >
+							<input type="submit" style="font-family: 'Nanum Myeongjo', serif;" value="작성하기">
 						</td>
 					</tr>
 				</table>
