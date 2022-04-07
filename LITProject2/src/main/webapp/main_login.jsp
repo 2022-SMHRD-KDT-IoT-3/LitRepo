@@ -190,7 +190,8 @@ int bpmListSize = pdao.SelectBPMPerHour(dto.getMem_id()).size();
 						<a id="bt" href="content_main.jsp">컨텐츠 추천</a>
 						<a id="bt" href="doctor main.jsp">의사피드백</a>
 						<a id="bt" href="Board.jsp">게시판</a>
-						<a id="bt" href="content_situation.jsp">상황별</a>
+						<a id="bt" href="content_situation.jsp">상황별 조명</a>
+						<a id="bt" href="speaker.jsp">음악</a>
 						
 					</td>
 				</tr>
