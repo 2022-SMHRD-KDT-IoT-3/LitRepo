@@ -27,10 +27,10 @@ public class idCheckServiceCon implements Command {
 		System.out.println(check);
 		
 		
-		if(check) {
+	
 			
 			out.print(check);
-		} 
+		
 		
 		out.close();
 		

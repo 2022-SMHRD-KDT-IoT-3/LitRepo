@@ -22,6 +22,7 @@ import service.SelectBoardServiceCon;
 import service.ShowCommentServiceCon;
 import service.UpdateBoardServiceCon;
 import service.WriteBoardService;
+import service.idCheckServiceCon;
 
 @WebServlet("*.do")
 public class Frontcontroller extends HttpServlet {
@@ -96,6 +97,9 @@ public class Frontcontroller extends HttpServlet {
 
 		} else if (command.equals("DeleteServiceCon.do")) {
 			com = new DeleteServiceCon();
+			nextPage = com.execute(request, response);
+		} else if (command.equals("idCheckServiceCon.do")) {
+			com = new idCheckServiceCon();
 			nextPage = com.execute(request, response);
 		}
 		
