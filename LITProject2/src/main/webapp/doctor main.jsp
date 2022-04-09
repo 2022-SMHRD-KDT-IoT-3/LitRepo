@@ -138,7 +138,7 @@
 			}
 
 			.mylevel {
-				margin-left: 120px;
+				margin-left: 60px;
 				position: absolute;
 			}
 
@@ -218,7 +218,7 @@
 							</div>
 							<br>
 							<div class="pulse2">
-								현재 '정정용' 님의 심박수는 <b>적정 수치</b>입니다
+								현재 '정정용' 님의 심박수는 <b>조금 위험</b>입니다
 							</div>
 
 							<details class="pulse1">
