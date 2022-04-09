@@ -1,3 +1,7 @@
+<%@page import="model.EnvironmentDTO"%>
+<%@page import="model.EnvironmentDAO"%>
+<%@page import="model.RealtimeDAO"%>
+<%@page import="model.RealtimeDTO"%>
 <%@page import="model.PhysicalDTO"%>
 <%@page import="java.util.List"%>
 <%@page import="service.BodyCalculator"%>
@@ -110,7 +114,11 @@
 				padding-bottom: 50px;
 			}
 			#box{
-margin-bottom:140px;
+			margin-bottom:140px;
+			}
+			
+			.row>div{
+				align : center;
 			}
 		</style>
 </head>
@@ -121,28 +129,67 @@ margin-bottom:140px;
 <body class="is-preload" style="font-family: 'Nanum Myeongjo', serif;"></body>
 
 <% 
-
+// 세션 생성
 HttpSession session1=request.getSession(); 
 MemberDTO dto= (MemberDTO) session1.getAttribute("info"); 
+
+//dao/dto 생성
 PhysicalDAO pdao = new PhysicalDAO();
+RealtimeDAO rdao = new RealtimeDAO();
+EnvironmentDAO edao = new EnvironmentDAO();
+EnvironmentDTO edto = edao.SelectTempHumi(dto.getMem_id());
+
+
+//그래프 데이터값을 생성하는 인스턴스 BodyCalculator
 BodyCalculator bc = new BodyCalculator();
 
 List<PhysicalDTO> BPMavgList = null;
-String labels = " ";
-String data = " ";
+List<RealtimeDTO> SoundavgList = null;
 
-int bpmListSize = pdao.SelectBPMPerHour(dto.getMem_id()).size();
+
+String BPMlabels = "";
+String BPMdata = "";
+String Soundlabels = "";
+String SoundData = "";
+int temperature = 0;
+int humidity = 0;
+
+
+
+if(edto != null){
+temperature = edto.getEnv_temp();
+humidity = edto.getEnv_humid();
+}
+
+int bpmListSize = pdao.SelectBPMPerHour(dto.getMem_id()).size(); // 시간당 bpm 가져오기
 	
 	if( bpmListSize != 0){
 	BPMavgList = pdao.SelectBPMPerHour(dto.getMem_id());
-	labels = bc.chart1Labels(BPMavgList);
+	BPMlabels = bc.chart1Labels(BPMavgList);
 	
-	data = bc.chart1Data(BPMavgList);
+	BPMdata = bc.chart1Data(BPMavgList);
 	} 
 	
+int SoundListSize = rdao.selectdecibelPerHour(dto.getMem_id()).size(); // 시간당 데시벨 가져오기
+
+	if(SoundListSize != 0){
+		SoundavgList = rdao.selectdecibelPerHour(dto.getMem_id());
+		
+		Soundlabels = bc.chart2Labels(SoundavgList);
+		SoundData = bc.chart2Data(SoundavgList);
+		
+		
+	}
+
+
 	
+
+
+
+
 	
-	
+
+		
 %>
 
 	<!-- Wrapper -->
@@ -256,10 +303,15 @@ int bpmListSize = pdao.SelectBPMPerHour(dto.getMem_id()).size();
 									<br>
 									<h5 id="txt">평균 데시벨</h5>
 									<br>
-									<div>
+									<%if(SoundListSize != 0){ %>
+									<div >
+									
 										<canvas id="myChart2"></canvas>
 									</div>
-									<canvas id="myChart2" width="400" height="80"></canvas>
+									<%} else { %>
+										<h5>축적된 데이터가 없습니다.</h5>
+									<%} %>
+									
 								</div>
 							</div>
 
@@ -278,7 +330,9 @@ int bpmListSize = pdao.SelectBPMPerHour(dto.getMem_id()).size();
 											<path
 												d="M5.5 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0V2.5zM8 1a1.5 1.5 0 0 0-1.5 1.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0l-.166-.15V2.5A1.5 1.5 0 0 0 8 1z" />
 										</svg></td>
-									<td id="txt">12도</td>
+										
+									<td id="txt"><%= temperature %>도</td>
+									
 								</tr>
 
 								<tr>
@@ -287,7 +341,7 @@ int bpmListSize = pdao.SelectBPMPerHour(dto.getMem_id()).size();
 											<path
 												d="M4.158 12.025a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm6 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm-3.5 1.5a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm6 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 1 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm.747-8.498a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 11H13a3 3 0 0 0 .405-5.973zM8.5 2a4 4 0 0 1 3.976 3.555.5.5 0 0 0 .5.445H13a2 2 0 0 1 0 4H3.5a2.5 2.5 0 1 1 .605-4.926.5.5 0 0 0 .596-.329A4.002 4.002 0 0 1 8.5 2z" />
 										</svg></td>
-									<td id="txt">40%</td>
+									<td id="txt"><%= humidity %>%</td>
 								</tr>
 
 							</table>
@@ -398,10 +452,10 @@ int bpmListSize = pdao.SelectBPMPerHour(dto.getMem_id()).size();
 		const myChart = new Chart(ctx, {
 			type: 'line',
 			data: {
-				labels: [<%= labels %>],
+				labels: [<%= BPMlabels %>],
 				datasets: [{
-					label: '하루 평균 수면 심박 수',
-					data: [<%=data%>],
+					label: '오늘의 수면 평균 심박수',
+					data: [<%= BPMdata %>],
 					backgroundColor: [
 						'rgba(255, 99, 132, 0.2)',
 						'rgba(255, 99, 132, 0.2)',
@@ -444,14 +498,14 @@ int bpmListSize = pdao.SelectBPMPerHour(dto.getMem_id()).size();
 			data: { // 차트에 들어갈 데이터
 				labels: [
 					//x 축
-					'3/1', '3/2', '3/3', '3/4', '3/5', '3/6', '3/7'
+					<%= Soundlabels %>
 				],
 				datasets: [
 					{ //데이터
-						label: '하루 평균 수면 데시벨', //차트 제목
+						label: '오늘의 수면 데시벨', //차트 제목
 						fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
 						data: [
-							40, 42, 38, 39, 35, 41, 40 //x축 label에 대응되는 데이터 값
+							<%= SoundData %> //x축 label에 대응되는 데이터 값
 						],
 						backgroundColor: [
 							//색상

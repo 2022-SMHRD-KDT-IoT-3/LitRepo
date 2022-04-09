@@ -2,6 +2,8 @@ package arduinotest;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,17 +22,11 @@ public class DataReceiver extends HttpServlet {
 			throws ServletException, IOException {
 
 	
+	
+		
 		String temp = request.getParameter("temp");
 		String humi = request.getParameter("humi");
 		String sound = request.getParameter("sound");
-		
-
-		
-		
-		
-		
-		
-		
 		
 	
 		System.out.println("온도 : " + temp);
@@ -52,18 +48,53 @@ public class DataReceiver extends HttpServlet {
 		}
 			
 		
-		else {
+		else if(restoreColor.LEDPower == true){
 			
 			
-			 out.print("{"+"\"Red\" : "+restoreColor.red+",\r\n"+"\"Green\" :"+restoreColor.green+",\r\n"+"\"Blue\" : "+restoreColor.blue+"\r\n"+"}");
+			 out.print("{"+"\"Red\": "+restoreColor.red+",\r\n"+"\"Green\": "+restoreColor.green+",\r\n"+"\"Blue\": "+restoreColor.blue+"\r\n"+"}");
+			 
+			 restoreColor.LEDPower = false;
 			
 		}
 		
 		
 		
 		 
+		 
+		 
+		 
+		 // 알람 설정
+		 if(timerService.alarmCheck == true) {
+		 
+		 Timer timer = new Timer();
+			
+			
+			TimerTask task = new TimerTask(){
+
+				@Override
+				public void run() {				
+						
+						
+						out.print("warmerOff");
+						
+						timerService.alarmCheck = false;
+						
+						
+					} 
+					
+					
+			 
+				
+				
+			};
+		
+			
+			timer.schedule(task, 5000);
+		
+			
+		 }
+		 
 		 out.close();
-	
 	}
 
 }

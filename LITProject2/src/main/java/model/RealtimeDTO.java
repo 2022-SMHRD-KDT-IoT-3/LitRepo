@@ -6,6 +6,28 @@ public class RealtimeDTO {
 	private int rt_pulse;
 	private int rt_decibel;
 	private String rt_datetime;
+	
+	//ЦђБе
+	private String SoundHour;
+	private int Soundavg;
+	
+	
+	public String getSoundHour() {
+		return SoundHour;
+	}
+
+	public void setSoundHour(String soundHour) {
+		SoundHour = soundHour;
+	}
+
+	public int getSoundavg() {
+		return Soundavg;
+	}
+
+	public void setSoundavg(int soundavg) {
+		Soundavg = soundavg;
+	}
+
 
 	
 	public RealtimeDTO(int rt_seq, String mem_id, int rt_pulse, int rt_decibel, String rt_datetiem) {
@@ -16,6 +38,12 @@ public class RealtimeDTO {
 		this.rt_datetime = rt_datetime;
 	}
 	
+	public RealtimeDTO(String soundHour, int soundavg) {
+		super();
+		SoundHour = soundHour;
+		Soundavg = soundavg;
+	}
+
 	public int getRt_seq() {
 		return rt_seq;
 	}

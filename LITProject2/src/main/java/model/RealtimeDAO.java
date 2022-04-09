@@ -81,4 +81,36 @@ public class RealtimeDAO {
 			dbclose();
 		} return rtlist;
 	}
+	
+	
+	public List<RealtimeDTO> selectdecibelPerHour(String id){
+		List<RealtimeDTO> rtlist = new ArrayList<RealtimeDTO>();
+		dbconn();
+		try {
+			String sql = "SELECT to_char(rt_datetime, 'yyyy/mm/dd hh24'), round(avg(rt_decibel))"
+					+ " FROM rt_info"
+					+ " WHERE to_char(rt_datetime, 'yyyy/mm/dd') = to_char(sysdate, 'yyyy/mm/dd')"
+					+ " AND mem_id = ?"
+					+ " GROUP BY to_char(rt_datetime, 'yyyy/mm/dd hh24')"
+					+ " ORDER BY to_char(rt_datetime, 'yyyy/mm/dd hh24')";
+			
+			
+			
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, id);
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				String SoundHour = rs.getString(1);
+				int Soundavg = rs.getInt(2);
+				
+				rtdto = new RealtimeDTO(SoundHour, Soundavg);
+				rtlist.add(rtdto);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			dbclose();
+		} return rtlist;
+	}
 }

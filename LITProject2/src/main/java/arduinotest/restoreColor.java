@@ -16,14 +16,17 @@ import javax.servlet.http.HttpServletResponse;
 public class restoreColor extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public static int red = 255;
-	public static int green = 255;
-	public static int blue = 255;
+	public static int red;
+	public static int green;
+	public static int blue;
+	public static boolean LEDPower = false;
 	
 	
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+		request.setCharacterEncoding("UTF-8");
+		
 		String color = request.getParameter("color");
 
 		System.out.println(color);
@@ -42,15 +45,29 @@ public class restoreColor extends HttpServlet {
 		green1 = rgb[2] + rgb[3];
 		blue1 = rgb[4] + rgb[5];
 
+		if(red1.equals("00") && green1.equals("00") && blue1.equals("00")) {
+			LEDPower = true;
+			
+			red = 0;
+			green = 0;
+			blue = 0;
+			
+			
+		} else {
+			
+			LEDPower = true;
+			
+			red = Integer.parseInt(red1, 16);
+			green = Integer.parseInt(green1, 16);
+			blue = Integer.parseInt(blue1, 16);
+			
+			
+		}
+
+		
 		System.out.println(red);
 		System.out.println(green);
 		System.out.println(blue);
-
-		red = Integer.parseInt(red1, 16);
-		green = Integer.parseInt(green1, 16);
-		blue = Integer.parseInt(blue1, 16);
-		
-			
 			
 		
 		

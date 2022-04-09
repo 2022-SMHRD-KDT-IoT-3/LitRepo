@@ -188,7 +188,7 @@
 					<div class="carousel-inner" role="listbox">
 						<div class="item active">
 							<a href="" target="_blank"><img src="./img_asmr/asmrºñ.jpg"
-								id="img1"></a>
+								id="img1" value = "17"></a>
 							<div class="carousel-caption">ºñ</div>
 						</div>
 
@@ -243,17 +243,17 @@
 			<img id="buttonimg" src="./img_speaker/left-arrow.png" alt="">
 		</button>
 
-		<button type="button" onclick="" class="btn btn-outline-secondary"
+		<button type="button" onclick="musicPlayer('17')" class="btn btn-outline-secondary"
 			id="buttontest" style="font-family: 'Nanum Myeongjo', serif;">
 			<img id="buttonimg" src="./img_speaker/play-button (3).png" alt="">
 		</button>
 
-		<button type="button" onclick="" class="btn btn-outline-secondary"
+		<button type="button" onclick="musicPlayer('p')" class="btn btn-outline-secondary"
 			id="buttontest" style="font-family: 'Nanum Myeongjo', serif;">
 			<img id="buttonimg" src="./img_speaker/next.png" alt="">
 		</button>
 
-		<button type="button" onclick="" class="btn btn-outline-secondary"
+		<button type="button" onclick="musicPlayer('+')" class="btn btn-outline-secondary"
 			id="buttontest" style="font-family: 'Nanum Myeongjo', serif;">
 			<img id="buttonimg" src="./img_speaker/plus (1).png" alt="">
 		</button>
@@ -275,6 +275,43 @@
 
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
+	
+	<script type="text/javascript">
+	
+		function musicPlayer(musicList){
+			
+			$.ajax({
+				type : 'post',
+	            url : 'restoreMp31',
+	            data : {
+	                'select' : "music : " + musicList
+	            },
+	            success : function(check){
+	            	
+	            	if(check){
+	                	
+					} 
+	            },
+	            error : function(){
+	                
+	            }	
+			
+			
+			
+			})
+			
+			
+			
+			
+			
+			
+			
+		}
+	
+	</script>
+	
+	
+	
 	<script src="assets/js/jquery.scrollex.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>
 	<script src="assets/js/browser.min.js"></script>

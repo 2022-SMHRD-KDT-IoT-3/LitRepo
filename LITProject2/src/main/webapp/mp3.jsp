@@ -15,7 +15,7 @@
 	<button type = "button" value = "1" onclick ="musicPlayer(4)">4</button>
 	<button type = "button" value = "1" onclick ="musicPlayer(5)">5</button>
 	<button type = "button" value = "1" onclick ="musicPlayer(6)">6</button>
-	<button type = "button"  onclick ="musicPlayer(7)">7</button>
+	<button type = "button"  onclick ="musicPlayer(17)">7</button>
 	<button type = "button" onclick="musicPlayer('p')">p/c</button>
 	<button type = "button" onclick="musicPlayer('+')">+</button>
 	<button type = "button" onclick="musicPlayer('-')">-</button>

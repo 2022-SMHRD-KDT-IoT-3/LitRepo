@@ -10,6 +10,7 @@ public class EnvironmentDAO {
 	Connection conn = null;
 	PreparedStatement psmt = null;
 	ResultSet rs = null;
+	EnvironmentDTO edto = null;
 	int cnt = 0;
 	
 	// DB conn메소드
@@ -65,9 +66,57 @@ public class EnvironmentDAO {
 			
 		}
 		
-		return cnt;
-		
+		return cnt;	
 		
 	}
+	
+	
+	//가장 최근의 온도 가져오기
+	
+	public EnvironmentDTO SelectTempHumi(String mem_id) {
+		
+		dbconn();
+		
+		try {
+			String sql = " SELECT env_temperature, env_humidity, to_char(env_date, 'HH:MM:DD HH24:MI:SS')"
+					+ " FROM env_info"
+					+ " WHERE env_date = (SELECT max(env_date) FROM env_info WHERE mem_id = ?)";
+			
+			psmt = conn.prepareStatement(sql);
+			
+			psmt.setString(1, mem_id);
+			
+			rs = psmt.executeQuery();
+			
+			
+			if(rs.next()) {
+				int temp = rs.getInt(1);
+				int humi = rs.getInt(2);
+				String date = rs.getString(3);
+				
+				edto = new EnvironmentDTO(temp, humi, date);
+				
+				
+			}
+			
+			
+			
+			
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+			
+		} finally {
+			
+			dbclose();
+			
+		}
+		
+		
+		
+		
+		return edto != null? edto : null;
+	}
+	
 	
 }

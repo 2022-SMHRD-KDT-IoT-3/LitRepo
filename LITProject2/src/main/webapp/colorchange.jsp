@@ -377,8 +377,8 @@
 				<img src="상황/캔들워머.jpg" width="400" style="margin-left: 40px;">
 					<a href=""></a>
 <div>
-<button type="button" class="btn btn-outline-secondary" style="font-family: 'Nanum Myeongjo', serif;margin-left: 115px;margin-top: 30px;font-size: 15px;font-weight: bold;" id="on">ON</button>
-			    <button type="button" class="btn btn-outline-secondary" style="font-family: 'Nanum Myeongjo', serif;font-size: 15px;font-weight: bold;" id="on">OFF</button>
+<button type="button" onclick = "warmerOnOff('On')"class="btn btn-outline-secondary" style="font-family: 'Nanum Myeongjo', serif;margin-left: 115px;margin-top: 30px;font-size: 15px;font-weight: bold;" id="on">ON</button>
+			    <button type="button" onclick ="warmerOnOff('Off')" class="btn btn-outline-secondary" style="font-family: 'Nanum Myeongjo', serif;font-size: 15px;font-weight: bold;" id="on">OFF</button>
  </div>
 	<!-- Footer -->
 	<footer id="footer">
@@ -419,6 +419,31 @@
 
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
+	
+	<script type="text/javascript">
+		function warmerOnOff(State){
+			$.ajax({
+				type : 'post',
+	            url : 'restoreWarmer',
+	            data : {
+	                'warmerState' : "warmer" + State
+	            },
+	            success : function(check){
+	            	
+	            	if(check){
+	                	alert("완료")
+					} 
+	            },
+	            error : function(){
+	                
+	            }	
+			
+			})
+			
+		}
+	
+	</script>
+	
 	<script src="assets/js/jquery.scrollex.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>
 	<script src="assets/js/browser.min.js"></script>

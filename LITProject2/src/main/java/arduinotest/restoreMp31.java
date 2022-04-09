@@ -14,12 +14,8 @@ public class restoreMp31 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
-	public String volumeUp = "+";
-	public String volumeDown = "-";
 	public static String SelectMusic = null;
-	public String StopMusic = "s";
-	public String PauseContinue = "p";
-	
+
 	
 	
 	

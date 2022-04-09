@@ -15,6 +15,17 @@ public class EnvironmentDTO {
 		this.mem_id = mem_id;
 	}
 	
+	
+	
+	public EnvironmentDTO(int env_temp, int env_humid, String env_date) {
+		super();
+		this.env_temp = env_temp;
+		this.env_humid = env_humid;
+		this.env_date = env_date;
+	}
+
+
+
 	public int getEnv_seq() {
 		return env_seq;
 	}
