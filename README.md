@@ -26,7 +26,7 @@ HeartRateSensingLamp
 
 
 
-
+[main](https://user-images.githubusercontent.com/64225078/162858325-f4b5ba27-dd96-4714-91c8-eeb83d271028.png)
 
 
 ## 기능 흐름도
@@ -49,6 +49,7 @@ HeartRateSensingLamp
 
 ## 역할
 ![image](https://user-images.githubusercontent.com/64225078/162859991-742b2f8d-31cd-41b9-b0b8-68166fe93470.png)
+
 
 ## 서비스 URL
 
