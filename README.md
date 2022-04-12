@@ -1,7 +1,3 @@
-# LitRepo
-HeartRateSensingLamp
-
-
 ## 소개
 팀명 : LIT! ✨
 제품명 : Dream Catcher
