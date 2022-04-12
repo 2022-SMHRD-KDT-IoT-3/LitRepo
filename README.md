@@ -3,7 +3,7 @@ HeartRateSensingLamp
 
 
 ## 소개
-팀명 : Lit! ✨
+팀명 : LIT! ✨
 제품명 : Dream Catcher
 - 심박센서를 이용한 수면데이터 수집 무드등 + 피드백 서비스
 - Challenge Point : 헬스케어
@@ -26,7 +26,8 @@ HeartRateSensingLamp
 
 
 
-[main](https://user-images.githubusercontent.com/64225078/162858325-f4b5ba27-dd96-4714-91c8-eeb83d271028.png)
+
+![image](https://user-images.githubusercontent.com/64225078/162862824-97abd3ee-8025-47c2-bee6-3e0e2a7689d0.png)
 
 
 ## 기능 흐름도
@@ -51,5 +52,6 @@ HeartRateSensingLamp
 ![image](https://user-images.githubusercontent.com/64225078/162859991-742b2f8d-31cd-41b9-b0b8-68166fe93470.png)
 
 
-## 서비스 URL
+## PPT
+[LIT_Dream Catcher.pptx](https://github.com/2022-SMHRD-KDT-IoT-3/LitRepo/files/8468880/LIT_Dream.Catcher.pptx)
 
