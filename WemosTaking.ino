@@ -4,8 +4,8 @@
 #include <HTTPClient.h>
 
 
-const char* ssid     = "jeongyong";
-const char* password = "123456789";
+const char* ssid     = "==ssid==";
+const char* password = "==passward==";
 
 boolean mp3Check = true;
 boolean warmerCheck = true;
@@ -72,9 +72,6 @@ void makeJson(String result) { //String 형태의 json 형식 파싱
   green = root["Green"];
   blue = root["Blue"];
   
-  } else if(result.startsWith("{\"BPM\"")){ // BPM으로 시작하는 json 형식
-  BPM = root["BPM"];
-  sound = root["Sound"];
   } else if (result.startsWith("{\"Temperature\"")){
   temperature = root["Temperature"];
   humidity = root["Humidity"];
