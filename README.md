@@ -25,7 +25,7 @@ HeartRateSensingLamp
 - 디자인도구 : PhotoShop
 
 
-![image](https://user-images.githubusercontent.com/64225078/162858325-f4b5ba27-dd96-4714-91c8-eeb83d271028.png)
+
 
 
 
@@ -51,5 +51,4 @@ HeartRateSensingLamp
 ![image](https://user-images.githubusercontent.com/64225078/162859991-742b2f8d-31cd-41b9-b0b8-68166fe93470.png)
 
 ## 서비스 URL
-http://localhost:8081/LITProject2/main1.jsp
 
