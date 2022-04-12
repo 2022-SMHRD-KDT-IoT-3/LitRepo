@@ -2,7 +2,7 @@
 
 #include "SoftwareSerial.h"
 #include "DFRobotDFPlayerMini.h"
-#include "DFRobot_Heartrate.h"
+
 #include "DHT.h"
 
 #define heartratePin A1 //심박센서 Uno A1
@@ -20,11 +20,6 @@ int soundPin = A2;// 사운드센서 Uno A2
 
 
 DHT dht(DHTPIN, DHTTYPE); // dht 매개변수
-
-
-
-
-DFRobot_Heartrate heartrate(DIGITAL_MODE);
 
 
 void setup() {
@@ -51,7 +46,7 @@ void setup() {
 
 void loop() {
 
-uint8_t rateValue;
+
 int temp = dht.readTemperature();
 int humi = dht.readHumidity();
 int sound = analogRead(soundPin);
