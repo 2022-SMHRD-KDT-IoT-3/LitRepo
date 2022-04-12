@@ -4,14 +4,20 @@
 #include <HTTPClient.h>
 
 
-const char* ssid     = "==ssid==";
-const char* password = "==password==";
+const char* ssid     = "jeongyong";
+const char* password = "123456789";
 
+boolean mp3Check = true;
+boolean warmerCheck = true;
+boolean LEDCheck = true;
 
 
 int ledRedPin = 14;
 int ledGreenPin = 27 ;
 int ledBluePin = 16;
+int warmerPin = 12;
+
+
 int red;
 int green;
 int blue;
@@ -30,17 +36,22 @@ void setup(){
   pinMode(ledRedPin, OUTPUT);
   pinMode(ledGreenPin, OUTPUT);
   pinMode(ledBluePin, OUTPUT);
+  pinMode(warmerPin, OUTPUT);
 
+  
+  digitalWrite(warmerPin, HIGH);
+  setColor(0, 0, 0);
+
+  
   //와이파이 연결 시도
   WiFi.begin(ssid, password);
 
   while (WiFi.status() != WL_CONNECTED)
   {
     delay(500);
-    Serial.print(".");
+    
   }
-  Serial.println("Connected to the WiFi network");
-  Serial.println("");
+
   
 }
 
@@ -60,17 +71,17 @@ void makeJson(String result) { //String 형태의 json 형식 파싱
   red = root["Red"];
   green = root["Green"];
   blue = root["Blue"];
+  
   } else if(result.startsWith("{\"BPM\"")){ // BPM으로 시작하는 json 형식
   BPM = root["BPM"];
   sound = root["Sound"];
   } else if (result.startsWith("{\"Temperature\"")){
   temperature = root["Temperature"];
-  humidity = root["Humidity"];    
-  }
+  humidity = root["Humidity"];
+  sound = root["Sound"];   
+  } 
   
-  Serial.print("Json data : ");
-  root.printTo(Serial);
-  Serial.println();
+
 } 
 
 
@@ -82,12 +93,13 @@ void loop(){
   }
 
   
+  
 
 if(WiFi.status() == WL_CONNECTED){
   HTTPClient http;
   
   
-  http.begin("http://172.30.1.40:8081/WebTest/DataReceiver?BPM=" + (String) BPM + "&temp=" + (String) temperature + "&humi=" + (String) humidity + "&sound=" + (String) sound);
+  http.begin("http://172.30.1.40:8081/LITProject2/DataReceiver?BPM=" + (String) BPM + "&temp=" + (String) temperature + "&humi=" + (String) humidity + "&sound=" + (String) sound);
    
     
     int httpCode = http.GET() ;
@@ -95,17 +107,66 @@ if(WiFi.status() == WL_CONNECTED){
     
     if(httpCode > 0) {
 
-      Serial.println(httpCode);
+     
       String result = http.getString();
-      makeJson(result);
+
+      if(result.startsWith("music : ")){
+        
+        if(mp3Check){
+        mp3Check = false;
+        char command = result[8];
+        
+       Serial.println(command);
+        }
+      } else{
+      
+      mp3Check = true;
+      }
+
+
+      if(result.startsWith("warmerOn")){
+      if(warmerCheck){
+        warmerCheck = false;
+        digitalWrite(warmerPin, HIGH);
+      }
+      } else if (result.startsWith("warmerOff")){
+        if(warmerCheck){
+          warmerCheck = false;
+          digitalWrite(warmerPin, LOW);
+        }
+      } else{
+         warmerCheck = true;
+      }
+      
+        
+      if(result.startsWith("{\"Red\"")){
+        if(LEDCheck){
+        LEDCheck = false;
+        
+        makeJson(result);
+        setColor(red, green, blue);
+        }
+      } else{
+        LEDCheck = true;
+      }
+      
+      
+
+        
+      
+      
       
     }
       http.end();
+ 
+  
+  } else {
+     WiFi.begin(ssid, password);
   }
 
-setColor(red, green, blue);
 
-delay(200);
+
+delay(1);
   
 
 
