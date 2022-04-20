@@ -5,7 +5,6 @@
 
 #include "DHT.h"
 
-#define heartratePin A1 //심박센서 Uno A1
 #define DHTPIN A0 // 온습도 Uno A0
 #define DHTTYPE DHT11
 
