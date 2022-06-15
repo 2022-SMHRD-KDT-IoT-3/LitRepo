@@ -51,4 +51,3 @@
 ## PPT
 [LIT_Dream Catcher.pptx](https://github.com/2022-SMHRD-KDT-IoT-3/LitRepo/files/8468880/LIT_Dream.Catcher.pptx)
 
-도은 
